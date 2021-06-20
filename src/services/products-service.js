@@ -9,6 +9,7 @@ export function createProduct(body, isSuccess, getToken) {
     headers: {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
+      'Access-Control-Allow-Origin':'https://oktay-free-market.netlify.app/'
     },
     body: JSON.stringify(body),
   };
@@ -32,8 +33,17 @@ export function createProduct(body, isSuccess, getToken) {
 
 //get all Products
 export async function getAll() {
+  const requestOptions = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      'Access-Control-Allow-Origin':'https://oktay-free-market.netlify.app/'
+    },
+   
+  };
+
   try {
-    const list = await fetch(apiConfig.products);
+    const list = await fetch(apiConfig.products,requestOptions);
     return await list.json();
   } catch (err) {
     return await console.log("error", err);
