@@ -1,0 +1,62 @@
+.out-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.edit-user{
+    width: 50%;
+}
+
+#profil-photo {
+    border: 3px solid rgb(75, 117, 145);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+}
+.next-button{
+    position: fixed;
+    right: 4rem;
+    bottom: 2rem;
+}
+.close-modal{
+    position:fixed;
+    right: 2rem;
+    top: 2rem;
+}
+p {
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+  padding: 1rem;
+
+}
+
+.form-control {
+    margin-bottom: 1rem;
+}
+.userProductButton{
+    width: 7.5rem;
+    
+}
+@media only screen and (max-device-width:767px) {
+    .edit-user{
+        width: 100%!important;
+    }
+    .profile-picture {
+        
+        border: 3px solid rgb(75, 117, 145);
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        position: relative;
+        z-index: 1;
+    }
+    .user-product-card{
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,18 @@
+.container{
+  min-height: 
+    33rem;
+}
+@media only screen and (min-width: 900px) {
+
+  .container{
+    min-width: 
+    63rem;
+  }
+  
+}
+@media only screen and (min-width: 1300px) {
+  .container{
+    min-width: 
+    83rem;
+  }
+}

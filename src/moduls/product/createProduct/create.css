@@ -1,0 +1,49 @@
+.creatExampleImage {
+  max-width: 20rem;
+  min-width: 20rem;
+  max-height: 15rem;
+  min-height: 15rem;
+  border-radius: 20px;
+  border: 1px solid rgb(135, 222, 139)
+}
+
+.alert-success, .alert-danger{
+  margin:5rem;
+  padding:5rem;
+}
+
+.disabled-back{
+    opacity: 0.6;
+    cursor: not-allowed; 
+}
+.form-create {
+  width:50%
+}
+
+.dropdown {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.showUploadPhoto {
+  width: 8rem;
+}
+
+@media only screen and (max-device-width:767px) {
+
+  .createWish-row {
+    display: inline-block;
+   width: 100%;
+  }
+
+  .form-create {
+    width: 100%
+  }
+  .alert-success, .alert-danger{
+    margin:0;
+    margin-top:2rem;
+    margin-bottom:2rem;
+    padding:1rem;
+  }
+  
+}
