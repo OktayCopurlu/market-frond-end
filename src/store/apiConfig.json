@@ -1,7 +1,7 @@
 {
-  "products":"http://localhost:5000/products",
-  "wishes":"http://localhost:5000/wishes",
-  "users":"http://localhost:5000/users"
+  "products":"http://localhost:5001/freemarket-314419/us-central1/app/products",
+  "wishes":"http://localhost:5001/freemarket-314419/us-central1/app/wishes",
+  "users":"http://localhost:5001/freemarket-314419/us-central1/app/users"
 }
 
   
