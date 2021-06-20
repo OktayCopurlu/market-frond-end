@@ -1,6 +1,6 @@
 {
   "name": "freemarket",
-  "homepage": "https://oktay-free-market.netlify.app",
+  "homepage": "/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
