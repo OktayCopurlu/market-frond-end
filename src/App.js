@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Route, Switch } from "react-router-dom";
@@ -28,12 +28,9 @@ function App() {
         <Route path="/wishList">
           <WishList />
         </Route>
-
-        <Fragment>
           <ProtectedRoute path="/create" component={CreateProducts} />
           <ProtectedRoute path="/wishForm" component={CreateWishList} />
           <ProtectedRoute path="/personalPage" component={PersonalPage} />
-        </Fragment>
       </Switch>
       <Footer />
     </>
