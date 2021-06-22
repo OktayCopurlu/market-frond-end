@@ -10,9 +10,10 @@ import FreeMarket from "./moduls/home/freeMarket";
 import CreateProducts from "./moduls/product/createProduct/createProducts";
 import CreateWishList from "./moduls/wish/createWish/createWish";
 import PersonalPage from "./moduls/user/userPage/personalPage";
-
+import EmailForm from "./moduls/footer/emailForm"
 import Footer from "./moduls/footer/footer";
-import ProtectedRoute from "./auth/protected-route";
+import History from "./moduls/footer/history"
+import ProtectedRoute from "./provider/protected-route";
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
         <Route path="/wishList">
           <WishList />
         </Route>
+        <Route path="/email"><EmailForm/></Route>
+        <Route path="/history"><History/></Route>
           <ProtectedRoute path="/create" component={CreateProducts} />
           <ProtectedRoute path="/wishForm" component={CreateWishList} />
           <ProtectedRoute path="/personalPage" component={PersonalPage} />

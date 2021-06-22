@@ -2,7 +2,6 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { Auth0Provider } from "@auth0/auth0-react";
 
-
 const Auth0ProviderWithHistory = ({ children }) => {
 
   const history = useHistory();
@@ -22,9 +21,7 @@ const Auth0ProviderWithHistory = ({ children }) => {
       redirectUri={path}
       onRedirectCallback={onRedirectCallback}
       audience={audience}
-      scope="read:current_user update:current_user_metadata"
-      
-    >
+      scope="read:current_user update:current_user_metadata">
       {children}
     </Auth0Provider>
   );

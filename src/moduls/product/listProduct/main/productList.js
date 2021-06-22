@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./productList.css";
-import ProductContext from "../../../../store/productContext";
+import ProductContext from "../../../../context/productContext";
 import Card from "../card/card";
 import FilterProduct from "../filter/filterProduct";
 

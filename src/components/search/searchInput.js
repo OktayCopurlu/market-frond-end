@@ -1,5 +1,5 @@
 import React,{useContext,useState} from 'react'
-import ProductContext from '../../store/productContext';
+import ProductContext from '../../context/productContext';
 
 export default function SearchInput() {
     const productContext = useContext(ProductContext);

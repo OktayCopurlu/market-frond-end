@@ -1,4 +1,4 @@
-import apiConfig from "../store/apiConfig.json";
+import apiConfig from "../context/apiConfig.json";
 
 
 //create wish

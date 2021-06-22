@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import ProductContext from "../../../../store/productContext";
+import ProductContext from "../../../../context/productContext";
 export default function Title() {
   const productContext = useContext(ProductContext);
 
@@ -7,6 +7,7 @@ export default function Title() {
     <div className="input-field">
       <label htmlFor="title"> Title </label>
       <input
+      required
         className="form-control  "
         type="text"
         name="name"

@@ -5,14 +5,14 @@ import * as productActions from "../../../services/products-service";
 import { useAuth0 } from "@auth0/auth0-react";
 import UserProductCard from "./userProductCard";
 import UserWishCard from "./userWishCard";
-import productContext from "../../../store/productContext";
+import productContext from "../../../context/productContext";
 
 export default function UserProduct() {
   const [products, setProducts] = useState([]);
+  const productsContext = useContext(productContext);
   const [wishes, setWishes] = useState([]);
   const { user } = useAuth0();
-  const productsContext = useContext(productContext);
-
+  
   useEffect(() => {
     productsContext.productIdHandler(products);
     productsContext.wishIdHandler(wishes);
@@ -20,15 +20,16 @@ export default function UserProduct() {
     async function showList() {
       try {
         const userId = await user.sub;
-        const products = await productActions.filterUserProducts(userId);
+        const product = await productActions.filterUserProducts(userId);
         const wishes = await wishActions.filterUserWishes(userId);
-        await setProducts(products);
+        await setProducts(product);
         await setWishes(wishes);
       } catch (error) {
         console.log(error);
       }
     }
     showList();
+    // eslint-disable-next-line
   }, [user]);
 
   return (

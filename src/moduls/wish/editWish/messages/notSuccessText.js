@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import Context from "../../../../store/context";
-import ProductContext from "../../../../store/productContext";
+import Context from "../../../../context/context";
+import ProductContext from "../../../../context/productContext";
 import { Link } from "react-router-dom";
 
 export default function NotSuccessText() {

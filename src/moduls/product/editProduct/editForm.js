@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import ProductContext from "../../../store/productContext";
+import ProductContext from "../../../context/productContext";
 import * as productActions from "../../../services/products-service";
 import MainForm from "../form/mainForm";
 

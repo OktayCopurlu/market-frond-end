@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import ProductContext from "../../../../store/productContext";
+import ProductContext from "../../../../context/productContext";
 
 export default function Photos() {
   const [showPicture, setShowPicture] = useState(false);

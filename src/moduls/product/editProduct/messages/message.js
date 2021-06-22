@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Context from "../../../../store/context";
+import Context from "../../../../context/context";
 import SuccessText from "./successText";
 import NotSuccessText from "./notSuccessText";
 export default function Message() {

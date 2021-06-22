@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import ProductContext from "../../../../store/productContext";
-import citiesJson from "../../../../store/city.json"; //import canton and city information
+import ProductContext from "../../../../context/productContext";
+import citiesJson from "../../../../context/city.json"; //import canton and city information
 
 export default function Canton() {
   const productContext = useContext(ProductContext);

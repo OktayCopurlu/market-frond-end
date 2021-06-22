@@ -1,5 +1,5 @@
 import React, {useContext } from "react";
-import Context from "../../../../store/context";
+import Context from "../../../../context/context";
 
 function UserInformation() {
     const context = useContext(Context);
