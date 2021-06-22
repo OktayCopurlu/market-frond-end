@@ -12,6 +12,7 @@ export default function FilterProduct() {
 
   useEffect(() => {
   productService.listAction (canton,mainCategory,productContext)
+  // eslint-disable-next-line
 },[canton,mainCategory])
 
   return (

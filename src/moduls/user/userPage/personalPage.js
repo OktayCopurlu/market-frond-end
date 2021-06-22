@@ -18,6 +18,7 @@ export default function PersonalPage() {
       .then((data) => {
         setUserMetadata(data);
       });
+      // eslint-disable-next-line
   }, [userId, getAccessTokenSilently]);
 
   return (
