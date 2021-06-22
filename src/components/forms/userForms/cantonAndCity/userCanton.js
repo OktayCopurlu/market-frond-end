@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Context from "../../../../store/context";
+import Context from "../../../../context/context";
 export default function UserCanton() {
   const context = useContext(Context);
     return (

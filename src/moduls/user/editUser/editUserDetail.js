@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import "../userPage/personalPage.css";
 import { useHistory } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import Context from "../../../store/context";
+import Context from "../../../context/context";
 import * as userService from "../../../services/users-service";
 import MainForm from "./form/mainForm";
 export default function EditUserDetail() {

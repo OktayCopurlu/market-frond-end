@@ -4,7 +4,7 @@ import SecondPageForm from "./secondPageForm";
 import ThreePageForm from "./threePageForm";
 import FourPageForm from "./fourPageForm";
 import ButtonForm from "./buttonForm";
-import Context from "../../../store/context";
+import Context from "../../../context/context";
 export default function MainForm(props) {
   const context = useContext(Context);
   const page = context.pageForm;

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import citiesJson from "../../../../store/city.json"; //import canton and city information
-import ProductContext from "../../../../store/productContext";
+import citiesJson from "../../../../context/city.json"; //import canton and city information
+import ProductContext from "../../../../context/productContext";
 import "../../../../moduls/product/listProduct/main/productList.css";
 
 export default function CantonLinks() {

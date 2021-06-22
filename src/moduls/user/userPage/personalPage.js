@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import "./personalPage.css";
-import Context from "../../../store/context";
+import Context from "../../../context/context";
 import UserProduct from "../userProduct/userProduct";
 import { useAuth0 } from "@auth0/auth0-react";
 import MainModal from "../editUser/mainModal";
@@ -8,6 +8,7 @@ import * as userService from "../../../services/users-service";
 import UserDetailCard from "./userDetailCard";
 export default function PersonalPage() {
   const context = useContext(Context);
+  
   const { user, getAccessTokenSilently } = useAuth0();
   const [userMetadata, setUserMetadata] = useState(null);
 
@@ -18,6 +19,7 @@ export default function PersonalPage() {
       .then((data) => {
         setUserMetadata(data);
       });
+      // eslint-disable-next-line
   }, [userId, getAccessTokenSilently]);
 
   return (

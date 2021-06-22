@@ -4,7 +4,7 @@ import DeleteUser from "../deleteUser/deleteUser";
 import EditLink from "./editLink";
 import DeleteLink from "./deleteLink";
 import { Link } from "react-router-dom";
-import Context from "../../../store/context";
+import Context from "../../../context/context";
 import * as modalCss from "./modalCss";
 import * as paperCss from "./modalPaperCss";
 export default function NavbarModal() {
