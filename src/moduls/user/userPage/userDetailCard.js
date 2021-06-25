@@ -21,7 +21,7 @@ export default function UserDetailCard(props) {
         <p>Job : {userMetadata?.job}</p>
         <p>Birth date : {userMetadata?.birthDate}</p>
         <p>Detail : {userMetadata?.detail}</p>
-        <p>Adress : {userMetadata?.adress}</p>
+        <p>Address : {userMetadata?.address}</p>
         <p>Canton : {userMetadata?.canton}</p>
         <p>City : {userMetadata?.city}</p>
         <p>Phone : {userMetadata?.contactNumber}</p>

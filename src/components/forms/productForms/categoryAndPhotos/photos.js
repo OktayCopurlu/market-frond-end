@@ -23,7 +23,7 @@ export default function Photos() {
   return (
     <div className="form-group">
       <h3>Upload your product pictures</h3>
-      <Link
+      <Link to="#"
         onClick={() => setShowPicture(true)}
         className="btn btn-info d-block mt-5 mb-5"
       >

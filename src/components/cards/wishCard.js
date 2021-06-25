@@ -27,10 +27,10 @@ export default function WishCard(props) {
         <p className="wishDetail">
           {element.canton},{element.city}
         </p>
-        <a href="/" className="wishDetail d-block">
+        <a href="#" className="wishDetail d-block">
           <i className="fas fa-phone"></i> {element.contactTel}
         </a>
-        <a href="/" className="wishDetail d-block">
+        <a href="#" className="wishDetail d-block">
           <i className="fas fa-envelope"></i> {element.contactEmail}
         </a>
       </div>

@@ -33,7 +33,8 @@ export default function CantonLinks() {
       id="Canton"
     >
       <div className="filter-canton-container mt-3 d-flex justify-content-between accordion-item">
-        <Link 
+        <Link
+          key="chooseCanton"
           to="/ProductList"
           className="ml-1 mb-2 filter-canton-link h5 accordion-button collapsed"
           data-toggle="collapse"
@@ -44,8 +45,8 @@ export default function CantonLinks() {
         >
           Choose Canton
         </Link>
-
         <Link
+          key="chooseCantonIcon"
           to="/ProductList"
           data-toggle="collapse"
           data-target="#flush-collapseTwo"
@@ -61,7 +62,6 @@ export default function CantonLinks() {
           )}
         </Link>
       </div>
-
       <div
         aria-labelledby="flush-headingOne"
         data-parent="#Canton"
@@ -69,33 +69,32 @@ export default function CantonLinks() {
         id="flush-collapseTwo"
       >
         {cantonArray.sort().map((canton, index) => {
-          return (
-            <>
-              {canton === productContext.canton ? (
-                <Link
-                  key={index}
-                  to="/ProductList"
-                  className="accordion-body filter-canton-link text-danger text-uppercase font-weight-bold col-6"
-                  onClick={() => productContext.cantonHandler(null)}
-                >
-                  {canton}
-                </Link>
-              ) : (
-                <Link
-                  to="/ProductList"
-                  className="accordion-body filter-canton-link mb-1 col-6"
-                  onClick={onSubmit}
-                  id={canton}
-                  key={index}
-                >
-                  {canton}
-                </Link>
-              )}
-            </>
-          );
+          if (canton === productContext.canton) {
+            return (
+              <Link
+                key={index}
+                to="/ProductList"
+                className="accordion-body filter-canton-link text-danger text-uppercase font-weight-bold col-6"
+                onClick={() => productContext.cantonHandler(null)}
+              >
+                {canton}
+              </Link>
+            );
+          } else {
+            return (
+              <Link
+                to="/ProductList"
+                className="accordion-body filter-canton-link mb-1 col-6"
+                onClick={onSubmit}
+                id={canton}
+                key={index}
+              >
+                {canton}
+              </Link>
+            );
+          }
         })}
       </div>
     </div>
-
   );
 }

@@ -69,7 +69,7 @@ export const updateUserMetaData = async (
   const token = await accessToken;
 
   const name = context.name;
-  const adress = context.adress;
+  const address = context.address;
   const canton = context.canton;
   const city = context.city;
   const detail = context.detail;
@@ -81,7 +81,7 @@ export const updateUserMetaData = async (
     user_metadata: {
       canton,
       city,
-      adress,
+      address,
       birthDate,
       contactNumber,
       detail,
