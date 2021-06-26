@@ -1,4 +1,8 @@
-import apiConfig from "../context/apiConfig.json";
+import dotenv from "dotenv";
+dotenv.config();
+
+const serverUrl = process.env.REACT_APP_SERVER_URL;
+const products = `${serverUrl}/products`;
 
 //create Product
 export function createProduct(body, isSuccess, getToken) {
@@ -13,7 +17,7 @@ export function createProduct(body, isSuccess, getToken) {
     body: JSON.stringify(body),
   };
 
-  fetch(apiConfig.products, requestOptions)
+  fetch(products, requestOptions)
     .then((response) => {
       if (response.ok) {
         isSuccess(true); //for user message
@@ -32,9 +36,8 @@ export function createProduct(body, isSuccess, getToken) {
 
 //get all Products
 export async function getAll() {
-
   try {
-    const list = await fetch(apiConfig.products);
+    const list = await fetch(products);
     return await list.json();
   } catch (err) {
     return await console.log("error", err);
@@ -44,7 +47,7 @@ export async function getAll() {
 //Product List Filter for canton
 export async function filterCanton(canton) {
   try {
-    const list = await fetch(`${apiConfig.products}/filter?canton=${canton}`);
+    const list = await fetch(`${products}/filter?canton=${canton}`);
     return await list.json();
   } catch (err) {
     return await console.log("error", err);
@@ -54,21 +57,18 @@ export async function filterCanton(canton) {
 //Product List Filter for Category
 export async function filterMainCategory(mainCategory) {
   try {
-    const list = await fetch(
-      `${apiConfig.products}/filter?mainCategory=${mainCategory}`
-    );
+    const list = await fetch(`${products}/filter?mainCategory=${mainCategory}`);
     return await list.json();
   } catch (err) {
     return await console.log("error", err);
   }
 }
 
-
 //Product List Filter for Category and Canton same time
 export async function filterProductCantonAndCategory(canton, category) {
   try {
     const list = await fetch(
-      `${apiConfig.products}/filter?mainCategory=${category}&canton=${canton}`
+      `${products}/filter?mainCategory=${category}&canton=${canton}`
     );
     return await list.json();
   } catch (err) {
@@ -79,7 +79,7 @@ export async function filterProductCantonAndCategory(canton, category) {
 //filter products for user
 export async function filterProductuserId(userId) {
   try {
-    const list = await fetch(apiConfig.products + "/filter?userId=" + userId);
+    const list = await fetch(products + "/filter?userId=" + userId);
     return await list.json();
   } catch (err) {
     return await console.log("error", err);
@@ -99,7 +99,7 @@ export async function deleteProducts(id, token) {
   };
 
   try {
-    const list = await fetch(apiConfig.products + "/" + id, requestOptions);
+    const list = await fetch(products + "/" + id, requestOptions);
     if (list.ok) {
       console.log("product deleted");
     } else {
@@ -114,7 +114,7 @@ export async function deleteProducts(id, token) {
 //filter a product and get
 export async function filterAndGet(id) {
   try {
-    const list = await fetch(apiConfig.products + "/" + id);
+    const list = await fetch(products + "/" + id);
     return await list.json();
   } catch (err) {
     console.log("error", err);
@@ -122,21 +122,19 @@ export async function filterAndGet(id) {
 }
 
 //edit product
-export async function updateProduct(id, body, isSuccess,token) {
-  const tokenString=token
+export async function updateProduct(id, body, isSuccess, token) {
+  const tokenString = token;
   const requestOptions = {
     method: "PUT",
-    headers: { 
+    headers: {
       Authorization: `Bearer ${tokenString}`,
-      "Content-Type": "application/json" },
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify(body),
   };
 
   try {
-    const product = await fetch(
-      apiConfig.products + "/edit/" + id,
-      requestOptions
-    );
+    const product = await fetch(products + "/edit/" + id, requestOptions);
     if (product.ok) {
       console.log("Product updated successfully");
       return await isSuccess(true); //for user message
@@ -154,13 +152,12 @@ export async function updateProduct(id, body, isSuccess,token) {
 //filter users products
 export async function filterUserProducts(userId) {
   try {
-    const list = await fetch(`${apiConfig.products}/filter?userId=${userId}`);
+    const list = await fetch(`${products}/filter?userId=${userId}`);
     return await list.json();
   } catch (error) {
     return await console.log("Error :" + error);
   }
 }
-
 
 export async function listAction(canton, mainCategory, productContext) {
   try {
@@ -177,10 +174,7 @@ export async function listAction(canton, mainCategory, productContext) {
 
     //filter for category and canton
     if (canton && mainCategory) {
-      const list = await filterProductCantonAndCategory(
-        canton,
-        mainCategory
-      );
+      const list = await filterProductCantonAndCategory(canton, mainCategory);
       return await productContext.stateHandler(list);
     }
 

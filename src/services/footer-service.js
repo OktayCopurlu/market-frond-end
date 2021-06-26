@@ -1,5 +1,8 @@
-import apiConfig from "../context/apiConfig.json";
-const emailRestAPI = apiConfig.email;
+import dotenv from "dotenv";
+dotenv.config();
+
+const serverUrl = process.env.REACT_APP_SERVER_URL;
+const emailRestAPI = `${serverUrl}/email`;
 
 export const sendEmail = async (name, email, title, message) => {
   const body = { name, email, title, message };

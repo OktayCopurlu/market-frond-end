@@ -1,5 +1,8 @@
-import apiConfig from "../context/apiConfig.json";
+import dotenv from "dotenv";
+dotenv.config();
 
+const serverUrl = process.env.REACT_APP_SERVER_URL;
+const wishes = `${serverUrl}/wishes`;
 
 //create wish
 export async function createWish(body, isSuccess, token) {
@@ -12,16 +15,16 @@ export async function createWish(body, isSuccess, token) {
     body: JSON.stringify(body),
   };
 
-  fetch(apiConfig.wishes, requestOptions)
-  .then((response) => {
-    if (response.ok) {
-      isSuccess(true); //for user message
-      return response.json();
-    } else {
-      isSuccess(false); // user message
-      return response.json();
-    }
-  })
+  fetch(wishes, requestOptions)
+    .then((response) => {
+      if (response.ok) {
+        isSuccess(true); //for user message
+        return response.json();
+      } else {
+        isSuccess(false); // user message
+        return response.json();
+      }
+    })
     .then((response) => console.log(response))
     .catch((err) => console.log("Error :" + err));
 }
@@ -29,7 +32,7 @@ export async function createWish(body, isSuccess, token) {
 //get all Wishes
 export async function getAll() {
   try {
-    const list = await fetch(apiConfig.wishes);
+    const list = await fetch(wishes);
     return await list.json();
   } catch (err) {
     return await console.log("error", err);
@@ -38,7 +41,7 @@ export async function getAll() {
 //filter wish for user
 export async function filterWishUserId(userId) {
   try {
-    const list = await fetch(apiConfig.wishes + "/filter?userId=" + userId);
+    const list = await fetch(wishes + "/filter?userId=" + userId);
     return await list.json();
   } catch (err) {
     return await console.log("error", err);
@@ -56,7 +59,7 @@ export async function deleteWishes(id, token) {
   };
 
   try {
-    const list = await fetch(apiConfig.wishes + "/" + id, requestOptions);
+    const list = await fetch(wishes + "/" + id, requestOptions);
     if (list.ok) {
       alert("wish deleted");
     } else {
@@ -71,7 +74,7 @@ export async function deleteWishes(id, token) {
 //filter a wish and get
 export async function filterAndGet(id) {
   try {
-    const list = await fetch(apiConfig.wishes + "/" + id);
+    const list = await fetch(wishes + "/" + id);
     return await list.json();
   } catch (err) {
     console.log("error", err);
@@ -79,18 +82,19 @@ export async function filterAndGet(id) {
 }
 
 //edit wish
-export async function updateWish(id, body, isSuccess,token) {
-  const tokenString = token
+export async function updateWish(id, body, isSuccess, token) {
+  const tokenString = token;
   const requestOptions = {
     method: "PUT",
-    headers: { 
+    headers: {
       Authorization: `Bearer ${tokenString}`,
-      "Content-Type": "application/json" },
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify(body),
   };
 
   try {
-    const wish = await fetch(apiConfig.wishes + "/edit/" + id, requestOptions);
+    const wish = await fetch(wishes + "/edit/" + id, requestOptions);
     if (wish.ok) {
       console.log("Wish updated successfully");
       return await isSuccess(true); //for user message
@@ -109,7 +113,7 @@ export async function updateWish(id, body, isSuccess,token) {
 
 export async function filterUserWishes(userId) {
   try {
-    const list = await fetch(`${apiConfig.wishes}/filter?userId=${userId}`);
+    const list = await fetch(`${wishes}/filter?userId=${userId}`);
     return await list.json();
   } catch (error) {
     return await console.log("Error :" + error);
