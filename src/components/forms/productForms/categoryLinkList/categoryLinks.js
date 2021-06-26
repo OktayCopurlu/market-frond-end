@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import ProductContext from "../../../../store/productContext";
+import ProductContext from "../../../../context/productContext";
 import "../../../../moduls/product/listProduct/main/productList.css";
 
 export default function CategoryLinks() {

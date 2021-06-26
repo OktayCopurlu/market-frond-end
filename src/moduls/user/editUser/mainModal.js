@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import Modal from "@material-ui/core/Modal";
-import Context from "../../../store/context";
+import Context from "../../../context/context";
 import NavbarModal from "./navbarModal";
 
 export default function MainModal() {

@@ -82,13 +82,14 @@ export async function filterAndGet(id) {
 }
 
 //edit wish
-export async function updateWish(id, body, isSuccess,token) {
-  const tokenString = token
+export async function updateWish(id, body, isSuccess, token) {
+  const tokenString = token;
   const requestOptions = {
     method: "PUT",
-    headers: { 
+    headers: {
       Authorization: `Bearer ${tokenString}`,
-      "Content-Type": "application/json" },
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify(body),
   };
 

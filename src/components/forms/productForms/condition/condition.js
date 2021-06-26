@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import ProductContext from "../../../../store/productContext";
+import ProductContext from "../../../../context/productContext";
 export default function Condition() {
   const productContext = useContext(ProductContext);
   return (

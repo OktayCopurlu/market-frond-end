@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import productContext from "../../../store/productContext";
+import productContext from "../../../context/productContext";
 import * as deleteAlert from "./confirmAlert";
-import Context from "../../../store/context";
+import Context from "../../../context/context";
 
 export default function DeleteUser() {
   const { user, logout } = useAuth0();

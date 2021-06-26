@@ -3,7 +3,7 @@ import "./wishList.css";
 import * as wishAction from "../../../services/wishes-service";
 import Card from "./card";
 import SearchInput from "../../../components/search/searchInput";
-import ProductContext from "../../../store/productContext";
+import ProductContext from "../../../context/productContext";
 export default function WishList() {
   const productContext = useContext(ProductContext);
   const searchItem = productContext.search;

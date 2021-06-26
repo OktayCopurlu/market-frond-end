@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Context from "../../../store/context";
+import Context from "../../../context/context";
 import { Link } from "react-router-dom";
 export default function EditLink() {
   const context = useContext(Context);

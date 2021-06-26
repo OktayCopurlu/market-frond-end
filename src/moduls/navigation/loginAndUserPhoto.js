@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import NavBar from "../../signUp/nav-bar";
 import { useAuth0 } from "@auth0/auth0-react";
 import { NavLink } from "react-router-dom";
-import Context from "../../store/context"
+import Context from "../../context/context"
 
 export default function LoginAndUserPhoto() {
   const { isAuthenticated } = useAuth0();

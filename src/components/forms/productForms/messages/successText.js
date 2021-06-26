@@ -1,7 +1,7 @@
 import React, {useContext } from "react";
-import Context from "../../../../store/context";
+import Context from "../../../../context/context";
 import { Link } from "react-router-dom";
-import ProductContext from "../../../../store/productContext";
+import ProductContext from "../../../../context/productContext";
 
 export default function SuccessText() {
   const context = useContext(Context);

@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
 import * as wishActions from "../../../services/wishes-service";
-import AuthContext from "../../../store/context";
+import AuthContext from "../../../context/context";
 import { useAuth0 } from "@auth0/auth0-react";
 import SuccessText from "./messages/successText";
 import NotSuccessText from "./messages/notSuccessText";
-import ProductContext from "../../../store/productContext";
+import ProductContext from "../../../context/productContext";
 import MainForm from "../form/mainForm";
 
 export default function EditWish(props) {

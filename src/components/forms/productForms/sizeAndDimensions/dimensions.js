@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import ProductContext from "../../../../store/productContext";
+import React, {useContext } from "react";
+import ProductContext from "../../../../context/productContext";
 export default function Dimensions() {
   const productContext = useContext(ProductContext);
 

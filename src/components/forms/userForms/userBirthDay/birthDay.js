@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import Context from "../../../../store/context";
+import React,{useContext} from 'react'
+import Context from "../../../../context/context";
 
 export default function BirthDay() {
   const context = useContext(Context);

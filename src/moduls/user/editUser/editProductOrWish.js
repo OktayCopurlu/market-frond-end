@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import Context from "../../../store/context";
+import Context from "../../../context/context";
 import EditProduct from "../../product/editProduct/editProduct";
 import EditWish from "../../wish/editWish/editWish";
 import * as productActions from "../../../services/products-service";

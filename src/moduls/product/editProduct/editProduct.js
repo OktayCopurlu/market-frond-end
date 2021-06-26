@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
-import Context from "../../../store/context";
-import ProductContext from "../../../store/productContext";
+import Context from "../../../context/context";
+import ProductContext from "../../../context/productContext";
 import { useAuth0 } from "@auth0/auth0-react";
 import EditProductCard from "./editProductPage";
 

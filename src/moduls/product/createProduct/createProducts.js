@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import "./create.css";
-import Context from "../../../store/context";
-import ProductContext from "../../../store/productContext";
+import Context from "../../../context/context";
+import ProductContext from "../../../context/productContext";
 import * as productActions from "../../../services/products-service";
 import { useAuth0 } from "@auth0/auth0-react";
 import SuccessText from "../../../components/forms/productForms/messages/successText";
