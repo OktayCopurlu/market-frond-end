@@ -15,7 +15,7 @@ export default function Canton() {
 
   return (
     <>
-      <div className="select-group">
+      <div className="select-group" id="deneme">
         {/* choosing canton */}
         <select
           defaultValue="Choose Canton"

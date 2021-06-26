@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as userService from "../../services/users-service";
 import UserInfoInWishCard from "../../moduls/wish/listWish/userInfoInWishCard";
-
+import {Link} from "react-router-dom"
 export default function WishCard(props) {
   const { element, index } = props.element;
   const [picture, setPicture] = useState([]);
@@ -27,12 +27,12 @@ export default function WishCard(props) {
         <p className="wishDetail">
           {element.canton},{element.city}
         </p>
-        <a href="/" className="wishDetail d-block">
+        <Link href="#" className="wishDetail d-block">
           <i className="fas fa-phone"></i> {element.contactTel}
-        </a>
-        <a href="/" className="wishDetail d-block">
+        </Link>
+        <Link href="#" className="wishDetail d-block">
           <i className="fas fa-envelope"></i> {element.contactEmail}
-        </a>
+        </Link>
       </div>
       <div className="wishPhoto">
         {picture.map((user) => {

@@ -10,8 +10,8 @@ export default function ProductCard(props) {
   const [readMore, setReadMore] = useState(false); //for more information
 
   return (
-    <div key={element._id} className="product-div">
-      {element.photos.length > 0 ? (
+    <div key={element?._id} className="product-div">
+      {element?.photos?.length > 0 ? (
         <Slider photos={element.photos} />
       ) : (
         <img
@@ -27,34 +27,34 @@ export default function ProductCard(props) {
             to="#"
             onClick={() => setReadMore(!readMore)}
           >
-            {element.title}
+            {element?.title}
           </Link>
-          <p className="card-text ">{element.canton}</p>
+          <p className="card-text ">{element?.canton}</p>
         </div>
         {readMore ? (
           <>
-            <p className="product-condition"> {element.condition}</p>
-            <p className=" m-0">{element.category}</p>
+            <p className="product-condition"> {element?.condition}</p>
+            <p className=" m-0">{element?.category}</p>
             <p className=" m-0">
-              {element.size ? "Size:" : null} {element.size}
+              {element.size ? "Size:" : null} {element?.size}
             </p>
             <p className="card-text m-0">
-              {element.dimensions ? "Dimensions:" : null}
-              {element.dimensions}
+              {element?.dimensions ? "Dimensions:" : null}
+              {element?.dimensions}
             </p>
-            <p className="card-text mt-1">{element.detail}</p>
+            <p className="card-text mt-1">{element?.detail}</p>
             <p className="card-text ">
-              {element.canton}, {element.city}
+              {element?.canton}, {element?.city}
             </p>
           </>
         ) : null}
         {isAuthenticated ? (
           <>
             <Link to="#" className="text-info d-block">
-              <i className="fas fa-phone"></i> {element.contactTel}
+              <i className="fas fa-phone"></i> {element?.contactTel}
             </Link>
             <Link to="#" className="text-info d-block">
-              <i className="fas fa-envelope"></i> {element.contactEmail}
+              <i className="fas fa-envelope"></i> {element?.contactEmail}
             </Link>
           </>
         ) : (

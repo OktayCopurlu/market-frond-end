@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const Context = React.createContext({
   navbarOpen: null,
   detail: "",
-  adress: "",
+  address: "",
   birthDate: "",
   job: "",
   phone: "",
@@ -24,7 +24,7 @@ const Context = React.createContext({
   userMetaDataHandler: function (props) {},
   photoHandler: function (props) {},
   detailHandler: function (props) {},
-  adressHandler: function (props) {},
+  addressHandler: function (props) {},
   birthDateHandler: function (props) {},
   jobHandler: function (props) {},
   phoneHandler: function (props) {},
@@ -45,7 +45,7 @@ export const ContextProvider = (props) => {
   const [name, setName] = useState(null);
   const [canton, setCanton] = useState(null);
   const [city, setCity] = useState(null);
-  const [adress, setadress] = useState(null);
+  const [address, setaddress] = useState(null);
   const [detail, setDetail] = useState(null);
   const [phone, setPhone] = useState(null);
   const [birthDate, setBirthDate] = useState(null);
@@ -84,8 +84,8 @@ export const ContextProvider = (props) => {
   const detailHandler = (props) => {
     setDetail(props);
   };
-  const adressHandler = (props) => {
-    setadress(props);
+  const addressHandler = (props) => {
+    setaddress(props);
   };
 
   const cantonHandler = (props) => {
@@ -115,7 +115,7 @@ export const ContextProvider = (props) => {
   const contextValue = {
     pageForm: pageForm,
     detail: detail,
-    adress: adress,
+    address: address,
     birthDate: birthDate,
     job: job,
     phone: phone,
@@ -138,7 +138,7 @@ export const ContextProvider = (props) => {
     birthDateHandler: birthDateHandler,
     phoneHandler: phoneHandler,
     detailHandler: detailHandler,
-    adressHandler: adressHandler,
+    addressHandler: addressHandler,
     jobHandler: jobHandler,
     cityHandler: cityHandler,
     cantonHandler: cantonHandler,

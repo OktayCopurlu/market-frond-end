@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Route, Switch } from "react-router-dom";
-
 import Navigation from "./moduls/navigation/navigation";
 import ProductList from "./moduls/product/listProduct/main/productList";
 import WishList from "./moduls/wish/listWish/wishList";

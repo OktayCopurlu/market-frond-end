@@ -16,15 +16,15 @@ export async function createWish(body, isSuccess, token) {
   };
 
   fetch(wishes, requestOptions)
-    .then((response) => {
-      if (response.ok) {
-        isSuccess(true); //for user message
-        return response.json();
-      } else {
-        isSuccess(false); // user message
-        return response.json();
-      }
-    })
+  .then((response) => {
+    if (response.ok) {
+      isSuccess(true); //for user message
+      return response.json();
+    } else {
+      isSuccess(false); // user message
+      return response.json();
+    }
+  })
     .then((response) => console.log(response))
     .catch((err) => console.log("Error :" + err));
 }
