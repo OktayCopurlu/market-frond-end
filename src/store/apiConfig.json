@@ -1,5 +1,5 @@
 {
-  "products":"http://172.104.147.97:5000/products",
-  "wishes":"http://172.104.147.97:5000/wishes",
-  "users":"http://172.104.147.97:5000/users"
+  "products":"http://localhost:5000/products",
+  "wishes":"http://localhost:5000/wishes",
+  "users":"http://localhost:5000/users"
 }
