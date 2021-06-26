@@ -1,5 +1,0 @@
-{
-  "products":"http://localhost:5000/products",
-  "wishes":"http://localhost:5000/wishes",
-  "users":"http://localhost:5000/users"
-}
