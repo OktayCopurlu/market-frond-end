@@ -63,33 +63,11 @@ export const getUserById = async (props) => {
 export const updateUserMetaData = async (
   userId,
   accessToken,
-  context,
-  picture
+  body
 ) => {
   const token = await accessToken;
 
-  const name = context.name;
-  const address = context.address;
-  const canton = context.canton;
-  const city = context.city;
-  const detail = context.detail;
-  const contactNumber = context.phone;
-  const birthDate = context.birthDate;
-  const job = context.job;
 
-  const body = {
-    user_metadata: {
-      canton,
-      city,
-      address,
-      birthDate,
-      contactNumber,
-      detail,
-      name,
-      job,
-      picture,
-    },
-  };
 
   try {
     const userDetailsByIdUrl = `https://${domain}/api/v2/users/${userId}`;

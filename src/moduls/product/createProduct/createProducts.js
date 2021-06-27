@@ -47,10 +47,17 @@ export default function CreateProducts() {
   };
 
   //post request function
-  function onSubmit(event) {
-    event.preventDefault();
-    productActions.createProduct(body, context.handlerSuccess, token);
-  }
+  const onSubmit = async (event) => {
+    try {
+      await event.preventDefault();
+      await productActions.createProduct(body, context.handlerSuccess, token);
+      await context.pageFormHandler(1);
+      await productContext.cantonHandler(null);
+      await productContext.mainCategoryHandler(null);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   //----------------------------------------------------------------
 
   return (
