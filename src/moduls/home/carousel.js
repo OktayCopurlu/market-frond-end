@@ -7,8 +7,7 @@ import "./freeMarket.css";
 
 export default function HomeCarousel() {
     return (
-      // <Carousel className="home-carousel" interval="30000">
-      <Carousel className="home-carousel">
+      <Carousel className="home-carousel" interval="30000">
       <Carousel.Item>
             <div className="text-center text-home-page">
               <h1>FreeMarket</h1>

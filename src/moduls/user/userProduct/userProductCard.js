@@ -1,7 +1,7 @@
 import React from "react";
 import DeleteProduct from "../../product/deleteProduct/deleteProduct";
 import "../userPage/personalPage.css";
-import ProductCard from "../../../components/cards/productCard";
+import ProductCard from "../../../components/cards/productCards";
 import ProductEditModal from "./productEditModal";
 
 export default function UserProductCard(props) {
