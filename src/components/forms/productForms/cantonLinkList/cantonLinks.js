@@ -1,11 +1,17 @@
-import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext} from "react";
 import citiesJson from "../../../../context/city.json"; //import canton and city information
 import ProductContext from "../../../../context/productContext";
-import "../../../../moduls/product/listProduct/main/productList.css";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
+import Accordion from "@material-ui/core/Accordion";
+import AccordionSummary from "@material-ui/core/AccordionSummary";
+import Typography from "@material-ui/core/Typography";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { Grid } from "@material-ui/core";
+import * as cantonLinksCss from "./cantonLinkStyle"
 
 export default function CantonLinks() {
-  const [openList, setOpenList] = useState(false);
+  const classes = cantonLinksCss.useStyles();
   const productContext = useContext(ProductContext);
 
   const cantonArray = [];
@@ -15,86 +21,40 @@ export default function CantonLinks() {
       cantonArray.push(element);
     }
   }
-
-  function onSubmit(event) {
-    event.preventDefault();
-    productContext.cantonHandler(event.target.id);
-
-    if (!openList) {
-      setOpenList(true);
-    } else {
-      setOpenList(false);
+  const onSubmit = async (event) => {
+    try {
+      if (productContext.canton === null) {
+        return await productContext.cantonHandler(event.target.id);
+      } else {
+        return await productContext.cantonHandler(null);
+      }
+    } catch (error) {
+      return await console.log(error);
     }
-  }
+  };
 
-  return (
-    <div
-      className="border-top border-dark m-2 accordion accordion-flush"
-      id="Canton"
-    >
-      <div className="filter-canton-container mt-3 d-flex justify-content-between accordion-item">
-        <Link
-          key="chooseCanton"
-          to="/ProductList"
-          className="ml-1 mb-2 filter-canton-link h5 accordion-button collapsed"
-          data-toggle="collapse"
-          data-target="#flush-collapseTwo"
-          aria-expanded="false"
-          aria-controls="flush-collapseTwo"
-          onClick={() => (!openList ? setOpenList(true) : setOpenList(false))}
-        >
-          Choose Canton
-        </Link>
-        <Link
-          key="chooseCantonIcon"
-          to="/ProductList"
-          data-toggle="collapse"
-          data-target="#flush-collapseTwo"
-          aria-expanded="false"
-          aria-controls="flush-collapseTwo"
-          className="filter-canton-link mb-2 h5 accordion-button collapsed"
-          onClick={() => (!openList ? setOpenList(true) : setOpenList(false))}
-        >
-          {!openList ? (
-            <i className="fas fa-angle-down"></i>
-          ) : (
-            <i className="fas fa-angle-up"></i>
-          )}
-        </Link>
-      </div>
-      <div
-        aria-labelledby="flush-headingOne"
-        data-parent="#Canton"
-        className="row ml-1 mb-3 accordion-collapse collapse"
-        id="flush-collapseTwo"
+  return (<div className={classes.root}>
+    <Accordion className="mb-2">
+      <AccordionSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls="panel1a-content"
+        id="panel1a-header"
       >
-        {cantonArray.sort().map((canton, index) => {
-          if (canton === productContext.canton) {
-            return (
-              <Link
-                key={index}
-                to="/ProductList"
-                className="accordion-body filter-canton-link text-danger text-uppercase font-weight-bold col-6"
-                onClick={() => productContext.cantonHandler(null)}
-              >
-                {canton}
-              </Link>
-            );
-          } else {
-            return (
-              <Link
-                to="/ProductList"
-                className="accordion-body filter-canton-link mb-1 col-6"
-                onClick={onSubmit}
-                id={canton}
-                key={index}
-              >
-                {canton}
-              </Link>
-            );
-          }
+        <Typography className={classes.heading}>Choose Canton</Typography>
+      </AccordionSummary>
+      <Grid>
+      {cantonArray.sort().map((canton, index) => {
+          return (
+            <FormControlLabel className={classes.cantonList}
+              key={index}
+              control={<Checkbox onChange={onSubmit} id={canton} />}
+              label={canton}
+            />
+          );
         })}
-      </div>
-    </div>
+      </Grid>
+    </Accordion>
+  </div>
+
   );
 }
