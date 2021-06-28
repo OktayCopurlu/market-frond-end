@@ -1,5 +1,5 @@
 import React from "react";
-import ProductCard from "../../../../components/cards/productCard";
+import ProductCard from "../../../../components/cards/productCards";
 
 export default function Card(filterAndSearch) {
   const searched = filterAndSearch.elements;
