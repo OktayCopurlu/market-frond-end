@@ -18,13 +18,13 @@ export default function UserDetailCard(props) {
       </div>
       <div className="d-flex justify-content-center">
       <div className="col-8 text-light bg-dark p-4">
-        <p>Job : {userMetadata?.job}</p>
-        <p>Birth date : {userMetadata?.birthDate}</p>
-        <p>Detail : {userMetadata?.detail}</p>
-        <p>Address : {userMetadata?.address}</p>
-        <p>Canton : {userMetadata?.canton}</p>
-        <p>City : {userMetadata?.city}</p>
-        <p>Phone : {userMetadata?.contactNumber}</p>
+        <p>Job : {userMetadata.job}</p>
+        <p>Birth date : {userMetadata.birthDate}</p>
+        <p>Detail : {userMetadata.detail}</p>
+        <p>Address : {userMetadata.address}</p>
+        <p>Canton : {userMetadata.canton}</p>
+        <p>City : {userMetadata.city}</p>
+        <p>Phone : {userMetadata.contactNumber}</p>
       </div></div>
     </div>
   );

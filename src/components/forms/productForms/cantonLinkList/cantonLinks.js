@@ -75,8 +75,7 @@ export default function CantonLinks() {
                 key={index}
                 to="/ProductList"
                 className="accordion-body filter-canton-link text-danger text-uppercase font-weight-bold col-6"
-                onClick={() => productContext.cantonHandler(null)}
-              >
+                onClick={() => productContext.cantonHandler(null)}>
                 {canton}
               </Link>
             );
@@ -87,8 +86,7 @@ export default function CantonLinks() {
                 className="accordion-body filter-canton-link mb-1 col-6"
                 onClick={onSubmit}
                 id={canton}
-                key={index}
-              >
+                key={index}>
                 {canton}
               </Link>
             );
