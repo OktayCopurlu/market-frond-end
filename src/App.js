@@ -13,6 +13,8 @@ import EmailForm from "./moduls/footer/emailForm"
 import Footer from "./moduls/footer/footer";
 import History from "./moduls/footer/history"
 import ProtectedRoute from "./provider/protected-route";
+import UserProduct from "./moduls/user/userProduct/userProduct";
+
 
 function App() {
   return (
@@ -33,6 +35,7 @@ function App() {
           <ProtectedRoute path="/create" component={CreateProducts} />
           <ProtectedRoute path="/wishForm" component={CreateWishList} />
           <ProtectedRoute path="/personalPage" component={PersonalPage} />
+           <ProtectedRoute path="/my-products" component={UserProduct}/>
       </Switch>
       <Footer />
     </>
