@@ -1,11 +1,12 @@
-import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
 import citiesJson from "../../../../context/city.json"; //import canton and city information
 import ProductContext from "../../../../context/productContext";
-import "../../../../moduls/product/listProduct/main/productList.css";
+import { RadioGroup, Radio,Accordion,AccordionSummary,Typography,Grid,FormControlLabel } from "@material-ui/core";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import * as cantonLinksCss from "./cantonLinkStyle";
 
 export default function CantonLinks() {
-  const [openList, setOpenList] = useState(false);
+  const classes = cantonLinksCss.useStyles();
   const productContext = useContext(ProductContext);
 
   const cantonArray = [];
@@ -15,84 +16,44 @@ export default function CantonLinks() {
       cantonArray.push(element);
     }
   }
-
-  function onSubmit(event) {
-    event.preventDefault();
-    productContext.cantonHandler(event.target.id);
-
-    if (!openList) {
-      setOpenList(true);
-    } else {
-      setOpenList(false);
+  const onSubmit = async (event) => {
+    try {
+      return await productContext.cantonHandler(event.target.value);
+    } catch (error) {
+      return await console.log(error);
     }
-  }
+  };
 
   return (
-    <div
-      className="border-top border-dark m-2 accordion accordion-flush"
-      id="Canton"
-    >
-      <div className="filter-canton-container mt-3 d-flex justify-content-between accordion-item">
-        <Link
-          key="chooseCanton"
-          to="/ProductList"
-          className="ml-1 mb-2 filter-canton-link h5 accordion-button collapsed"
-          data-toggle="collapse"
-          data-target="#flush-collapseTwo"
-          aria-expanded="false"
-          aria-controls="flush-collapseTwo"
-          onClick={() => (!openList ? setOpenList(true) : setOpenList(false))}
+    <div className={classes.root}>
+      <Accordion className="mt-2">
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
         >
-          Choose Canton
-        </Link>
-        <Link
-          key="chooseCantonIcon"
-          to="/ProductList"
-          data-toggle="collapse"
-          data-target="#flush-collapseTwo"
-          aria-expanded="false"
-          aria-controls="flush-collapseTwo"
-          className="filter-canton-link mb-2 h5 accordion-button collapsed"
-          onClick={() => (!openList ? setOpenList(true) : setOpenList(false))}
-        >
-          {!openList ? (
-            <i className="fas fa-angle-down"></i>
-          ) : (
-            <i className="fas fa-angle-up"></i>
-          )}
-        </Link>
-      </div>
-      <div
-        aria-labelledby="flush-headingOne"
-        data-parent="#Canton"
-        className="row ml-1 mb-3 accordion-collapse collapse"
-        id="flush-collapseTwo"
-      >
-        {cantonArray.sort().map((canton, index) => {
-          if (canton === productContext.canton) {
-            return (
-              <Link
-                key={index}
-                to="/ProductList"
-                className="accordion-body filter-canton-link text-danger text-uppercase font-weight-bold col-6"
-                onClick={() => productContext.cantonHandler(null)}>
-                {canton}
-              </Link>
-            );
-          } else {
-            return (
-              <Link
-                to="/ProductList"
-                className="accordion-body filter-canton-link mb-1 col-6"
-                onClick={onSubmit}
-                id={canton}
-                key={index}>
-                {canton}
-              </Link>
-            );
-          }
-        })}
-      </div>
+          <Typography className={classes.heading}>Choose Canton</Typography>
+        </AccordionSummary>
+        <Grid>
+          <RadioGroup>
+            <FormControlLabel
+              className={classes.cantonList}
+              control={<Radio value={null} onChange={onSubmit} />}
+              label="Cancel selection"
+            />
+            {cantonArray.sort().map((canton, index) => {
+              return (
+                <FormControlLabel
+                  className={classes.cantonList}
+                  key={index}
+                  control={<Radio value={canton} onChange={onSubmit} />}
+                  label={canton}
+                />
+              );
+            })}
+          </RadioGroup>
+        </Grid>
+      </Accordion>
     </div>
   );
 }

@@ -38,14 +38,14 @@ export default function ProductCard(props) {
               {element.canton}
             </Typography>
           </div>
-          <Typography className="d-flex justify-content-between" variant="body2" color="textSecondary" component="p">
+          <div className="d-flex justify-content-between" variant="body2" color="textSecondary" component="p">
           <Typography variant="body2" color="textSecondary" component="p">
             {element.condition}
           </Typography> 
           <Typography variant="body2" color="textSecondary" component="p">
             {element.city}
           </Typography>
-           </Typography>
+           </div>
           <Typography variant="body2" color="textSecondary" component="p">
             {element.category}
           </Typography>

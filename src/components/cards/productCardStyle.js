@@ -4,7 +4,6 @@ export const useStyles = makeStyles({
       margin: 10,
       maxWidth: 345,
       minWidth: 345,
-      
     },
     rootMedia:{ 
       maxWidth: "100%",

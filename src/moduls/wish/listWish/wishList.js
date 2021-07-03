@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import "./wishList.css";
 import * as wishAction from "../../../services/wishes-service";
 import Card from "./card";
-import SearchInput from "../../../components/search/searchInput";
+import SearchButton from "../../../components/search/searchButton";
 import ProductContext from "../../../context/productContext";
 export default function WishList() {
   const productContext = useContext(ProductContext);
@@ -25,7 +25,7 @@ export default function WishList() {
         ) : (
           <>
             <h2 className="d-flex justify-content-center mb-3">Wish List</h2>
-            <SearchInput />
+            <SearchButton />
             <div className="d-flex justify-content-around row">
             <Card element={{ state, searchItem }} /></div>
           </>
