@@ -20,7 +20,11 @@ export default function CategoryLinks() {
 
   const onSubmit = async (event) => {
     try {
-      return await productContext.mainCategoryHandler(event.target.value);
+      if (event.target.value === "null") {
+        return await productContext.mainCategoryHandler(null);
+      } else {
+        return await productContext.mainCategoryHandler(event.target.value);
+      }
     } catch (error) {
       return await console.log(error);
     }
@@ -35,9 +39,9 @@ export default function CategoryLinks() {
         </AccordionSummary>
         <Grid>
           <RadioGroup>
-          <FormControlLabel
+            <FormControlLabel
               className={classes.categoryList}
-              control={<Radio value={null} onChange={onSubmit} />}
+              control={<Radio value="null" onChange={onSubmit} />}
               label="Cancel selection"
             />
             {array.map((category, index) => {

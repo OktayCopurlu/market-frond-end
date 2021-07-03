@@ -28,7 +28,8 @@ export default function PersonalPage() {
         <UserDetailCard element={userMetadata} />
         <MainModal />
       </div>
-      <h2 className="text-center mt-5 mb-5"><Link to="/my-products">My Products</Link> </h2>
+      <Link to="/my-products" className=" text-info"><h3 className="text-center p-0">My Products </h3></Link>
+      <Link to="/my-wishes" className=" text-info"><h3 className="text-center p-0">My Wishes</h3></Link> 
     </>
   );
 }

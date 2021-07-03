@@ -20,7 +20,7 @@ export default function MainForm(props) {
         <ThreePageForm mainCategory={mainCategory} />
       ) : page === 4 ? (
         <FourPageForm mainCategory={mainCategory} />
-      ) : null}
+      ) :null}
       <ButtonForm />
     </div>
   );

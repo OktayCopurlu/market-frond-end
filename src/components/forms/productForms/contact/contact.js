@@ -7,7 +7,6 @@ export default function Contact() {
       <div className="input-field">
         <label htmlFor="contact"> Contact Tel</label>
         <input
-          pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
           className="form-control "
           type="tel"
           name="contact"

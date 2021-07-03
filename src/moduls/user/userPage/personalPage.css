@@ -42,19 +42,18 @@ h3 {
     width: 7.5rem;
     
 }
-.card {
+.user-card{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 30rem;
-    margin: auto;
+    min-width: 30rem;
     text-align: center;
   }
   
-  .title {
+.user-title {
     color: grey;
     font-size: 1.5rem;
   }
-  
-  button {
+
+.user-contact-button {
     border: none;
     outline: 0;
     display: inline-block;
@@ -67,13 +66,14 @@ h3 {
     font-size: 18px;
   }
   
-  a {
+.social-media {
     text-decoration: none;
     font-size: 22px;
     color: black;
+    margin-right: 1rem;
   }
   
-  button:hover, a:hover {
+.social-media:hover, a:hover {
     opacity: 0.7;
   }
 @media only screen and (max-device-width:767px) {
@@ -81,7 +81,6 @@ h3 {
         width: 100%!important;
     }
     .profile-picture {
-        
         border: 3px solid rgb(75, 117, 145);
         width: 150px;
         height: 150px;
@@ -92,5 +91,11 @@ h3 {
     .user-product-card{
         width: 100%;
     }
+    .user-card{
+        min-width: 22rem;
+      }
+    .user-card-container{ 
+        min-width: 100%;
+      }
 
 }

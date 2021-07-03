@@ -3,15 +3,6 @@ import Photos from "../../../components/forms/productForms/categoryAndPhotos/pho
 
 export default function FourPageForm() {
   return (
-    <>
       <Photos />
-      <div className="form-group">
-        <input
-          type="submit"
-          value="Save"
-          className="btn btn-primary"
-        />
-      </div>
-    </>
   );
 }

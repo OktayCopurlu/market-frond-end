@@ -10,7 +10,7 @@ import {
   Typography,
   useMediaQuery,
 } from "@material-ui/core";
-import * as styles from "./productCardStyle";
+import * as styles from "./wishCardStyle";
 
 export default function WishCard(props) {
   const { element, index } = props.element;
@@ -43,7 +43,7 @@ export default function WishCard(props) {
               {element.canton}
             </Typography>
           </div>
-          <Typography variant="body2" color="textSecondary" component="p" className="d-flex justify-content-between">
+          <div variant="body2" color="textSecondary" className="d-flex justify-content-between">
           <Typography variant="body2" color="textSecondary" component="p">
             {picture.map((user) => {
               if (user.user_id === element.userId) {
@@ -54,7 +54,7 @@ export default function WishCard(props) {
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             {element.city}
-          </Typography></Typography>
+          </Typography></div>
           <Typography variant="body2" color="textSecondary" component="p">
             {element.detail}
           </Typography>

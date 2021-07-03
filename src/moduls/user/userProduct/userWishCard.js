@@ -7,17 +7,13 @@ import EditWishModal from "../../wish/editWish/editWishModal";
 export default function UserWishCard(props) {
   const wishes = props.wishes;
 
-  return (
-    <div>
-      {wishes.map((element, index) => {
-        return (
-          <div key={index} >
-            <WishCard element={{ element, index }} />
-            <EditWishModal value={element._id}/>
-            <DeleteProduct value={element._id} />
-          </div>
-        );
-      })}
-    </div>
-  );
+  return wishes.map((element, index) => {
+    return (
+      <div className="user-product-card mb-5" key={index}>
+        <WishCard element={{ element, index }} />
+        <EditWishModal value={element._id} />
+        <DeleteProduct value={element._id} />
+      </div>
+    );
+  });
 }
