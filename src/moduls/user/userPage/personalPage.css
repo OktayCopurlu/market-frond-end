@@ -91,6 +91,9 @@ h3 {
     .user-product-card{
         width: 100%;
     }
+    .user-wish-card{
+      width: 100%;
+  }
     .user-card{
         min-width: 22rem;
       }

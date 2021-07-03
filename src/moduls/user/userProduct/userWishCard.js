@@ -9,7 +9,7 @@ export default function UserWishCard(props) {
 
   return wishes.map((element, index) => {
     return (
-      <div className="user-product-card mb-5" key={index}>
+      <div className="user-wish-card w-100 mb-5" key={index}>
         <WishCard element={{ element, index }} />
         <EditWishModal value={element._id} />
         <DeleteProduct value={element._id} />
