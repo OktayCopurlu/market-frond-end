@@ -1,26 +1,23 @@
 import React from "react";
 import DeleteProduct from "../../product/deleteProduct/deleteProduct";
 import "../userPage/personalPage.css";
-import WishCard from "../../../components/cards/wishCard";
+import WishCard from "../../../components/cards/wishCards";
 import EditWishModal from "../../wish/editWish/editWishModal";
 
 export default function UserWishCard(props) {
   const wishes = props.wishes;
 
-  
- 
-
   return (
-    <>
+    <div>
       {wishes.map((element, index) => {
         return (
-          <div key={index} className="w-100">
+          <div key={index} >
             <WishCard element={{ element, index }} />
             <EditWishModal value={element._id}/>
             <DeleteProduct value={element._id} />
           </div>
         );
       })}
-    </>
+    </div>
   );
 }

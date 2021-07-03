@@ -42,7 +42,8 @@ export default function Photos() {
         className="mb-3 d-block "
         name="image"
         type="file"
-        accept="image/*"
+        accept="image/*,.heic"
+        
         multiple
         onChange={handleImageChange}
       />

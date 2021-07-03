@@ -1,25 +1,14 @@
-.wishListImage {
-  border: 3px solid rgb(75, 117, 145);
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  position: relative;
-  z-index: 1;
+
+/* .wish-top-container{
+  
+  display: grid;
+  justify-content: center;
+  align-items: center;
+} */
+.detail-icon{
+  width: 20px;
 }
 
-hr {
-  margin: 0;
-  padding: 0;
-}
-
-.wishPhoto {
-  color: #000;
-  min-width: 125px;
-}
-
-.wishDetail {
-  color: #000;
-}
 
 .wishList {
   width: 100%;
@@ -37,23 +26,9 @@ hr {
   justify-content: center;
 }
 
-.wishCard:hover {
-  background-color: #F0F2F5;
-}
 
 
-.wishCard {
-  padding: 3rem;
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 1.5rem;
-  padding-top: 1.5rem;
-  background-color: white;
-  align-items: center;
-  margin-bottom: 10px;
-  border: 1px solid gray;
-  max-width: 49%;
-}
+
 
 @media only screen and (max-device-width:767px) {
 
@@ -64,11 +39,7 @@ hr {
     padding-bottom: 1rem;
   }
 
-  .wishCard {
-    flex: 0 0 100%;
-    max-width: 100%;
-    padding: 1rem;
-  }
+ 
 
   .wishContainer {
     justify-content: space-between;

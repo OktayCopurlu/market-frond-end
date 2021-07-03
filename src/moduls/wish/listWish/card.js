@@ -1,5 +1,5 @@
 import React from "react";
-import WishCard from "../../../components/cards/wishCard";
+import WishCard from "../../../components/cards/wishCards";
 
 export default function Card(props) {
   const { state, searchItem } = props.element;
