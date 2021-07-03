@@ -5,8 +5,10 @@ import {
   Grid,
   Typography,
   AccordionSummary,
-  Checkbox,
-  Accordion,FormControlLabel
+  Radio,
+  RadioGroup,
+  Accordion,
+  FormControlLabel,
 } from "@material-ui/core";
 
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -18,11 +20,7 @@ export default function CategoryLinks() {
 
   const onSubmit = async (event) => {
     try {
-      if (productContext.mainCategory === null) {
-        return await productContext.mainCategoryHandler(event.target.id);
-      } else {
-        return await productContext.mainCategoryHandler(null);
-      }
+      return await productContext.mainCategoryHandler(event.target.value);
     } catch (error) {
       return await console.log(error);
     }
@@ -36,16 +34,23 @@ export default function CategoryLinks() {
           <Typography className={classes.heading}>Choose Category</Typography>
         </AccordionSummary>
         <Grid>
-          {array.map((category, index) => {
-            return (
-              <FormControlLabel
-                className={classes.categoryList}
-                key={index}
-                control={<Checkbox onChange={onSubmit} id={category} />}
-                label={category}
-              />
-            );
-          })}
+          <RadioGroup>
+          <FormControlLabel
+              className={classes.categoryList}
+              control={<Radio value={null} onChange={onSubmit} />}
+              label="Cancel selection"
+            />
+            {array.map((category, index) => {
+              return (
+                <FormControlLabel
+                  className={classes.categoryList}
+                  key={index}
+                  control={<Radio onChange={onSubmit} value={category} />}
+                  label={category}
+                />
+              );
+            })}
+          </RadioGroup>
         </Grid>
       </Accordion>
     </div>

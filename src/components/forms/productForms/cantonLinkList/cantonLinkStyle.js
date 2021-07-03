@@ -8,7 +8,7 @@ export const useStyles = makeStyles((theme) => ({
       fontWeight: theme.typography.fontWeightRegular,
     },
     cantonList:{ 
-        width: "48%",
+        width: "100%",
         margin:0
     }
   }));
