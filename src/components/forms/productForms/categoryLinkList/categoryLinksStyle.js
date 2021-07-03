@@ -10,7 +10,7 @@ export const useStyles = makeStyles((theme) => ({
     },
     
     categoryList:{
-        width:"48%",
+        width:"100%",
         margin:0
     }
   }));

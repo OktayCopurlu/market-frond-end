@@ -18,8 +18,8 @@ export default function FilterProduct() {
   return (
     <div className="col-3 productList-menu">
       <SearchButton />
-      <CantonLinks/>
       <CategoryLinks/>
+      <CantonLinks/>
     </div>
   );
 }

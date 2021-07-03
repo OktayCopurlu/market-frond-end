@@ -8,19 +8,19 @@ import UserDetailCard from "./userDetailCard";
 import { Link } from "react-router-dom";
 export default function PersonalPage() {
   const context = useContext(Context);
-  
-  const { user, getAccessTokenSilently } = useAuth0();
   const [userMetadata, setUserMetadata] = useState(null);
-
-  const userId = user.sub;
+  const { user, getAccessTokenSilently } = useAuth0();
+  
+  
   useEffect(() => {
+    const userId = user.sub;
     userService
       .getUserMetadata(userId, getAccessTokenSilently, context)
       .then((data) => {
         setUserMetadata(data);
       });
       // eslint-disable-next-line
-  }, [userId, getAccessTokenSilently]);
+  }, [getAccessTokenSilently]);
 
   return (
     <>
