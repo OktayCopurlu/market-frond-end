@@ -18,7 +18,7 @@ export default function LoginAndUserPhoto() {
       <li className="nav-item">
         <NavLink
           exact
-          to="/wishForm"
+          to="/productList"
           activeclassname="active"
           className="nav-links"
           onClick={handleClick}
