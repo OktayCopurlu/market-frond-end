@@ -15,7 +15,7 @@ export default function PersonalPage() {
       .then((data) => {
         setUserMetadata(data);
       });
-  },[]);
+  },[getAccessTokenSilently,user.sub]);
   return (
     <>
       <div className="out-container">
