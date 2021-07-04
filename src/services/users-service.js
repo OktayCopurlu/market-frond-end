@@ -117,7 +117,7 @@ export const getUserMetadata = async (userId,getAccessTokenSilently) => {
       },
     });
     const { user_metadata } = await metadataResponse.json();
-   
+   console.log(user_metadata)
     return await user_metadata;
   } catch (e) {
     console.log(e.message);

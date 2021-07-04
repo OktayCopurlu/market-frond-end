@@ -8,14 +8,19 @@ import UserDetailCard from "./userDetailCard";
 export default function PersonalPage() {
   const [userMetadata, setUserMetadata] = useState(null);
   const { user, getAccessTokenSilently } = useAuth0();
-  
+
+  const userId = user.sub;
   useEffect(() => {
-    const userId =  user.sub;
-    userService.getUserMetadata(userId, getAccessTokenSilently)
-      .then((data) => {
-        setUserMetadata(data);
-      });
-  },[getAccessTokenSilently,user.sub]);
+    const something = async () => {
+      const data = await userService.getUserMetadata(
+        userId,
+        getAccessTokenSilently
+      );
+      return await setUserMetadata(data);
+    };
+
+    something();
+  }, [userId, getAccessTokenSilently]);
   return (
     <>
       <div className="out-container">
