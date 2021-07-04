@@ -18,7 +18,7 @@ export default function PersonalPage() {
       .then((data) => {
         setUserMetadata(data);
       });
-  }, []);
+  }, [userId]);
 
   return (
     <>
