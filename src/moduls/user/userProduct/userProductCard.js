@@ -12,7 +12,7 @@ export default function UserProductCard(props) {
     <>
       {products.map((element, index) => {
         return (
-          <div  key={index} className="user-product-card mb-5">
+          <div key={index} className="user-product-card mb-5">
             <ProductCard element={element} />
             <p>
               <ProductEditModal element={element}/>

@@ -8,7 +8,7 @@ export default function FourPageForm() {
     <div className="form-group">
       <input
         type="submit"
-        value="Save"
+        value="Save and Publish"
         className="btn btn-primary"
       />
     </div></>

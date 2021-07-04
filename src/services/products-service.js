@@ -179,7 +179,7 @@ export async function listAction(canton, mainCategory, productContext) {
     }
 
     //list all products
-    if (!mainCategory && !canton) {
+    if (!mainCategory && !canton ) {
       const list = await getAll();
       return await productContext.stateHandler(list);
     }

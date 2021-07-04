@@ -1,7 +1,15 @@
 import React, { useContext } from "react";
 import citiesJson from "../../../../context/city.json"; //import canton and city information
 import ProductContext from "../../../../context/productContext";
-import { RadioGroup, Radio,Accordion,AccordionSummary,Typography,Grid,FormControlLabel } from "@material-ui/core";
+import {
+  RadioGroup,
+  Radio,
+  Accordion,
+  AccordionSummary,
+  Typography,
+  Grid,
+  FormControlLabel,
+} from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import * as cantonLinksCss from "./cantonLinkStyle";
 
@@ -18,7 +26,11 @@ export default function CantonLinks() {
   }
   const onSubmit = async (event) => {
     try {
-      return await productContext.cantonHandler(event.target.value);
+      if (event.target.value === "null") {
+        return await productContext.cantonHandler(null);
+      } else {
+        return await productContext.cantonHandler(event.target.value);
+      }
     } catch (error) {
       return await console.log(error);
     }
@@ -38,7 +50,7 @@ export default function CantonLinks() {
           <RadioGroup>
             <FormControlLabel
               className={classes.cantonList}
-              control={<Radio value={null} onChange={onSubmit} />}
+              control={<Radio value="null" onChange={onSubmit} />}
               label="Cancel selection"
             />
             {cantonArray.sort().map((canton, index) => {

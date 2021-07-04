@@ -23,7 +23,7 @@ export default function MainModal() {
   return (
     <div className="d-flex justify-content-center ">
       <Link to="#" onClick={onSubmit} className="btn btn-link text-info">
-        Edit My Detail
+        <h3 className="p-0">Edit My Detail</h3>
       </Link>
       <Modal
         onClose={handleClose}

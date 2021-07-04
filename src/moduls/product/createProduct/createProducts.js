@@ -48,8 +48,10 @@ export default function CreateProducts() {
 
   //post request function
   const onSubmit = async (event) => {
+
     try {
       await event.preventDefault();
+      
       await productActions.createProduct(body, context.handlerSuccess, token);
       await context.pageFormHandler(1);
       await productContext.cantonHandler(null);

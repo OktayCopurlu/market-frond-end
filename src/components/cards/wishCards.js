@@ -10,7 +10,7 @@ import {
   Typography,
   useMediaQuery,
 } from "@material-ui/core";
-import * as styles from "./productCardStyle";
+import * as styles from "./wishCardStyle";
 
 export default function WishCard(props) {
   const { element, index } = props.element;
@@ -43,18 +43,18 @@ export default function WishCard(props) {
               {element.canton}
             </Typography>
           </div>
-          <Typography variant="body2" color="textSecondary" component="p" className="d-flex justify-content-between">
-          <Typography variant="body2" color="textSecondary" component="p">
+          <div variant="body2" color="textSecondary" className="d-flex justify-content-between">
+          <div variant="body2" color="textSecondary" component="p">
             {picture.map((user) => {
               if (user.user_id === element.userId) {
                 return <UserInfoInWishCard key={user.user_id} user={user} />;
               }
               return null;
             })}
-          </Typography>
+          </div>
           <Typography variant="body2" color="textSecondary" component="p">
             {element.city}
-          </Typography></Typography>
+          </Typography></div>
           <Typography variant="body2" color="textSecondary" component="p">
             {element.detail}
           </Typography>
@@ -62,7 +62,7 @@ export default function WishCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions className="bg-light text-dark">
-        <Link href="#" className="text-info d-block">
+        <Link to="#" className="text-info d-block">
           <i className="fas fa-phone"></i> {element.contactTel}
         </Link>
       </CardActions>

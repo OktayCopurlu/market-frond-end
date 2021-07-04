@@ -14,6 +14,7 @@ import Footer from "./moduls/footer/footer";
 import History from "./moduls/footer/history"
 import ProtectedRoute from "./provider/protected-route";
 import UserProduct from "./moduls/user/userProduct/userProduct";
+import UserWish from "./moduls/user/userProduct/userWish";
 
 
 function App() {
@@ -36,6 +37,8 @@ function App() {
           <ProtectedRoute path="/wishForm" component={CreateWishList} />
           <ProtectedRoute path="/personalPage" component={PersonalPage} />
            <ProtectedRoute path="/my-products" component={UserProduct}/>
+           <ProtectedRoute path="/my-wishes" component={UserWish}/>
+
       </Switch>
       <Footer />
     </>
