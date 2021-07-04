@@ -16,7 +16,7 @@ export default function SuccessText() {
     <div className="alert alert-success text-center" role="alert">
      <p> Product upload successfully... </p>
       <p>
-        <Link onClick={onClick} to="/personalPage">
+        <Link onClick={onClick} to="/my-products">
          Edit again
         </Link>
       </p>

@@ -87,7 +87,7 @@ export default function EditUserDetail() {
     context.closedModalHandler(false);
     context.pageFormHandler(1);
     userService.updateUserMetaData(userId, accessToken, body).then(() => {
-      history.replace("/personalPage");
+      history.replace("/my-products");
     });
   }
 
