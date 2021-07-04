@@ -1,6 +1,4 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-
 import Modal from "@material-ui/core/Modal";
 import Context from "../../../context/context";
 import NavbarModal from "./navbarModal";
@@ -32,7 +30,7 @@ export default function MainModal() {
         aria-describedby="simple-modal-description"
       >
         <div>
-          <NavbarModal/>
+          <NavbarModal />
         </div>
       </Modal>
     </div>
