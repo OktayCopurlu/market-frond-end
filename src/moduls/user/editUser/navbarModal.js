@@ -19,9 +19,9 @@ export default function NavbarModal() {
   }
   return (
     <div style={modalStyle} className={classes.paper}>
-      <Link to="#" onClick={handleClose} className="close-modal">
+      <button onClick={handleClose} className="close-modal btn btn-link text-info">
         Close
-      </Link>
+      </button>
       {state === "detail" ? (
         <EditUserDetail />
       ) : (

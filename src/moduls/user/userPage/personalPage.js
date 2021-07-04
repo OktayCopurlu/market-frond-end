@@ -13,13 +13,13 @@ export default function PersonalPage() {
   
   
   // useEffect(() => {
-    const userId = user.sub;
-    userService
-      .getUserMetadata(userId, getAccessTokenSilently, context)
-      .then((data) => {
-        setUserMetadata(data);
-      });
-  //     // eslint-disable-next-line
+  //   const userId = user.sub;
+  //   // userService
+  //   //   .getUserMetadata(userId, getAccessTokenSilently, context)
+  //   //   .then((data) => {
+  //   //     setUserMetadata(data);
+  //   //   });
+  //   //   // eslint-disable-next-line
   // }, [getAccessTokenSilently]);
 
   return (
