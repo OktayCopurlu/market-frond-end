@@ -102,7 +102,7 @@ export const deleteUser = async (userId,accessToken) => {
 };
 
 //get user information from auth0
-export const getUserMetadata = async (userId,getAccessTokenSilently,context) => {
+export const getUserMetadata = async (userId,getAccessTokenSilently) => {
   try {
     const accessToken = await getAccessTokenSilently({
       audience: audience,
@@ -117,7 +117,7 @@ export const getUserMetadata = async (userId,getAccessTokenSilently,context) => 
       },
     });
     const { user_metadata } = await metadataResponse.json();
-    await context.userMetaDataHandler(user_metadata)
+   
     return await user_metadata;
   } catch (e) {
     console.log(e.message);
