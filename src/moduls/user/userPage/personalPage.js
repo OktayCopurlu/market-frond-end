@@ -12,15 +12,15 @@ export default function PersonalPage() {
   const { user, getAccessTokenSilently } = useAuth0();
   
   
-  // useEffect(() => {
-  //   const userId = user.sub;
-  //   // userService
-  //   //   .getUserMetadata(userId, getAccessTokenSilently, context)
-  //   //   .then((data) => {
-  //   //     setUserMetadata(data);
-  //   //   });
-  //   //   // eslint-disable-next-line
-  // }, [getAccessTokenSilently]);
+  useEffect(() => {
+    const userId = user.sub;
+    userService
+      .getUserMetadata(userId, getAccessTokenSilently, context)
+      // .then((data) => {
+      //   setUserMetadata(data);
+      // });
+      // eslint-disable-next-line
+  }, [getAccessTokenSilently]);
 
   return (
     <>
