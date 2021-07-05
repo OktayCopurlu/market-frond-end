@@ -10,17 +10,18 @@ export default function PersonalPage() {
   const { user, getAccessTokenSilently } = useAuth0();
 
   const userId = user.sub;
-  useEffect(() => {
-    const something = async () => {
-      const data = await userService.getUserMetadata(
-        userId,
-        getAccessTokenSilently
-      );
-      return await setUserMetadata(data);
-    };
+  const something = async () => {
+    const data = await userService.getUserMetadata(
+      userId,
+      getAccessTokenSilently
+    );
+    return await setUserMetadata(data);
+  };
 
+  useEffect(() => {
     something();
-  }, [userId, getAccessTokenSilently]);
+    // eslint-disable-next-line
+  }, []);
   return (
     <>
       <div className="out-container">
