@@ -5,27 +5,29 @@ import { useAuth0 } from "@auth0/auth0-react";
 import MainModal from "../editUser/mainModal";
 import * as userService from "../../../services/users-service";
 import UserDetailCard from "./userDetailCard";
+
 export default function PersonalPage() {
   const [userMetadata, setUserMetadata] = useState(null);
   const { user, getAccessTokenSilently } = useAuth0();
-
   const userId = user.sub;
-  const something = async () => {
-    const data = await userService.getUserMetadata(
-      userId,
-      getAccessTokenSilently
-    );
-    return await setUserMetadata(data);
-  };
 
   useEffect(() => {
-    something();
-    // eslint-disable-next-line
-  }, []);
+
+    const something = async () => {
+      const data = await userService.getUserMetadata(
+        userId,
+        getAccessTokenSilently
+      );
+      return await setUserMetadata(data);
+    };
+   return something();
+
+  }, [userId, getAccessTokenSilently]);
+
   return (
     <>
       <div className="out-container">
-        <UserDetailCard element={userMetadata} />
+       {userMetadata ? <UserDetailCard element={userMetadata}/>:<p>Loading...</p>}
         <MainModal />
       </div>
       <Link to="/my-products" className=" text-info">
