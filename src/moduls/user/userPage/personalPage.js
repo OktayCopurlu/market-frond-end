@@ -9,25 +9,26 @@ import UserDetailCard from "./userDetailCard";
 export default function PersonalPage() {
   const [userMetadata, setUserMetadata] = useState(null);
   const { user, getAccessTokenSilently } = useAuth0();
-  const userId = user.sub;
 
   useEffect(() => {
-
     const something = async () => {
       const data = await userService.getUserMetadata(
-        userId,
+        user,
         getAccessTokenSilently
       );
       return await setUserMetadata(data);
     };
-   return something();
-
-  }, [userId, getAccessTokenSilently]);
+    return something();
+  }, [user, getAccessTokenSilently]);
 
   return (
     <>
       <div className="out-container">
-       {userMetadata ? <UserDetailCard element={userMetadata}/>:<p>Loading...</p>}
+        {userMetadata ? (
+          <UserDetailCard element={userMetadata} />
+        ) : (
+          <h3 className="m-5">Loading...</h3>
+        )}
         <MainModal />
       </div>
       <Link to="/my-products" className=" text-info">
