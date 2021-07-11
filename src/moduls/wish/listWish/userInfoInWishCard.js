@@ -58,11 +58,11 @@ export default function UserInfoInWishCard(props) {
           <img src={user.picture} alt="no photos" className="rounded-circle" />
           <h5>{user.name}</h5>
           <div>
-            <p>{user.user_metadata.job}</p>
-            <p>{user.user_metadata.detail}</p>
-            <p>{user.user_metadata.canton}</p>
-            <p>{user.user_metadata.city}</p>
-            <p>{user.user_metadata.contactNumber}</p>
+            <p>{user.user_metadata?.job}</p>
+            <p>{user.user_metadata?.detail}</p>
+            <p>{user.user_metadata?.canton}</p>
+            <p>{user.user_metadata?.city}</p>
+            <p>{user.user_metadata?.contactNumber}</p>
           </div>
         </div>
       </Modal>
