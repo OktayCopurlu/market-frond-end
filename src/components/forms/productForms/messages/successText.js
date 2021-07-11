@@ -11,6 +11,16 @@ export default function SuccessText() {
     context.handlerSuccess(null);
     productContext.photosHandler([]);
     productContext.cantonHandler(null);
+    productContext.dimensionsHandler(null);
+    productContext.contactEmailHandler(null)
+    productContext.informationHandler(null)
+    productContext.contactTelHandler(null)
+    productContext.titleHandler(null)
+    productContext.sizeHandler(null)
+    productContext.conditionHandler(null)
+    productContext.categoryClothesHandler(null)
+    productContext.mainCategoryHandler(null)
+    productContext.cityHandler(null)
   }
   return (
     <div className="alert alert-success text-center" role="alert">
