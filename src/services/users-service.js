@@ -102,15 +102,12 @@ export const deleteUser = async (userId,accessToken) => {
 };
 
 //get user information from auth0
-export const getUserMetadata = async (user,getAccessTokenSilently) => {
+export const getUserMetadata = async (user,accessToken) => {
   
   const userId = user.sub;
 
   try {
-    const accessToken = await getAccessTokenSilently({
-      audience: audience,
-      scope: "read:current_user_metadata",
-    });
+    
 
     const userDetailsByIdUrl = `https://${domain}/api/v2/users/${userId}`;
     const metadataResponse = await fetch(userDetailsByIdUrl, {

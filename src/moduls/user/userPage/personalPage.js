@@ -7,14 +7,18 @@ import * as userService from "../../../services/users-service";
 import UserDetailCard from "./userDetailCard";
 
 export default function PersonalPage() {
+  const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
   const [userMetadata, setUserMetadata] = useState(null);
   const { user, getAccessTokenSilently } = useAuth0();
-
+  const accessToken =  getAccessTokenSilently({
+    audience: audience,
+    scope: "read:current_user_metadata",
+  });
   useEffect(() => {
     const something = async () => {
       const data = await userService.getUserMetadata(
         user,
-        getAccessTokenSilently
+        accessToken
       );
       return await setUserMetadata(data);
     };
