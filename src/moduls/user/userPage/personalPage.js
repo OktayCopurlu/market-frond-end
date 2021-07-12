@@ -10,20 +10,27 @@ export default function PersonalPage() {
   const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
   const [userMetadata, setUserMetadata] = useState(null);
   const { user, getAccessTokenSilently } = useAuth0();
-  const accessToken =  getAccessTokenSilently({
-    audience: audience,
-    scope: "read:current_user_metadata",
-  });
+
   useEffect(() => {
+  
     const something = async () => {
-      const data = await userService.getUserMetadata(
-        user,
-        accessToken
-      );
-      return await setUserMetadata(data);
+      try {
+        const accessToken = await getAccessTokenSilently({
+          audience: audience,
+          scope: "read:current_user_metadata",
+        });
+        const data = await userService.getUserMetadata(
+          user,
+          accessToken
+        );
+        return await setUserMetadata(data);  
+      } catch (error) {
+        console.log(error)
+      }
+      
     };
     return something();
-  }, [user, getAccessTokenSilently]);
+  }, [user, getAccessTokenSilently,audience]);
 
   return (
     <>
