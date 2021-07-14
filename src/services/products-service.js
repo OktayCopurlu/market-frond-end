@@ -140,7 +140,6 @@ export async function updateProduct(id, body, isSuccess, token) {
       return await isSuccess(true); //for user message
     } else {
       console.log("Product couldn't updated ");
-
       return await isSuccess(false);
     }
   } catch (error) {

@@ -54,10 +54,7 @@ export default function ProductCard(props) {
             {element.size ? "Size:" : null} {element.size}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {element.dimensions ? "Dimensions:" : null}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {element.dimensions}
+            {element.dimensions ? "Dimensions:" : null} {element.dimensions}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             {element.detail}
@@ -72,7 +69,7 @@ export default function ProductCard(props) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions  className="bg-light text-dark">
+      <CardActions  className="bg-light text-dark ">
         {isAuthenticated ? (
           <Link to="#" className="text-info d-block">
             <i className="fas fa-phone"></i> {element.contactTel}

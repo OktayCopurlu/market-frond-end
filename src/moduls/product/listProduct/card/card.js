@@ -3,15 +3,15 @@ import ProductCard from "../../../../components/cards/productCards";
 
 export default function Card(filterAndSearch) {
   const searched = filterAndSearch.elements;
-  const { state, searchItem } = searched;
+  const { productList, searchItem } = searched;
 
   return (
     <div className="col-9 productList-main">
       <div className="row">
-        {state === 0 ? (
+        {productList === 0 ? (
           <h3>Category is empty</h3>
         ) : (
-          state
+          productList
             .filter((element) => {
               if (
                 element.title.toLowerCase().includes(searchItem.toLowerCase())
