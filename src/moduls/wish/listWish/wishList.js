@@ -30,7 +30,7 @@ export default function WishList() {
             <div className="d-flex justify-content-around row">
             <Card element={{ state, searchItem }} /></div>
           </>
-        )}
+        ):<h3 className="m-5">Loading...</h3>}
       </div>
     </div>
   );

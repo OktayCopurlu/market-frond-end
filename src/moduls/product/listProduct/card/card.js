@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 
 export default function Card(filterAndSearch) {
   const searched = filterAndSearch.elements;
+<<<<<<< HEAD
   const { state, searchItem } = searched;
 const {t}=useTranslation()
   return (
@@ -11,8 +12,17 @@ const {t}=useTranslation()
       <div className="row">
         {state === 0 ? (
           <h3>{t('CategoryIsEmpty')}</h3>
+=======
+  const { productList, searchItem } = searched;
+
+  return (
+    <div className="col-9 productList-main">
+      <div className="row">
+        {productList === 0 ? (
+          <h3>Category is empty</h3>
+>>>>>>> main
         ) : (
-          state
+          productList
             .filter((element) => {
               if (
                 element.title.toLowerCase().includes(searchItem.toLowerCase())

@@ -140,7 +140,6 @@ export async function updateProduct(id, body, isSuccess, token) {
       return await isSuccess(true); //for user message
     } else {
       console.log("Product couldn't updated ");
-
       return await isSuccess(false);
     }
   } catch (error) {
@@ -181,7 +180,7 @@ export async function listAction(canton, mainCategory, productContext) {
     //list all products
     if (!mainCategory && !canton ) {
       const list = await getAll();
-      return await productContext.stateHandler(list);
+        return await productContext.stateHandler(list); 
     }
   } catch (error) {
     console.log(error);

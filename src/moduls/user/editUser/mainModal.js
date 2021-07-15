@@ -33,7 +33,7 @@ export default function MainModal() {
         aria-describedby="simple-modal-description"
       >
         <div>
-          <NavbarModal/>
+          <NavbarModal />
         </div>
       </Modal>
     </div>

@@ -70,7 +70,7 @@ export default function ProductCard(props) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions  className="bg-light text-dark">
+      <CardActions  className="bg-light text-dark ">
         {isAuthenticated ? (
           <Link to="#" className="text-info d-block">
             <i className="fas fa-phone"></i> {element.contactTel}

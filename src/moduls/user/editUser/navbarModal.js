@@ -3,7 +3,6 @@ import EditUserDetail from "./editUserDetail";
 import DeleteUser from "../deleteUser/deleteUser";
 import EditLink from "./editLink";
 import DeleteLink from "./deleteLink";
-import { Link } from "react-router-dom";
 import Context from "../../../context/context";
 import * as modalCss from "./modalCss";
 import * as paperCss from "./modalPaperCss";
@@ -19,9 +18,9 @@ export default function NavbarModal() {
   }
   return (
     <div style={modalStyle} className={classes.paper}>
-      <Link to="#" onClick={handleClose} className="close-modal">
+      <button onClick={handleClose} className="close-modal btn btn-link text-info">
         Close
-      </Link>
+      </button>
       {state === "detail" ? (
         <EditUserDetail />
       ) : (

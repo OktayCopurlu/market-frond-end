@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import "./personalPage.css";
-import Context from "../../../context/context";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import MainModal from "../editUser/mainModal";
@@ -9,25 +8,40 @@ import UserDetailCard from "./userDetailCard";
 import {useTranslation} from "react-i18next";
 
 export default function PersonalPage() {
-  const context = useContext(Context);
+  const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
   const [userMetadata, setUserMetadata] = useState(null);
   const { user, getAccessTokenSilently } = useAuth0();
   const {t}= useTranslation()
   
   useEffect(() => {
-    const userId = user.sub;
-    userService
-      .getUserMetadata(userId, getAccessTokenSilently, context)
-      .then((data) => {
-        setUserMetadata(data);
-      });
-      // eslint-disable-next-line
-  }, [getAccessTokenSilently]);
+  
+    const something = async () => {
+      try {
+        const accessToken = await getAccessTokenSilently({
+          audience: audience,
+          scope: "read:current_user_metadata",
+        });
+        const data = await userService.getUserMetadata(
+          user,
+          accessToken
+        );
+        return await setUserMetadata(data);  
+      } catch (error) {
+        console.log(error)
+      }
+      
+    };
+    return something();
+  }, [user, getAccessTokenSilently,audience]);
 
   return (
     <>
       <div className="out-container">
-        <UserDetailCard element={userMetadata} />
+        {userMetadata ? (
+          <UserDetailCard element={userMetadata} />
+        ) : (
+          <h3 className="m-5">Loading...</h3>
+        )}
         <MainModal />
       </div>
       <Link to="/my-products" className=" text-info"><h3 className="text-center p-0">{t('MyProduct')}</h3></Link>
