@@ -1,8 +1,11 @@
 import React, { useContext } from "react";
 import Context from "../../../context/context";
 import { Link } from "react-router-dom";
+import {useTranslation} from "react-i18next";
+
 export default function EditLink() {
   const context = useContext(Context);
+  const {t}= useTranslation()
   function onSubmit(event) {
     event.preventDefault();
     context.stateHandler(event.target.value);
@@ -15,7 +18,7 @@ export default function EditLink() {
         value="detail"
         onClick={onSubmit}
       >
-        Edit My Detail
+        {t('EditMyDetail')}
       </button>
     </Link>
   );

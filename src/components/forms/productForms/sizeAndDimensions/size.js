@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
+import {useTranslation} from "react-i18next";
 import ProductContext from "../../../../context/productContext";
 export default function Size() {
   const productContext = useContext(ProductContext);
-
+  const {t}= useTranslation()
   return (
     <div className="input-field mt-4 mb-4">
-      <label htmlFor="title"> Size </label>
+      <label htmlFor="title">{t('Size')}</label>
       <input
         className="form-control"
         name="size"

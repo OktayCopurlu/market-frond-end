@@ -1,12 +1,12 @@
 import React,{useContext} from 'react'
 import Context from "../../../../context/context";
-
+import { useTranslation } from 'react-i18next';
 export default function BirthDay() {
   const context = useContext(Context);
-
+  const {t}= useTranslation()
   return (
     <>
-      <label className="label-birthDay"> Birth Date </label>
+      <label className="label-birthDay">{t('BirthDate')}</label>
       <div>
         <input
           name="date"

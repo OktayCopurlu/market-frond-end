@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import Context from "../../../../context/context";
-
+import { useTranslation } from "react-i18next";
 export default function UserCity() {
   const context = useContext(Context);
+  const {t}= useTranslation()
     return (
         <div className="input-field">
-        <label htmlFor="city"> City </label>
+        <label htmlFor="city">{t('City')}</label>
         <input
           className="form-control"
           type="text"

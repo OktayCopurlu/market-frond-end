@@ -4,12 +4,12 @@ import * as productActions from "../../../services/products-service";
 import { useAuth0 } from "@auth0/auth0-react";
 import UserProductCard from "./userProductCard";
 import productContext from "../../../context/productContext";
-
+import { useTranslation } from "react-i18next";
 export default function UserProduct() {
   const [products, setProducts] = useState([]);
   const productsContext = useContext(productContext);
   const { user } = useAuth0();
-  
+  const {t}= useTranslation()
   useEffect(() => {
     productsContext.productIdHandler(products);
     
@@ -27,7 +27,7 @@ export default function UserProduct() {
   }, [user]);
 
   return (<>
-    <h3 className="d-flex justify-content-center p-0 mt-3">My Product List</h3>
+    <h3 className="d-flex justify-content-center p-0 mt-3">{t('MyProductList')}</h3>
     <div className="d-flex justify-content-center row m-0 p-1">
       <UserProductCard products={products} />
     </div></>

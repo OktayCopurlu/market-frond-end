@@ -3,11 +3,12 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { NavLink } from "react-router-dom";
 import LoginAndUserPhoto from "./loginAndUserPhoto";
 import Context from "../../context/context"
-
+import { useTranslation } from "react-i18next";
+import ChangeLanguage from "./changeLanguage";
 export default function MenuLinks() {
   const { isAuthenticated } = useAuth0();
   const context = useContext(Context);
-
+const {t} = useTranslation()
   //this is for @media navbar
   const click = context.navbarOpen;
   const handleClick = () => context.navbarOpenHandler(!click);
@@ -23,7 +24,7 @@ export default function MenuLinks() {
             className="nav-links"
             onClick={handleClick}
           >
-            Products List
+            {t('ProductList')}
           </NavLink>
         </li>
         {isAuthenticated ? (
@@ -35,7 +36,7 @@ export default function MenuLinks() {
               className="nav-links"
               onClick={handleClick}
             >
-              Create Products
+               {t('CreateProducts')}
             </NavLink>
           </li>
         ) : null}
@@ -47,7 +48,7 @@ export default function MenuLinks() {
             className="nav-links"
             onClick={handleClick}
           >
-            Wish List
+             {t('WishList')}
           </NavLink>
         </li>
         {isAuthenticated ? (
@@ -59,14 +60,14 @@ export default function MenuLinks() {
               className="nav-links"
               onClick={handleClick}
             >
-              Create Wish
+              {t('CreateWish')}
             </NavLink>
           </li>
         ) : null}
         {/* show login / logout bottun and user photo */}
         <LoginAndUserPhoto />
+        <ChangeLanguage/>
       </ul>
-
       <div className="nav-icon" onClick={handleClick}>
         <i className={click ? "fas fa-times" : "fas fa-bars"}> </i>
       </div>

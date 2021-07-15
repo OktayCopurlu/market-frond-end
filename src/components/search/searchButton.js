@@ -6,10 +6,10 @@ import InputBase from "@material-ui/core/InputBase";
 import IconButton from "@material-ui/core/IconButton";
 import SearchIcon from "@material-ui/icons/Search";
 import * as searchButtonCss from "./searchButtonStyle"
-
+import { useTranslation } from "react-i18next";
 export default function SearchButton() {
   const classes = searchButtonCss.useStyles();
-
+  const {t}= useTranslation()
   const productContext = useContext(ProductContext);
   const [searchItem, setSearchItem] = useState("");
 
@@ -24,7 +24,7 @@ export default function SearchButton() {
       <Paper component="form" className={classes.root}>
         <InputBase
           className={classes.input}
-          placeholder="Search Items"
+          placeholder={t('SearchItems')}
           onChange={(event) => setSearchItem(event.target.value)}
         />
         <IconButton

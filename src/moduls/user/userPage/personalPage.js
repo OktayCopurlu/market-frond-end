@@ -6,11 +6,13 @@ import { useAuth0 } from "@auth0/auth0-react";
 import MainModal from "../editUser/mainModal";
 import * as userService from "../../../services/users-service";
 import UserDetailCard from "./userDetailCard";
+import {useTranslation} from "react-i18next";
+
 export default function PersonalPage() {
   const context = useContext(Context);
   const [userMetadata, setUserMetadata] = useState(null);
   const { user, getAccessTokenSilently } = useAuth0();
-  
+  const {t}= useTranslation()
   
   useEffect(() => {
     const userId = user.sub;
@@ -28,8 +30,8 @@ export default function PersonalPage() {
         <UserDetailCard element={userMetadata} />
         <MainModal />
       </div>
-      <Link to="/my-products" className=" text-info"><h3 className="text-center p-0">My Products </h3></Link>
-      <Link to="/my-wishes" className=" text-info"><h3 className="text-center p-0">My Wishes</h3></Link> 
+      <Link to="/my-products" className=" text-info"><h3 className="text-center p-0">{t('MyProduct')}</h3></Link>
+      <Link to="/my-wishes" className=" text-info"><h3 className="text-center p-0">{t('MyWish')}</h3></Link> 
     </>
   );
 }

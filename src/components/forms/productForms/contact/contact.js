@@ -1,8 +1,10 @@
 import React, {useContext } from "react";
 import ProductContext from "../../../../context/productContext";
-
+import {useTranslation} from "react-i18next";
 export default function Contact() {
  const productContext = useContext(ProductContext);   
+ const {t}= useTranslation()
+
     return (
       <div className="input-field">
         <label htmlFor="contact"> Contact Tel</label>
@@ -15,9 +17,9 @@ export default function Contact() {
           onChange={(event) => productContext.contactTelHandler(event.target.value)}
         /> 
         
-        <label htmlFor="contact">or Email</label>
+        <label htmlFor="contact">{t('ContactEmail')}</label>
           <input
-          className="form-control "
+          className="form-control"
           type="email"
           name="contact"
           placeholder="example@example.com"

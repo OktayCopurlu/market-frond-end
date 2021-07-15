@@ -7,8 +7,9 @@ import { useAuth0 } from "@auth0/auth0-react";
 import SuccessText from "../../../components/forms/productForms/messages/successText";
 import NotSuccessText from "../../../components/forms/productForms/messages/notSuccessText";
 import MainForm from "../form/mainForm";
-
+import { useTranslation } from "react-i18next";
 export default function CreateProducts() {
+  const {t}= useTranslation()
   const { getAccessTokenSilently, user } = useAuth0();
   const [token, setToken] = useState();
   getAccessTokenSilently().then((token) => setToken(token));
@@ -64,7 +65,7 @@ export default function CreateProducts() {
 
   return (
     <div className="container">
-      <h3 className="d-flex justify-content-center"> Create New Product </h3>
+      <h3 className="d-flex justify-content-center">{t('CreateNewProduct')}</h3>
       {context.isSuccess === null ? (
         <div className="row">
           <div className="col d-flex justify-content-center">

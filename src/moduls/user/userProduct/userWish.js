@@ -4,12 +4,12 @@ import * as wishActions from "../../../services/wishes-service";
 import { useAuth0 } from "@auth0/auth0-react";
 import UserWishCard from "./userWishCard";
 import productContext from "../../../context/productContext";
-
+import { useTranslation } from "react-i18next";
 export default function UserWish() {
   const productsContext = useContext(productContext);
   const [wishes, setWishes] = useState([]);
   const { user } = useAuth0();
-
+  const {t}= useTranslation()
   useEffect(() => {
     productsContext.wishIdHandler(wishes);
     async function showList() {
@@ -27,7 +27,7 @@ export default function UserWish() {
 
   return (
     <>
-      <h3 className="d-flex justify-content-center mt-3">My Wish List</h3>
+      <h3 className="d-flex justify-content-center mt-3">{t('MyWishList')}</h3>
       <div className="d-flex justify-content-center row m-0 p-1">
         <UserWishCard wishes={wishes} />
       </div>

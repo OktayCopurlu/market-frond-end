@@ -3,8 +3,9 @@ import Context from "../../../context/context";
 import ProductContext from "../../../context/productContext";
 import { useAuth0 } from "@auth0/auth0-react";
 import EditProductCard from "./editProductPage";
-
+import { useTranslation } from "react-i18next";
 export default function EditProduct(props) {
+  const {t}= useTranslation()
   const { getAccessTokenSilently } = useAuth0();
   const [token, setToken] = useState();
   getAccessTokenSilently().then((token) => setToken(token));
@@ -101,7 +102,7 @@ export default function EditProduct(props) {
 
   return (
     <>
-      <h3>Edit Product</h3>
+      <h3>{t('EditProduct')}</h3>
       <div className="row">
         <EditProductCard
           elements={{ productId, body, handlerSuccess, token, products }}/>

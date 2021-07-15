@@ -1,15 +1,16 @@
 import React from "react";
 import ProductCard from "../../../../components/cards/productCards";
+import { useTranslation } from "react-i18next";
 
 export default function Card(filterAndSearch) {
   const searched = filterAndSearch.elements;
   const { state, searchItem } = searched;
-
+const {t}=useTranslation()
   return (
     <div className="col-9 productList-main">
       <div className="row">
         {state === 0 ? (
-          <h3>Category is empty</h3>
+          <h3>{t('CategoryIsEmpty')}</h3>
         ) : (
           state
             .filter((element) => {

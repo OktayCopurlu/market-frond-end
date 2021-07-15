@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Slider from "../slider";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-
+import {useTranslation} from "react-i18next";
 export default function ProductCard(props) {
   const element = props.element;
-
+const {t}= useTranslation()
   const { isAuthenticated, loginWithRedirect } = useAuth0();
   const [readMore, setReadMore] = useState(false); //for more information
 
@@ -39,7 +39,7 @@ export default function ProductCard(props) {
               {element.size ? "Size:" : null} {element.size}
             </p>
             <p className="card-text m-0">
-              {element.dimensions ? "Dimensions:" : null}
+              {element.dimensions ? `${t('Dimensions')} :` : null}
               {element.dimensions}
             </p>
             <p className="card-text mt-1">{element.detail}</p>
@@ -66,7 +66,7 @@ export default function ProductCard(props) {
               })
             }
             className="text-danger">
-            Please SignUp to see contact information.
+            {t('PleaseSignUp')}
           </Link>
         )}
       </div>
