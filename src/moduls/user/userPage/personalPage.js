@@ -19,7 +19,7 @@ export default function PersonalPage() {
       try {
         const accessToken = await getAccessTokenSilently({
           audience: audience,
-          scope: "read:current_user_metadata",
+          // scope: "read:current_user_metadata",
         });
         const data = await userService.getUserMetadata(
           user,
