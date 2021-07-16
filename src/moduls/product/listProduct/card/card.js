@@ -4,13 +4,14 @@ import { useTranslation } from "react-i18next";
 
 export default function Card(filterAndSearch) {
   const searched = filterAndSearch.elements;
+  const { t } = useTranslation();
   const { productList, searchItem } = searched;
-const {t}=useTranslation()
+
   return (
     <div className="col-9 productList-main">
       <div className="row">
-        {productList=== 0 ? (
-          <h3>{t('CategoryIsEmpty')}</h3>
+        {productList === 0 ? (
+          <h3>{t("CategoryIsEmpty")}</h3>
         ) : (
           productList
             .filter((element) => {
@@ -29,7 +30,7 @@ const {t}=useTranslation()
               }
               return null;
             })
-            .map((element,index) => {
+            .map((element, index) => {
               return <ProductCard element={element} key={index} />;
             })
         )}
