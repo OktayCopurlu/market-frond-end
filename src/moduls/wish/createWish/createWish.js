@@ -7,7 +7,7 @@ import ProductContext from "../../../context/productContext";
 import SuccessText from "./messages/successText";
 import NotSuccessText from "./messages/notSuccessText";
 import MainForm from "../form/mainForm";
-
+import {useTranslation} from "react-i18next";
 export default function CreateWishList() {
   const context = useContext(Context);
   const productContext = useContext(ProductContext);
@@ -16,7 +16,7 @@ export default function CreateWishList() {
   const userId = sub;
   const [token, setToken] = useState();
   getAccessTokenSilently().then((token) => setToken(token));
-
+  const {t}= useTranslation()
   const name = context.name;
   const canton = productContext.canton;
   const title = productContext.title;
@@ -45,7 +45,7 @@ export default function CreateWishList() {
 
   return (
     <div className="container">
-      <h3 className="d-flex justify-content-center mb-4"> Create Your Wish </h3>
+      <h3 className="d-flex justify-content-center mb-4">{t('CreateYourWish')}</h3>
       {context.isSuccess === null ? (
         <div className="row createWish-row">
           <div className="col d-flex justify-content-center">

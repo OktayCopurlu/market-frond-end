@@ -17,6 +17,7 @@ import UserProduct from "./moduls/user/userProduct/userProduct";
 import UserWish from "./moduls/user/userProduct/userWish";
 
 
+
 function App() {
   return (
     <>
@@ -38,7 +39,6 @@ function App() {
           <ProtectedRoute path="/personalPage" component={PersonalPage} />
            <ProtectedRoute path="/my-products" component={UserProduct}/>
            <ProtectedRoute path="/my-wishes" component={UserWish}/>
-
       </Switch>
       <Footer />
     </>

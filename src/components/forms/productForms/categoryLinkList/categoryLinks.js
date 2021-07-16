@@ -10,14 +10,14 @@ import {
   Accordion,
   FormControlLabel,
 } from "@material-ui/core";
-
+import {useTranslation} from "react-i18next";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import * as categoryLinksCss from "./categoryLinksStyle";
 
 export default function CategoryLinks() {
   const classes = categoryLinksCss.useStyles();
   const productContext = useContext(ProductContext);
-
+  const {t}= useTranslation()
   const onSubmit = async (event) => {
     try {
       if (event.target.value === "null") {
@@ -35,7 +35,7 @@ export default function CategoryLinks() {
     <div className={classes.root}>
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography className={classes.heading}>Choose Category</Typography>
+          <Typography className={classes.heading}>{t('ChooseCategory')}</Typography>
         </AccordionSummary>
         <Grid>
           <RadioGroup>

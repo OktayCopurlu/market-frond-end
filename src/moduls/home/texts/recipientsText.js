@@ -1,13 +1,12 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Recipients() {
+  const {t} = useTranslation()
   return (
     <div>
       <p className="mt-4 information-text">
-        It’s easy! Create your account, complete our social assistance
-        verification form, and then search the website for the things you need.
-        If you need something that you can’t find, you can post to our Wishlist
-        page.
+      {t('RecipientsText')}
       </p>
     </div>
   );

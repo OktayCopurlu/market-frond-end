@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./footer.css";
+import { useTranslation } from "react-i18next";
+
 export default function Footer() {
+const {t} = useTranslation()
   return (
     <footer className="text-center text-lg-start text-muted">
       <section className="pt-1">
@@ -40,15 +43,15 @@ export default function Footer() {
             </div>
 
             <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-3">
-              <h6 className="text-uppercase fw-bold mb-4">About Us</h6>
+              <h6 className="text-uppercase fw-bold mb-4">{t('AboutUs')}</h6>
               <p>
                 <Link to="/history" className="text-reset">
-                  History
+                {t('History')}
                 </Link>
               </p>
             </div>
             <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-              <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
+              <h6 className="text-uppercase fw-bold mb-4">{t('Contact')}</h6>
               <Link className="contact-link" to="/email">
                 <i className="fas fa-envelope me-3 mb-2"></i>
                 info@freemarket.com

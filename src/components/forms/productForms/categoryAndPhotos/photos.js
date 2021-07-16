@@ -3,10 +3,10 @@ import ProductContext from "../../../../context/productContext";
 import { storage } from "../../../../firebase/firebase";
 import { useAuth0 } from "@auth0/auth0-react";
 import { v4 as uuidv4 } from "uuid";
-
+import {useTranslation} from "react-i18next";
 export default function Photos() {
   const { user } = useAuth0();
-
+  const {t}= useTranslation()
   const productContext = useContext(ProductContext);
   const photos = productContext.photos;
   const [images] = useState([]);
@@ -52,10 +52,10 @@ export default function Photos() {
 
   return (
     <div className="form-group">
-      <h3>Upload your product pictures</h3>
+      <h3>{t('UploadYourProductPictures')}</h3>
       {/* uploading images */}
       <div className="d-flex justify-content-between">
-      <span className="btn btn-primary btn-file"> Add Photos
+      <span className="btn btn-primary btn-file">{t('AddPhotos')}
         <input
           className="mb-3 d-block"
           name="image"
@@ -65,18 +65,18 @@ export default function Photos() {
           onChange={handleImageChange}
         /></span>
         <button className="btn btn-info" type="button" onClick={upload}>
-          Upload
+        {t('Upload')}
         </button>
       </div>
       <div  className="d-flex justify-content-between mt-5">
-      <h6>You Choosed {photoCounter} Photo</h6>
-      {pictureUploaded ? <h6 className="form-group text-danger">You must click Upload button</h6>:
+      <h6>{t('YouChoosedPhoto.1')} {photoCounter} {t('YouChoosedPhoto.2')}</h6>
+      {pictureUploaded ? <h6 className="form-group text-danger">{t('YouMustClickUploadButton')}</h6>:
       
       <div className="form-group">
         <input
           disabled={pictureUploaded}
           type="submit"
-          value="Save and Publish"
+          value={t('SaveAndPublish')}
           className="btn btn-primary"
         />
       </div>}</div>

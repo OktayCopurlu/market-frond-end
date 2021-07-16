@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Card,CardActions,CardActionArea,CardContent,CardMedia,Typography,useMediaQuery } from "@material-ui/core";
 import * as styles from "./productCardStyle"
-
+import {useTranslation} from "react-i18next";
 
 export default function ProductCard(props) {
-  
+  const {t}= useTranslation()
   const element = props.element;
   const { isAuthenticated, loginWithRedirect } = useAuth0();
   const classes = styles.useStyles();
@@ -51,10 +51,11 @@ export default function ProductCard(props) {
           </Typography>
 
           <Typography variant="body2" color="textSecondary" component="p">
-            {element.size ? "Size:" : null} {element.size}
+            {element.size ? `${t('Size')} :` : null} {element.size}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {element.dimensions ? "Dimensions:" : null} {element.dimensions}
+            {element.dimensions ? `${t('Dimensions')} :` : null}
+            {element.dimensions}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             {element.detail}
@@ -84,7 +85,7 @@ export default function ProductCard(props) {
             }
             className="text-danger"
           >
-            Please SignUp to see contact information.
+            {t('PleaseSignUp')}
           </Link>
         )}
       </CardActions>

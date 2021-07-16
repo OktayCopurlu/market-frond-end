@@ -1,4 +1,4 @@
-import React from "react";
+import React,{Suspense} from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -8,7 +8,7 @@ import { ContextProvider } from "./context/context";
 import { ProductContextProvider } from "./context/productContext"
 ReactDOM.render(
   <Compose components={[Router, Auth0ProviderWithHistory, ProductContextProvider, ContextProvider]}>
-    <App />
+   <Suspense fallback={<h2>Loading...</h2>}><App /></Suspense>
   </Compose>,
   document.getElementById("root")
 );

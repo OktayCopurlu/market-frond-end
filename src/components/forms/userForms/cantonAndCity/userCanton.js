@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import Context from "../../../../context/context";
+import {useTranslation} from "react-i18next";
 export default function UserCanton() {
   const context = useContext(Context);
+  const {t}= useTranslation()
     return (
         <div className="input-field ">
-        <label htmlFor="canton"> Canton </label>
+        <label htmlFor="canton">{t('Canton')}</label>
         <input
           className="form-control"
           name="canton"

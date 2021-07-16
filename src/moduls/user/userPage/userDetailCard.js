@@ -1,10 +1,11 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import "./personalPage.css"
+import {useTranslation} from "react-i18next";
 export default function UserDetailCard(props) {
   const userMetadata = props.element;
   const { user } = useAuth0();
-
+  const {t}= useTranslation()
   const { name, picture, email } = user;
   return (
     <div className="mt-5 user-card-container">
@@ -15,25 +16,25 @@ export default function UserDetailCard(props) {
          {userMetadata?.job}
         </h4>
         <p>
-         <span className="h6 mr-3">Birth date :</span> <span>{userMetadata?.birthDate}</span>
+         <span className="h6 mr-3">{t('BirthDate')} :</span> <span>{userMetadata?.birthDate}</span>
         </p>
         <p>
-         <span className="h6 mr-3">Detail : </span>
+         <span className="h6 mr-3">{t('Detail')} : </span>
           <span>{userMetadata?.detail}</span>
         </p>
         <p>
-         <span className="h6 mr-3">Address :</span> <span>{userMetadata?.address}</span>
+         <span className="h6 mr-3">{t('Address')} :</span> <span>{userMetadata?.address}</span>
         </p>
         <p>
-        <span className="h6 mr-3">Canton :</span>
+        <span className="h6 mr-3">{t('Canton')} :</span>
           <span> {userMetadata?.canton}</span>
         </p>
         <p>
-         <span className="h6 mr-3">City : </span>
+         <span className="h6 mr-3">{t('City')} : </span>
           <span>{userMetadata?.city}</span>
         </p>
         <p>
-        <span className="h6 mr-3">Phone :</span> <span>{userMetadata?.contactNumber}</span>
+        <span className="h6 mr-3">{t('Phone')} :</span> <span>{userMetadata?.contactNumber}</span>
         </p>
         <a
           className="social-media"

@@ -12,11 +12,11 @@ import {
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import * as cantonLinksCss from "./cantonLinkStyle";
-
+import { useTranslation } from "react-i18next";
 export default function CantonLinks() {
   const classes = cantonLinksCss.useStyles();
   const productContext = useContext(ProductContext);
-
+  const {t}= useTranslation()
   const cantonArray = [];
   for (let index = 0; index < citiesJson.length; index++) {
     const element = citiesJson[index].canton.NAME;
@@ -44,7 +44,7 @@ export default function CantonLinks() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography className={classes.heading}>Choose Canton</Typography>
+          <Typography className={classes.heading}>{t('ChooseCanton')}</Typography>
         </AccordionSummary>
         <Grid>
           <RadioGroup>

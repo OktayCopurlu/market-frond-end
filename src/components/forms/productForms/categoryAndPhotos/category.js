@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import ProductContext from "../../../../context/productContext";
-
+import {useTranslation} from "react-i18next";
 export default function Category() {
   const productContext = useContext(ProductContext);
+  const {t}= useTranslation()
   return (
     <>
       {/* choosing main Category */}
@@ -15,12 +16,12 @@ export default function Category() {
           }
           className="dropdown browser-default p-1  rounded"
         >
-          <option value=""> Choose Category </option>
-          <option value="Clothes"> Clothes </option>
-          <option value="Hausehold"> Hausehold </option>
-          <option value="Electronic"> Electronic </option>
-          <option value="Toys"> Toys </option>
-          <option value="Others"> Others </option>
+          <option value="">{t('ChooseCategory')}</option>
+          <option value="Clothes">{t('Clothes')}</option>
+          <option value="Hausehold">{t('Hauseholds')}</option>
+          <option value="Electronic">{t('Electronics')}</option>
+          <option value="Toys">{t('Toys')}</option>
+          <option value="Others">{t('Other')}</option>
         </select>
       </div>
       

@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import Context from "../../../context/context";
 import { Link } from "react-router-dom";
-
+import {useTranslation} from "react-i18next";
 export default function DeleteLink() {
   const context = useContext(Context);
+  const {t}= useTranslation()
   function onSubmit(event) {
     event.preventDefault();
     context.stateHandler(event.target.value);
@@ -16,7 +17,7 @@ export default function DeleteLink() {
         value="delete"
         onClick={onSubmit}
       >
-        Delete Account
+      {t('DeleteAccount')}
       </button>
     </Link>
   );

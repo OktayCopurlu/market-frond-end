@@ -8,5 +8,5 @@ export default function ThreePageForm() {
   <Address />
   <UserCanton />
   <UserCity />
-</>;
+</>
 }

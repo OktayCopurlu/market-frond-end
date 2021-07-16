@@ -6,10 +6,11 @@ import SuccessText from "./messages/successText";
 import NotSuccessText from "./messages/notSuccessText";
 import ProductContext from "../../../context/productContext";
 import MainForm from "../form/mainForm";
+import {useTranslation} from "react-i18next";
 
 export default function EditWish(props) {
   const productContext = useContext(ProductContext);
-
+const {t}= useTranslation()
   const { getAccessTokenSilently } = useAuth0();
   const [token, setToken] = useState();
   getAccessTokenSilently().then((token) => setToken(token));
@@ -47,7 +48,7 @@ export default function EditWish(props) {
 
   return (
     <>
-      <h3> Edit Wish </h3>
+      <h3>{t('EditWish')}</h3>
       <div className="row">
         <div className="col">
           {context.isSuccess === null ? (

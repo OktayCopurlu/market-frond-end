@@ -1,11 +1,12 @@
 import React, {useContext } from "react";
 import ProductContext from "../../../../context/productContext";
-
+import {useTranslation} from "react-i18next";
 function Information() {
+    const {t}= useTranslation()
     const productContext = useContext(ProductContext);
     return (
         <div className="input-field">
-        <label htmlFor="detail"> More information </label>
+        <label htmlFor="detail">{t('MoreInformation')}</label>
         <textarea
           className="form-control"
           name="detail"
