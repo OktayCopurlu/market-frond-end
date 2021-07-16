@@ -12,15 +12,16 @@ export default function PersonalPage() {
   const [userMetadata, setUserMetadata] = useState(null);
   const { user, getAccessTokenSilently } = useAuth0();
   const {t}= useTranslation()
-  
+
   useEffect(() => {
-  
     const something = async () => {
       try {
-        const accessToken = await getAccessTokenSilently({
+        const accessToken = await getAccessTokenSilently(
+          {
           audience: audience,
-          // scope: "read:current_user_metadata",
-        });
+          scope: "read:current_user",
+        }
+        );
         const data = await userService.getUserMetadata(
           user,
           accessToken

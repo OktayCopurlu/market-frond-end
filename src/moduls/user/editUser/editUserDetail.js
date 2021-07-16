@@ -81,7 +81,7 @@ export default function EditUserDetail() {
   };
   const accessToken = getAccessTokenSilently({
     audience: audience,
-    scope: "read:current_user_metadata",
+    //scope: "read:current_user_metadata",
   });
 
   function onSubmit(event) {
