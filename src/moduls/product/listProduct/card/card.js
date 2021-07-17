@@ -1,5 +1,5 @@
 import React from "react";
-import ProductCard from "../../../../components/cards/productCards";
+import ProductCard from "../../../../components/cards/productCard";
 import { useTranslation } from "react-i18next";
 
 export default function Card(filterAndSearch) {

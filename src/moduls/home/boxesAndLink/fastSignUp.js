@@ -8,7 +8,7 @@ export default function FastSignUp() {
     const { loginWithRedirect } = useAuth0();
     return (
         <div className="text-center">
-        <Link  to="/" 
+        <Link to="/" 
           onClick={loginWithRedirect}
           className="btn mt-5 btn-danger SignUpButton"
         >
