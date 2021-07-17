@@ -1,18 +1,37 @@
-import React, { useContext } from "react";
+import React, { useContext,useState,useEffect } from "react";
 import NavBar from "../../signUp/nav-bar";
 import { useAuth0 } from "@auth0/auth0-react";
 import { NavLink } from "react-router-dom";
 import Context from "../../context/context"
+import * as userService from "../../services/users-service";
 
 export default function LoginAndUserPhoto() {
   const { isAuthenticated } = useAuth0();
   const context = useContext(Context);
+  const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
+  const [userMetadata, setUserMetadata] = useState(null);
+  const { user, getAccessTokenSilently } = useAuth0();
 
+
+  useEffect(() => {
+    const readUserMetadata = async () => {
+      try {
+        const accessToken = await getAccessTokenSilently({
+          audience: audience,
+          scope: "read:current_user",
+        });
+        const data = await userService.getUserMetadata(user, accessToken);
+        return await setUserMetadata(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    return readUserMetadata();
+  }, [user, getAccessTokenSilently, audience]);
   //this is for @media navbar
   const click = context.navbarOpen;
   const handleClick = () => context.navbarOpenHandler(!click);
 
-  const { user } = useAuth0();
   return (
     <>
       <li className="nav-item">
@@ -36,7 +55,7 @@ export default function LoginAndUserPhoto() {
             <img
               className="navbar-personal-photo"
               alt="Me"
-              src={user.picture}
+              src={userMetadata?.picture ? userMetadata?.picture : user.picture}
             />
           ) : null}
         </NavLink>

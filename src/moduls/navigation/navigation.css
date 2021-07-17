@@ -87,7 +87,10 @@
 .nav-icon {
     display: none;
 }
-
+.multi-languages{
+    background-color: #000000;
+    color:white
+}
 @media screen and (min-width: 958px)and (max-width : 1145px) {
     .navbar {
         background-color: #000000;

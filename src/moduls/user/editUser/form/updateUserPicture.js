@@ -19,13 +19,14 @@ export default function UpdateUserPicture() {
   return (
     <>
       <div className="form-group">
+      <span className="btn btn-info btn-file">Change Your Profile Photo
         <input
           id="file"
-          name="date"
+          name="Change Photo"
           type="file"
-          accept="image/*"
+          accept="image/*,.heic"
           onChange={handleImageChange}
-        />
+        /></span>
       </div>
     </>
   );

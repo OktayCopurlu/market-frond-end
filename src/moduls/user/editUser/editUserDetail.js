@@ -5,7 +5,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Context from "../../../context/context";
 import * as userService from "../../../services/users-service";
 import MainForm from "./form/mainForm";
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 export default function EditUserDetail() {
   const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
@@ -15,7 +15,8 @@ export default function EditUserDetail() {
   const context = useContext(Context);
   const photo = context.photo;
   const userMetaData = context.userMetaData;
-  const {t}= useTranslation()
+  console.log(userMetaData)
+  const { t } = useTranslation();
   const [picture, setPicture] = useState(userMetaData.picture);
   const [name, setName] = useState(userMetaData.name);
   const [address, setAddress] = useState(userMetaData.address);
@@ -25,7 +26,9 @@ export default function EditUserDetail() {
   const [contactNumber, setContactNumber] = useState(userMetaData.phone);
   const [birthDate, setBirthDate] = useState(userMetaData.birthDate);
   const [job, setJob] = useState(userMetaData.job);
-
+  const [facebook, setFacebook] = useState(userMetaData.facebook);
+  const [twitter, setTwitter] = useState(userMetaData.twitter);
+  const [instagram, setInstagram] = useState(userMetaData.instagram);
   useEffect(() => {
     if (photo) {
       setPicture(photo);
@@ -54,6 +57,15 @@ export default function EditUserDetail() {
     if (context.job) {
       setJob(context.job);
     }
+    if (context.facebook) {
+      setFacebook(context.facebook);
+    }
+    if (context.twitter) {
+      setTwitter(context.twitter);
+    }
+    if (context.instagram) {
+      setInstagram(context.instagram);
+    }
   }, [
     photo,
     context.address,
@@ -64,8 +76,11 @@ export default function EditUserDetail() {
     context.job,
     context.name,
     context.phone,
+    context.facebook,
+    context.twitter,
+    context.instagram,
   ]);
-  
+
   const body = {
     user_metadata: {
       canton,
@@ -77,6 +92,9 @@ export default function EditUserDetail() {
       name,
       job,
       picture,
+      facebook,
+      twitter,
+      instagram,
     },
   };
   const accessToken = getAccessTokenSilently({
@@ -97,7 +115,7 @@ export default function EditUserDetail() {
     <>
       <div className="conteiner d-flex justify-content-center mt-5 pb-5">
         <form className="edit-user w-100" onSubmit={onSubmit}>
-          <h3>{t('EditMyDetail')}</h3>
+          <h3>{t("EditMyDetail")}</h3>
           <MainForm />
         </form>
       </div>

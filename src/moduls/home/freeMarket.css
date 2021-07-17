@@ -1,5 +1,5 @@
 .freemarket {
-   background-image: url("https://t3.ftcdn.net/jpg/03/16/35/88/240_F_316358814_dh58mlXH8NbtsxsyXbAedEMuBKSzMTNp.jpg");
+    background-image: url("https://t3.ftcdn.net/jpg/03/16/35/88/240_F_316358814_dh58mlXH8NbtsxsyXbAedEMuBKSzMTNp.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -8,16 +8,18 @@
     padding: 5rem;
     padding-left: 8rem;
     padding-right: 8rem;
-    
+
 }
-.home-carousel{
-    
-    max-height:400px;
-    min-height:400px;
+
+.home-carousel {
+    max-height: 400px;
+    min-height: 400px;
 }
-.text-home-page{
+
+.text-home-page {
     margin-left: 40rem;
 }
+
 .donate-box {
     background: url('https://as2.ftcdn.net/v2/jpg/01/92/87/05/1000_F_192870527_rhRBKQwHF993xWb6le87DUXwTwAnK5X1.jpg');
     background-position: center;
@@ -37,9 +39,6 @@
 }
 
 .wish-box {
-   
-    /* background:url('https://t3.ftcdn.net/jpg/03/16/05/06/240_F_316050699_buRxhE7iWZAni8x2zarrDkpg0BwnIApj.jpg'); */
-    /* background: url('https://t4.ftcdn.net/jpg/01/54/19/25/240_F_154192514_KkPKkqqGrCIAU5G6NqP6QtxAqhvfWchh.jpg'); */
     background: url('https://t4.ftcdn.net/jpg/01/68/91/73/240_F_168917354_V38JnhtGRlN5SE7vRVkp7Dl8jQTFM42i.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -59,7 +58,7 @@
 }
 
 .SignUpButton {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     width: 13rem;
     height: 4rem;
     padding-top: 0.9rem;
@@ -76,7 +75,7 @@
     font-size: 3rem;
     color: black;
     font-family: Georgia, 'Times New Roman', Times, serif;
-   
+
 }
 
 .boxes:hover {
@@ -93,14 +92,17 @@ h3 {
         font-size: 12px;
         ;
     }
-    .home-carousel{
-        max-height:400px;
-        min-height:400px;
+
+    .home-carousel {
+        max-height: 400px;
+        min-height: 400px;
     }
-    .text-home-page{
+
+    .text-home-page {
         margin-left: 0;
         margin-right: 0;
     }
+
     .freemarket {
         background-image: url("https://t3.ftcdn.net/jpg/03/16/35/88/240_F_316358814_dh58mlXH8NbtsxsyXbAedEMuBKSzMTNp.jpg");
         background-position: center;
@@ -141,7 +143,6 @@ h3 {
     }
 
     .boxes {
-  
         height: 13rem;
         display: flex;
         justify-content: center;
@@ -170,7 +171,6 @@ h3 {
     }
 
     .boxes {
-     
         height: 17rem;
         display: flex;
         justify-content: center;

@@ -1,21 +1,28 @@
-import React from 'react'
-import i18n from '../../i18next'
-import {Link} from 'react-router-dom'
+import React from "react";
+import i18n from "../../i18next";
 export default function ChangeLanguage() {
-
-    function handleLanguage(event){
-        
-     try {
-         i18n.changeLanguage(event)
-     } catch (error) {
-         console.log(error)
-     }
+  function handleLanguage(event) {
+    try {
+      i18n.changeLanguage(event.target.value);
+    } catch (error) {
+      console.log(error);
     }
-    return (
-        <div className="d-flex">
-            <Link to="#" className="mr-2 text-light" onClick={()=>handleLanguage('en')}>EN</Link>
-            <Link to="#" className="mr-2 text-light" onClick={()=>handleLanguage('de')}>DE</Link>
-            <Link to="#" className="mr-2 text-light" onClick={()=>handleLanguage('fr')}>FR</Link>
-        </div>
-    )
+  }
+  return (
+    <select
+      onChange={handleLanguage}
+      className="form-select d-flex multi-languages"
+      aria-label="Default select example"
+    >
+      <option  defaultValue="en">
+        EN
+      </option>
+      <option  value="de">
+        DE
+      </option>
+      <option value="fr">
+        FR
+      </option>
+    </select>
+  );
 }
