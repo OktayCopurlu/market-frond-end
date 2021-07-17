@@ -45,21 +45,21 @@ export default function LoginAndUserPhoto() {
           <NavBar/>{/* login and logout buttons */}
         </NavLink>
       </li>
-      <li className="nav-item">
+      {isAuthenticated ? (<li className="nav-item">
         <NavLink
           activeclassname="active"
           className="nav-links"
           to="/personalPage"
           onClick={handleClick}>
-          {isAuthenticated ? (
+          
             <img
               className="navbar-personal-photo"
               alt="Me"
               src={userMetadata?.picture ? userMetadata?.picture : user.picture}
             />
-          ) : null}
+        
         </NavLink>
-      </li>
+      </li>  ) : null}
     </>
   );
 }
