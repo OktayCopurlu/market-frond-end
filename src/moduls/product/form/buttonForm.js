@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 export default function ButtonForm() {
   const context = useContext(Context);
   const page = context.pageForm;
-const {t}= useTranslation()
+  const {t}= useTranslation()
   function backPage(event) {
     event.preventDefault();
     if (page > 1) {
