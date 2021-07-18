@@ -18,27 +18,27 @@ export default function UserDetailCard(props) {
         <h3 className="p-0">{userMetadata?.name ? userMetadata.name : name}</h3>
         <h4 className="p-0">{userMetadata?.job}</h4>
         <p className="d-flex ml-5">
-          <span className="h6 mr-3">{t("BirthDate")} :</span>{" "}
+          <span className="h6 mr-3">{t("BirthDate")} :</span>
           <span>{userMetadata?.birthDate}</span>
         </p>
         <p className="d-flex ml-5">
-          <span className="h6 mr-3">{t("Detail")} : </span>
+          <span className="h6 mr-3">{t("Detail")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : </span>
           <span>{userMetadata?.detail}</span>
         </p>
         <p className="d-flex ml-5">
-          <span className="h6 mr-3">{t("Address")} :</span>{" "}
+          <span className="h6 mr-3">{t("Address")}&nbsp;&nbsp;&nbsp;&nbsp; :</span>
           <span>{userMetadata?.address}</span>
         </p>
         <p className="d-flex ml-5">
-          <span className="h6 mr-3">{t("Canton")} :</span>
+          <span className="h6 mr-3">{t("Canton")} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</span>
           <span> {userMetadata?.canton}</span>
         </p>
         <p className="d-flex ml-5">
-          <span className="h6 mr-3">{t("City")} : </span>
+          <span className="h6 mr-3">{t("City")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : </span>
           <span>{userMetadata?.city}</span>
         </p>
         <p className="d-flex ml-5">
-          <span className="h6 mr-3">{t("Phone")} :</span>{" "}
+          <span className="h6 mr-3">{t("Phone")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</span>
           <span>{userMetadata?.contactNumber}</span>
         </p>
         {userMetadata?.instagram ? (
