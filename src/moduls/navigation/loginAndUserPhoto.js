@@ -45,7 +45,6 @@ export default function LoginAndUserPhoto() {
           {/* login and logout buttons */}
         </NavLink>
       </li>
-<<<<<<< HEAD
       {isAuthenticated ? (
         <li className="nav-item">
           <NavLink
@@ -54,29 +53,13 @@ export default function LoginAndUserPhoto() {
             to="/personalPage"
             onClick={handleClick}
           >
-=======
-      {isAuthenticated ? (<li className="nav-item">
-        <NavLink
-          activeclassname="active"
-          className="nav-links"
-          to="/personalPage"
-          onClick={handleClick}>
-          
->>>>>>> dcd8e335cc1f41be2ff440c817fac7bcf737c993
             <img
               className="navbar-personal-photo"
               alt="Me"
               src={userMetadata?.picture ? userMetadata?.picture : user.picture}
             />
-<<<<<<< HEAD
-          </NavLink>
-        </li>
-      ) : null}
-=======
-        
         </NavLink>
       </li>  ) : null}
->>>>>>> dcd8e335cc1f41be2ff440c817fac7bcf737c993
     </>
   );
 }
