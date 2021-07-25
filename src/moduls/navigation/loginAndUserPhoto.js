@@ -1,16 +1,8 @@
-<<<<<<< HEAD
 import React, { useContext, useState, useEffect } from "react";
 import NavBar from "../../signUp/nav-bar";
 import { useAuth0 } from "@auth0/auth0-react";
 import { NavLink } from "react-router-dom";
 import Context from "../../context/context";
-=======
-import React, { useContext,useState,useEffect } from "react";
-import NavBar from "../../signUp/nav-bar";
-import { useAuth0 } from "@auth0/auth0-react";
-import { NavLink } from "react-router-dom";
-import Context from "../../context/context"
->>>>>>> dcd8e335cc1f41be2ff440c817fac7bcf737c993
 import * as userService from "../../services/users-service";
 
 export default function LoginAndUserPhoto() {
