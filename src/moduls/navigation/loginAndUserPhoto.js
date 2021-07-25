@@ -1,8 +1,16 @@
+<<<<<<< HEAD
+import React, { useContext, useState, useEffect } from "react";
+import NavBar from "../../signUp/nav-bar";
+import { useAuth0 } from "@auth0/auth0-react";
+import { NavLink } from "react-router-dom";
+import Context from "../../context/context";
+=======
 import React, { useContext,useState,useEffect } from "react";
 import NavBar from "../../signUp/nav-bar";
 import { useAuth0 } from "@auth0/auth0-react";
 import { NavLink } from "react-router-dom";
 import Context from "../../context/context"
+>>>>>>> dcd8e335cc1f41be2ff440c817fac7bcf737c993
 import * as userService from "../../services/users-service";
 
 export default function LoginAndUserPhoto() {
@@ -11,7 +19,6 @@ export default function LoginAndUserPhoto() {
   const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
   const [userMetadata, setUserMetadata] = useState(null);
   const { user, getAccessTokenSilently } = useAuth0();
-
 
   useEffect(() => {
     const readUserMetadata = async () => {
@@ -42,9 +49,20 @@ export default function LoginAndUserPhoto() {
           className="nav-links"
           onClick={handleClick}
         >
-          <NavBar/>{/* login and logout buttons */}
+          <NavBar />
+          {/* login and logout buttons */}
         </NavLink>
       </li>
+<<<<<<< HEAD
+      {isAuthenticated ? (
+        <li className="nav-item">
+          <NavLink
+            activeclassname="active"
+            className="nav-links"
+            to="/personalPage"
+            onClick={handleClick}
+          >
+=======
       {isAuthenticated ? (<li className="nav-item">
         <NavLink
           activeclassname="active"
@@ -52,14 +70,21 @@ export default function LoginAndUserPhoto() {
           to="/personalPage"
           onClick={handleClick}>
           
+>>>>>>> dcd8e335cc1f41be2ff440c817fac7bcf737c993
             <img
               className="navbar-personal-photo"
               alt="Me"
               src={userMetadata?.picture ? userMetadata?.picture : user.picture}
             />
+<<<<<<< HEAD
+          </NavLink>
+        </li>
+      ) : null}
+=======
         
         </NavLink>
       </li>  ) : null}
+>>>>>>> dcd8e335cc1f41be2ff440c817fac7bcf737c993
     </>
   );
 }
