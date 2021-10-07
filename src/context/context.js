@@ -18,12 +18,12 @@ const Context = React.createContext({
   userMetaData: {},
   pageForm: null,
   closedModal: null,
-  facebook:null,
-  twitter:null,
-  instagram:null,
-  facebookHandler:function (props) {},
-  twitterHandler:function (props){},
-  instagramHandler:function (props){},
+  facebook: null,
+  twitter: null,
+  instagram: null,
+  facebookHandler: function (props) {},
+  twitterHandler: function (props) {},
+  instagramHandler: function (props) {},
   clasedModalHandler: function (props) {},
   pageFormHandler: function (props) {},
   navbarOpenHandler: function (props) {},
@@ -61,19 +61,19 @@ export const ContextProvider = (props) => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [pageForm, setPageForm] = useState(1);
   const [closedModal, setClosedModal] = useState(false);
-const [twitter,setTwitter] = useState(null)
-const [facebook,setFacebook] = useState(null)
-const [instagram,setInstagram] = useState(null)
+  const [twitter, setTwitter] = useState(null);
+  const [facebook, setFacebook] = useState(null);
+  const [instagram, setInstagram] = useState(null);
 
-const facebookHandler= (props) => {
-  setFacebook(props);
-}
-const twitterHandler= (props) => {
-  setTwitter(props);
-}
-const instagramHandler= (props) => {
-  setInstagram(props);
-}
+  const facebookHandler = (props) => {
+    setFacebook(props);
+  };
+  const twitterHandler = (props) => {
+    setTwitter(props);
+  };
+  const instagramHandler = (props) => {
+    setInstagram(props);
+  };
   const closedModalHandler = (props) => {
     setClosedModal(props);
   };

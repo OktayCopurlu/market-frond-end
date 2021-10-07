@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import ProductContext from "../../../../context/productContext";
-import "../../../../moduls/product/listProduct/main/productList.css";
+import "../../../../modules/product/listProduct/main/productList.css";
 import {
   Grid,
   Typography,
@@ -10,14 +10,14 @@ import {
   Accordion,
   FormControlLabel,
 } from "@material-ui/core";
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import * as categoryLinksCss from "./categoryLinksStyle";
 
 export default function CategoryLinks() {
   const classes = categoryLinksCss.useStyles();
   const productContext = useContext(ProductContext);
-  const {t}= useTranslation()
+  const { t } = useTranslation();
   const onSubmit = async (event) => {
     try {
       if (event.target.value === "null") {
@@ -35,15 +35,18 @@ export default function CategoryLinks() {
     <div className={classes.root}>
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography className={classes.heading}>{t('ChooseCategory')}</Typography>
-        </AccordionSummary>
+          <Typography className={classes.heading}>
+             
+            {t("ChooseCategory")} 
+          </Typography> 
+        </AccordionSummary> 
         <Grid>
           <RadioGroup>
             <FormControlLabel
               className={classes.categoryList}
               control={<Radio value="null" onChange={onSubmit} />}
               label="Cancel selection"
-            />
+            /> 
             {array.map((category, index) => {
               return (
                 <FormControlLabel
@@ -53,10 +56,10 @@ export default function CategoryLinks() {
                   label={category}
                 />
               );
-            })}
-          </RadioGroup>
-        </Grid>
-      </Accordion>
+            })} 
+          </RadioGroup> 
+        </Grid> 
+      </Accordion> 
     </div>
   );
 }

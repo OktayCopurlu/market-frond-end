@@ -158,7 +158,10 @@ export async function filterUserProducts(userId) {
   }
 }
 
+
+
 export async function listAction(canton, mainCategory, productContext) {
+  
   try {
     //filter for Canton
     if (canton && !mainCategory) {
@@ -180,7 +183,7 @@ export async function listAction(canton, mainCategory, productContext) {
     //list all products
     if (!mainCategory && !canton ) {
       const list = await getAll();
-        return await productContext.stateHandler(list); 
+      return await productContext.stateHandler(list); 
     }
   } catch (error) {
     console.log(error);

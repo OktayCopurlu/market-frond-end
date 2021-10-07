@@ -12,8 +12,8 @@ export default function ProductCard(props) {
 
   return (
    
-      <div class="card product-card">
-        <div class="card-photo">
+      <div className="card product-card">
+        <div className="card-photo">
         {element.photos.length > 0 ? (
           <Slider photos={element.photos} />
         ) : (
@@ -23,7 +23,7 @@ export default function ProductCard(props) {
             src="https://orbis-alliance.com/wp-content/themes/consultix/images/no-image-found-360x260.png"
           />
         )}</div>
-        <div class="card-body">
+        <div className="card-body">
           <div className="d-flex justify-content-between">
             <h5>{element.title}</h5>
             <p>{element.canton}</p>
@@ -47,7 +47,7 @@ export default function ProductCard(props) {
             </Link>
           ) : null}
         </div>
-        <div class="card-footer">
+        <div className="card-footer">
           {isAuthenticated ? (
             <Link to="#" className="text-dark d-block">
               <i className="fas fa-phone"></i> {element.contactTel}

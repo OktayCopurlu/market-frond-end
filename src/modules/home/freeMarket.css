@@ -89,8 +89,7 @@ h3 {
 
 @media only screen and (max-device-width:767px) {
     .information-text {
-        font-size: 12px;
-        ;
+        font-size: 0.8rem;
     }
 
     .home-carousel {
@@ -104,7 +103,7 @@ h3 {
     }
 
     .freemarket {
-        background-image: url("https://t3.ftcdn.net/jpg/03/16/35/88/240_F_316358814_dh58mlXH8NbtsxsyXbAedEMuBKSzMTNp.jpg");
+        background-image: url("https://bellevuetoddlers.files.wordpress.com/2015/03/handshake.jpg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
