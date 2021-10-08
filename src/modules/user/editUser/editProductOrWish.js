@@ -33,9 +33,7 @@ export default function EditProductOrWish() {
 
   return (
     <div>
-      {products._id === productId ? (
-        <EditProduct products={products} />
-      ) : null}
+      {products._id === productId ? <EditProduct products={products} /> : null}
       {wish._id === productId ? <EditWish wish={wish} /> : null}
     </div>
   );

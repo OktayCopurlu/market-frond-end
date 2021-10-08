@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as userService from "../../services/users-service";
-import UserInfoInWishCard from "../../moduls/wish/listWish/userInfoInWishCard";
+import UserInfoInWishCard from "../../modules/wish/listWish/userInfoInWishCard";
 import { Link } from "react-router-dom";
 import {
   Card,

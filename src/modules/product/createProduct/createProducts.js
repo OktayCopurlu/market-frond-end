@@ -17,6 +17,7 @@ export default function CreateProducts() {
   const userId = user.sub;
   const context = useContext(Context);
   const productContext = useContext(ProductContext);
+
   const canton = productContext.canton;
   const city = productContext.city;
   const categoryClothes = productContext.categoryClothes;
@@ -49,10 +50,8 @@ export default function CreateProducts() {
 
   //post request function
   const onSubmit = async (event) => {
-
     try {
       await event.preventDefault();
-      
       await productActions.createProduct(body, context.handlerSuccess, token);
       await context.pageFormHandler(1);
       await productContext.cantonHandler(null);

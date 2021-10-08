@@ -2,21 +2,20 @@ import React from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Route, Switch } from "react-router-dom";
-import Navigation from "./moduls/navigation/navigation";
-import ProductList from "./moduls/product/listProduct/main/productList";
-import WishList from "./moduls/wish/listWish/wishList";
-import FreeMarket from "./moduls/home/freeMarket";
-import CreateProducts from "./moduls/product/createProduct/createProducts";
-import CreateWishList from "./moduls/wish/createWish/createWish";
-import PersonalPage from "./moduls/user/userPage/personalPage";
-import EmailForm from "./moduls/footer/emailForm";
-import Footer from "./moduls/footer/footer";
-import History from "./moduls/footer/history";
+import Navigation from "./modules/navigation/navigation";
+import ProductList from "./modules/product/listProduct/main/productList";
+import WishList from "./modules/wish/listWish/wishList";
+import FreeMarket from "./modules/home/freeMarket";
+import CreateProducts from "./modules/product/createProduct/createProducts";
+import CreateWishList from "./modules/wish/createWish/createWish";
+import PersonalPage from "./modules/user/userPage/personalPage";
+import EmailForm from "./modules/footer/emailForm";
+import Footer from "./modules/footer/footer";
+import History from "./modules/footer/history";
 import ProtectedRoute from "./provider/protected-route";
-import UserProduct from "./moduls/user/userProduct/userProduct";
-import UserWish from "./moduls/user/userProduct/userWish";
-// import MainModal from "./moduls/user/editUser/mainModal";
-import NavbarModal from "./moduls/user/editUser/navbarModal";
+import UserProduct from "./modules/user/userProduct/userProduct";
+import UserWish from "./modules/user/userProduct/userWish";
+import NavbarModal from "./modules/user/editUser/navbarModal";
 
 function App() {
   return (

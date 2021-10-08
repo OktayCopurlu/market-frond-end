@@ -5,13 +5,15 @@ import SearchButton from "../../../../components/search/searchButton";
 import CantonLinks from "../../../../components/forms/productForms/cantonLinkList/cantonLinks";
 import CategoryLinks from "../../../../components/forms/productForms/categoryLinkList/categoryLinks";
 import "../main/productList.css"
+
 export default function FilterProduct() {
   const productContext = useContext(ProductContext);
   const mainCategory = productContext.mainCategory;
   const canton = productContext.canton;
+  const isLoading = productContext.isLoadingHandler;
 
   useEffect(() => {
-  productService.listAction (canton,mainCategory,productContext)
+  productService.listAction (canton,mainCategory,productContext,isLoading)
   // eslint-disable-next-line
 },[canton,mainCategory])
 

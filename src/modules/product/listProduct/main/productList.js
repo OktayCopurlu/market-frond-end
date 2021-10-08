@@ -9,14 +9,17 @@ export default function ProductList() {
   const productContext = useContext(ProductContext);
   const searchItem = productContext.search;
   const productList = productContext.state;
-const {t}= useTranslation()
+  const { t } = useTranslation();
   return (
     <div className="row productList-container">
       <FilterProduct />
-      {productList.length === 0 ? (<div className="m-auto d-flex justify-content-center"> 
-          <h3 key="header">{t('ThereIsNoProduct')}</h3></div>
-        ) : (
-      <Card elements={{ productList, searchItem }} />)}
+      {productList.length === 0 ? (
+        <div className="m-auto d-flex justify-content-center">
+          <h3 key="header">{t("ThereIsNoProduct")}</h3>
+        </div>
+      ) : (
+        <Card elements={{ productList, searchItem }} />
+      )}
     </div>
   );
 }
