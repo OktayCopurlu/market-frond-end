@@ -30,17 +30,6 @@
     max-width: 1500px;
 }
 
-.nav-logo {
-    color: white;
-    margin-left: 20px;
-    font-size: 2rem;
-    flex-grow: 1;
-    padding: 0.5rem 1rem;
-    border-bottom: 3px solid transparent;
-    height: 100%;
-
-}
-
 .nav-menu {
     display: flex;
     list-style: none;
