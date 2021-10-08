@@ -70,11 +70,11 @@ export default function Photos() {
       </div>
       <div  className="d-flex justify-content-between mt-5">
       <h6>{t('YouChoosedPhoto.1')} {photoCounter} {t('YouChoosedPhoto.2')}</h6>
-      {pictureUploaded ? <h6 className="form-group text-danger">{t('YouMustClickUploadButton')}</h6>:
+      {(pictureUploaded && !productContext.product.photos)? <h6 className="form-group text-danger">{t('YouMustClickUploadButton')}</h6>:
       
       <div className="form-group">
         <input
-          disabled={pictureUploaded}
+          disabled={!productContext.product.photos}
           type="submit"
           value={t('SaveAndPublish')}
           className="btn btn-primary"

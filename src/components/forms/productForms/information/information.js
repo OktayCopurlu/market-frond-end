@@ -1,19 +1,26 @@
-import React, {useContext } from "react";
+import React, { useContext } from "react";
 import ProductContext from "../../../../context/productContext";
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 function Information() {
-    const {t}= useTranslation()
-    const productContext = useContext(ProductContext);
-    return (
-        <div className="input-field">
-        <label htmlFor="detail">{t('MoreInformation')}</label>
-        <textarea
-          className="form-control"
-          name="detail"
-          onChange={(event) => productContext.informationHandler(event.target.value)}
-        ></textarea>
-      </div>
-    )
+  const { t } = useTranslation();
+  const productContext = useContext(ProductContext);
+  return (
+    <div className="input-field">
+      <label htmlFor="detail">{t("MoreInformation")}</label>
+      <textarea
+        defaultValue={
+          productContext.product.detail
+            ? productContext.product.detail
+            : ""
+        }
+        className="form-control"
+        name="detail"
+        onChange={(event) =>
+          productContext.informationHandler(event.target.value)
+        }
+      ></textarea>
+    </div>
+  );
 }
 
-export default Information
+export default Information;

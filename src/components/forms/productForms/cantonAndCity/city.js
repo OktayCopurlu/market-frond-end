@@ -24,7 +24,7 @@ export default function City() {
           defaultValue="Choose City"
           name="chooseCity"
           onChange={(event) => productContext.cityHandler(event.target.value)}
-          className="dropdown browser-default p-1   rounded"
+          className="dropdown browser-default p-1 rounded"
         >
           <option value="">{t('ChooseCity')}</option>
           {citiesArray.sort().map((city, index) => (

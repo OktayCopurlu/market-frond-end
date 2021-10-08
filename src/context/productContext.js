@@ -16,6 +16,8 @@ const ProductContext = React.createContext({
   information: "",
   wishId: "",
   contactEmail: "",
+  product: [],
+  productHandler: function (props) {},
   contactEmailHandler: function (props) {},
   wishIdHandler: function (props) {},
   stateHandler: function (props) {},
@@ -51,7 +53,11 @@ export const ProductContextProvider = (props) => {
   const [state, setState] = useState([]);
   const [wishId, setWishId] = useState();
   const [contactEmail, setContactEmail] = useState(null);
+  const [product, setProduct] = useState([null]);
 
+  const productHandler = (props) => {
+    setProduct(props);
+  };
   const contactEmailHandler = (props) => {
     setContactEmail(props);
   };
@@ -71,7 +77,7 @@ export const ProductContextProvider = (props) => {
     setCondition(props);
   };
   const photosHandler = (props) => {
-      setPhotos(props);
+    setPhotos(props);
   };
 
   const categoryClothesHandler = (props) => {
@@ -123,6 +129,8 @@ export const ProductContextProvider = (props) => {
     information: information,
     contactTel: contactTel,
     contactEmail: contactEmail,
+    product: product,
+    productHandler: productHandler,
     contactEmailHandler: contactEmailHandler,
     wishIdHandler: wishIdHandler,
     stateHandler: stateHandler,
