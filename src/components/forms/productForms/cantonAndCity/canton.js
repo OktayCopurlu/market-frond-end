@@ -4,6 +4,7 @@ import citiesJson from "../../../../context/city.json"; //import canton and city
 import {useTranslation} from "react-i18next";
 export default function Canton() {
   const productContext = useContext(ProductContext);
+  
   const {t}= useTranslation()
   const cantonArray = [];
   for (let index = 0; index < citiesJson.length; index++) {
@@ -18,7 +19,7 @@ export default function Canton() {
       <div className="select-group" id="deneme">
         {/* choosing canton */}
         <select
-          defaultValue="Choose Canton"
+          defaultValue= {productContext.product.canton ? productContext.product.canton : "Choose Canton"}
           name="choosecanton"
           onChange={(event) => productContext.cantonHandler(event.target.value)}
           className="dropdown browser-default p-1 rounded"

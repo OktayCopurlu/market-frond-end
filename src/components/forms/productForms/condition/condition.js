@@ -8,7 +8,7 @@ export default function Condition() {
     <div className="select-group">
       {/* choosing Condition */}
       <select
-        defaultValue="Condition"
+        defaultValue={productContext.product.condition ?productContext.product.condition :"Condition"}
         name="condition"
         onChange={(event) =>
           productContext.conditionHandler(event.target.value)

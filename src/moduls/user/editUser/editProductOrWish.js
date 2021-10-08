@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import Context from "../../../context/context";
+import ProductContext from "../../../context/productContext";
 import EditProduct from "../../product/editProduct/editProduct";
 import EditWish from "../../wish/editWish/editWish";
 import * as productActions from "../../../services/products-service";
@@ -7,6 +8,8 @@ import * as wishActions from "../../../services/wishes-service";
 
 export default function EditProductOrWish() {
   const editContext = useContext(Context);
+  const productContext = useContext(ProductContext);
+
   const productId = editContext.productId;
   const [products, setProducts] = useState({});
   const [wish, setWish] = useState({});
@@ -17,6 +20,7 @@ export default function EditProductOrWish() {
       const wish = await wishActions.filterAndGet(productId);
 
       if (product) {
+        productContext.productHandler(product)
         return await setProducts(product);
       }
       if (wish) {
@@ -25,7 +29,7 @@ export default function EditProductOrWish() {
     }
 
     showList();
-  }, [productId]);
+  }, [productId,productContext]);
 
   return (
     <div>
