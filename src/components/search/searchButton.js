@@ -21,7 +21,7 @@ export default function SearchButton() {
   };
 
   return (
-    <div className="input-group mb-3">
+    <div className= {classes.root} >
       <Paper component="form" className={classes.root}>
         <InputBase
           className={classes.input}

@@ -17,7 +17,7 @@ export default function CreateProducts() {
   const userId = user.sub;
   const context = useContext(Context);
   const productContext = useContext(ProductContext);
-
+  
   const canton = productContext.canton;
   const city = productContext.city;
   const categoryClothes = productContext.categoryClothes;

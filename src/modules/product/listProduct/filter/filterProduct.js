@@ -18,7 +18,7 @@ export default function FilterProduct() {
 },[canton,mainCategory])
 
   return (
-    <div className="col-3 productList-menu">
+    <div className="productList-menu">
       <SearchButton />
       <CategoryLinks/>
       <CantonLinks/>

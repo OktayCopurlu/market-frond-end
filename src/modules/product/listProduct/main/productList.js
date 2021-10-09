@@ -11,7 +11,7 @@ export default function ProductList() {
   const productList = productContext.state;
   const { t } = useTranslation();
   return (
-    <div className="row productList-container">
+    <div className="productList-container">
       <FilterProduct />
       {productList.length === 0 ? (
         <div className="m-auto d-flex justify-content-center">

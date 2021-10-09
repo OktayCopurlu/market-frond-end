@@ -5,15 +5,19 @@ import LoginAndUserPhoto from "./loginAndUserPhoto";
 import Context from "../../context/context";
 import { useTranslation } from "react-i18next";
 import ChangeLanguage from "./changeLanguage";
+import ProductContext from "../../context/productContext";
 export default function MenuLinks() {
   const { isAuthenticated } = useAuth0();
   const context = useContext(Context);
+  const productContext = useContext(ProductContext);
+
   const { t } = useTranslation();
   //this is for @media navbar
   const click = context.navbarOpen;
   const handleClick = () => {
     context.navbarOpenHandler(!click);
     context.pageFormHandler(1);
+    productContext.productHandler("");
   };
 
   return (

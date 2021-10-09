@@ -19,7 +19,7 @@ export default function Canton() {
       <div className="select-group" id="deneme">
         {/* choosing canton */}
         <select
-          defaultValue= {productContext.product.canton ? productContext.product.canton : "Choose Canton"}
+          defaultValue= "Choose Canton"
           name="choosecanton"
           onChange={(event) => productContext.cantonHandler(event.target.value)}
           className="dropdown browser-default p-1 rounded"

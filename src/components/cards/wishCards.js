@@ -16,8 +16,8 @@ export default function WishCard(props) {
   const { element, index } = props.element;
   const [picture, setPicture] = useState([]);
   const classes = styles.useStyles();
+  const tablet = useMediaQuery("(max-width:830)")
   const matches = useMediaQuery("(max-width:767px)");
-
   const showPicture = async () => {
     try {
       const user = await userService.getUsers();
@@ -27,12 +27,12 @@ export default function WishCard(props) {
       console.log(error);
     }
   };
-
+console.log(tablet)
   useEffect(() => {
     showPicture();
   }, []);
   return (
-    <Card key={index} className={matches ? classes.rootMedia : classes.root}>
+    <Card key={index} className={matches ? classes.rootMedia : tablet ? classes.tablet : classes.root}>
       <CardActionArea>
         <CardContent>
           <div className="d-flex justify-content-between">

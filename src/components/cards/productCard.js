@@ -12,7 +12,7 @@ export default function ProductCard(props) {
 
   return (
    
-      <div className="card product-card">
+      <div className="card product-card mt-0">
         <div className="card-photo">
         {element.photos.length > 0 ? (
           <Slider photos={element.photos} />

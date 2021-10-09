@@ -8,9 +8,7 @@ export default function ClothesCategory() {
     <div className="select-group">
       <select
         defaultValue={
-          productContext.product.categoryClothes
-            ? productContext.product.categoryClothes
-            : "Choose Category"
+           "Choose Category"
         }
         name="clothesCategory"
         onChange={(event) =>

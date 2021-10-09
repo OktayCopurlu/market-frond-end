@@ -28,8 +28,9 @@ export default function WishList() {
             <h2 className="d-flex justify-content-center mb-3">
               {t("WishList")}
             </h2>
+            
             <SearchButton />
-            <div className="d-flex justify-content-around row">
+            <div className="d-flex justify-content-between row m-0">
               <Card element={{ state, searchItem }} />
             </div>
           </>

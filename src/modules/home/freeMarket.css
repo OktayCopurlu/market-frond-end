@@ -1,181 +1,187 @@
 .freemarket {
+  background-image: url("https://t3.ftcdn.net/jpg/03/16/35/88/240_F_316358814_dh58mlXH8NbtsxsyXbAedEMuBKSzMTNp.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: justify;
+  justify-content: center;
+  padding: 5rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
+
+.home-carousel {
+  max-height: 400px;
+  min-height: 400px;
+}
+
+.text-home-page {
+  margin-left: 40rem;
+}
+.box-images {
+  width: 100%;
+  height: 20rem;
+  filter: drop-shadow(0 0 0.75rem rgb(173, 171, 172));
+  border-radius: 3px;
+  display: block;
+}
+
+.boxes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.boxes-container {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #008cba;
+}
+.boxes-container:hover .overlay {
+  opacity: 1;
+}
+
+.text-in-boxes {
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.SignUpButton:hover {
+  background-color: white;
+  color: red;
+}
+
+.information-text {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.SignUpButton {
+  font-size: 1.2rem;
+  width: 13rem;
+  height: 4rem;
+  padding-top: 0.9rem;
+  border-radius: 15px;
+}
+
+h3 {
+  padding-left: 0 !important;
+}
+
+@media only screen and (max-device-width: 767px) {
+  .information-text {
+    font-size: 0.8rem;
+  }
+
+  .home-carousel {
+    max-height: 400px;
+    min-height:540px;
+  }
+
+  .text-home-page {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .freemarket {
+    background-image: url("https://bellevuetoddlers.files.wordpress.com/2015/03/handshake.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: justify;
+    justify-content: center;
+    padding: 2rem;
+    margin: 0;
+  }
+
+  .boxes {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: black;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .information-text {
+    font-size: 14px;
+  }
+
+  .freemarket {
     background-image: url("https://t3.ftcdn.net/jpg/03/16/35/88/240_F_316358814_dh58mlXH8NbtsxsyXbAedEMuBKSzMTNp.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     text-align: justify;
     justify-content: center;
-    padding: 5rem;
-    padding-left: 8rem;
-    padding-right: 8rem;
+    padding: 2rem;
+    margin: 0;
+  }
 
-}
-
-.home-carousel {
-    max-height: 400px;
-    min-height: 400px;
-}
-
-.text-home-page {
-    margin-left: 40rem;
-}
-
-.donate-box {
-    background: url('https://as2.ftcdn.net/v2/jpg/01/92/87/05/1000_F_192870527_rhRBKQwHF993xWb6le87DUXwTwAnK5X1.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-align: justify;
-    justify-content: center;
-}
-
-.find-box {
-    background: url('https://t4.ftcdn.net/jpg/03/18/82/17/240_F_318821714_8vn2k5rCYwRCdEoW7mrKiy0oIqGcoz3n.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-align: justify;
-    justify-content: center;
-}
-
-.wish-box {
-    background: url('https://t4.ftcdn.net/jpg/01/68/91/73/240_F_168917354_V38JnhtGRlN5SE7vRVkp7Dl8jQTFM42i.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-align: justify;
-    justify-content: center;
-}
-
-.SignUpButton:hover {
-    background-color: white;
-    color: red;
-}
-
-.information-text {
-    font-weight: 500;
-    font-size: 1.1rem;
-}
-
-.SignUpButton {
-    font-size: 1.2rem;
-    width: 13rem;
-    height: 4rem;
-    padding-top: 0.9rem;
-    border-radius: 15px;
-}
-
-.boxes {
-    border: 1px solid gray;
-    width: 100%;
-    height: 20rem;
+  .boxes {
+    min-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3rem;
+    font-size: 1.4rem;
     color: black;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  .box-images {
+    height: 15rem;
+  }
+  .text-home-page {
+    margin:0 auto;
+    width: 80%;
+    text-align: center;
+  }
 }
 
-.boxes:hover {
-    text-decoration: none;
-    color: rgb(44, 157, 177)
-}
+@media screen and (min-width: 1024px) and (max-width: 1299px) {
+  .information-text {
+    font-size: 16px;
+  }
+  .text-home-page {
+    margin:0 auto;
+    width: 80%;
+    text-align: center;
 
-h3 {
-    padding-left: 0 !important;
-}
+  }
+  .freemarket {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: justify;
+    justify-content: center;
+    padding: 2rem;
+    margin: 0;
+  }
 
-@media only screen and (max-device-width:767px) {
-    .information-text {
-        font-size: 0.8rem;
-    }
-
-    .home-carousel {
-        max-height: 400px;
-        min-height: 400px;
-    }
-
-    .text-home-page {
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .freemarket {
-        background-image: url("https://bellevuetoddlers.files.wordpress.com/2015/03/handshake.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        text-align: justify;
-        justify-content: center;
-        padding: 2rem;
-        margin: 0;
-    }
-
-    .boxes {
-        height: 15rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 3rem;
-        color: black;
-        font-family: Georgia, 'Times New Roman', Times, serif
-    }
-}
-
-@media screen and (min-width:768px) and (max-width:1023px) {
-    .information-text {
-        font-size: 12px;
-        ;
-    }
-
-    .freemarket {
-        background-image: url("https://t3.ftcdn.net/jpg/03/16/35/88/240_F_316358814_dh58mlXH8NbtsxsyXbAedEMuBKSzMTNp.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        text-align: justify;
-        justify-content: center;
-        padding: 2rem;
-        margin: 0;
-    }
-
-    .boxes {
-        height: 13rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.4rem;
-        color: black;
-        font-family: Georgia, 'Times New Roman', Times, serif
-    }
-}
-
-@media screen and (min-width:1024px) and (max-width:1299px) {
-    .information-text {
-        font-size: 12px;
-        ;
-    }
-
-    .freemarket {
-        background-image: url("https://t4.ftcdn.net/jpg/03/03/13/61/240_F_303136150_d2vwkZKnr8qD4rV465R8R8Y6pgYWscYM.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        text-align: justify;
-        justify-content: center;
-        padding: 2rem;
-        margin: 0;
-    }
-
-    .boxes {
-        height: 17rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.4rem;
-        color: black;
-        font-family: Georgia, 'Times New Roman', Times, serif
-    }
+  .boxes {
+    height: 17rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    color: black;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  .box-images {
+    height: 17rem;
+  }
 }

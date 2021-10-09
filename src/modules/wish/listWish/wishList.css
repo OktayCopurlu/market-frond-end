@@ -1,14 +1,6 @@
-
-/* .wish-top-container{
-  
-  display: grid;
-  justify-content: center;
-  align-items: center;
-} */
 .detail-icon{
   width: 20px;
 }
-
 
 .wishList {
   width: 100%;
@@ -26,20 +18,13 @@
   justify-content: center;
 }
 
-
-
-
-
-@media only screen and (max-device-width:767px) {
-
+@media only screen and (max-device-width:1025px) {
   .wishList {
     width: 100%;
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding-right: .5rem;
+    padding-left: .5rem;
     padding-bottom: 1rem;
   }
-
- 
 
   .wishContainer {
     justify-content: space-between;
@@ -47,6 +32,19 @@
     padding-bottom: 0;
     width: 100%;
   }
+}
+@media only screen and (max-device-width:767px) {
+  .wishList {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 1rem;
+  }
 
-
+  .wishContainer {
+    justify-content: space-between;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 100%;
+  }
 }

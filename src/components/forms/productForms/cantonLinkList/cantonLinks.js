@@ -14,7 +14,9 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import * as cantonLinksCss from "./cantonLinkStyle";
 import { useTranslation } from "react-i18next";
 export default function CantonLinks() {
+
   const classes = cantonLinksCss.useStyles();
+
   const productContext = useContext(ProductContext);
   const {t}= useTranslation()
   const cantonArray = [];
@@ -27,12 +29,12 @@ export default function CantonLinks() {
   const onSubmit = async (event) => {
     try {
       if (event.target.value === "null") {
-        return await productContext.cantonHandler(null);
+        return productContext.cantonHandler(null);
       } else {
-        return await productContext.cantonHandler(event.target.value);
+        return productContext.cantonHandler(event.target.value);
       }
     } catch (error) {
-      return await console.log(error);
+      return  console.log(error);
     }
   };
 

@@ -8,8 +8,8 @@ export default function Card(filterAndSearch) {
   const { productList, searchItem } = searched;
 
   return (
-    <div className="col-9 productList-main">
-      <div className="row">
+    <div className="productList-main">
+      
         {productList === 0 ? (
           <h3>{t("CategoryIsEmpty")}</h3>
         ) : (
@@ -35,6 +35,6 @@ export default function Card(filterAndSearch) {
             })
         )}
       </div>
-    </div>
+    
   );
 }
