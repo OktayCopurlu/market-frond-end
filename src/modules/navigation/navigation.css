@@ -95,10 +95,7 @@
   .nav-menu {
     align-items: left;
   }
-  .nav-item {
-    line-height: 40px;
-    margin-right: 0.4rem;
-  }
+
 }
 
 @media screen and (max-width: 960px) {
