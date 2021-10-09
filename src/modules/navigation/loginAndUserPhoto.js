@@ -33,7 +33,7 @@ export default function LoginAndUserPhoto() {
 
   return (
     <>
-      <li className="nav-item">
+      <li className="nav-button">
         <NavLink
           exact
           to="/productList"
@@ -41,12 +41,11 @@ export default function LoginAndUserPhoto() {
           className="nav-links"
           onClick={handleClick}
         >
-          <NavBar />
-          {/* login and logout buttons */}
+          <NavBar />{/* login and logout buttons */}
         </NavLink>
       </li>
       {isAuthenticated ? (
-        <li className="nav-item">
+        <li className="nav-button">
           <NavLink
             activeclassname="active"
             className="nav-links"

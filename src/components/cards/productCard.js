@@ -11,7 +11,6 @@ export default function ProductCard(props) {
   const { isAuthenticated, loginWithRedirect } = useAuth0();
 
   return (
-   
       <div className="card product-card mt-0">
         <div className="card-photo">
         {element.photos.length > 0 ? (

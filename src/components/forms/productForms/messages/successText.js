@@ -26,7 +26,7 @@ export default function SuccessText() {
     <div className="alert alert-success text-center" role="alert">
       <p>{t('ProductCreateMessage.success')}</p>
       <p>
-        <Link onClick={onClick} to="/create">
+        <Link onClick={onClick} to="/create" className="btn btn-success mt-5">
         {t('ProductCreateMessage.new')}
         </Link>
       </p>

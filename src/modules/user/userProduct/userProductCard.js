@@ -13,7 +13,7 @@ export default function UserProductCard(props) {
         return (
           <div key={index} className="user-product-card mb-5">
             <ProductCard element={element} />
-            <div>
+            <div className="edit-delete-button-container">
               <ProductEditModal element={element}/>
               <DeleteProduct value={element._id}/>
             </div>

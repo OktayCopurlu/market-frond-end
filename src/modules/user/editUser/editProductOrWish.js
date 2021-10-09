@@ -21,10 +21,10 @@ export default function EditProductOrWish() {
 
       if (product) {
         productContext.productHandler(product)
-        return await setProducts(product);
+        return setProducts(product);
       }
       if (wish) {
-        return await setWish(wish);
+        return setWish(wish);
       }
     }
 

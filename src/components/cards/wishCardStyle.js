@@ -2,8 +2,9 @@ import {makeStyles} from "@material-ui/core"
 export const useStyles = makeStyles({
     root: {
       marginBottom: 25,
-      maxWidth: "48%",
       minWidth: "48%",
+      boxShadow:"1px 1px 5px gray",
+
     },
     rootMedia:{ 
       maxWidth: "100%",

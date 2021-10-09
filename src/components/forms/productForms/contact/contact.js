@@ -4,6 +4,10 @@ import { useTranslation } from "react-i18next";
 export default function Contact() {
   const productContext = useContext(ProductContext);
   const { t } = useTranslation();
+
+  const onChange = (event) => {
+    productContext.contactTelHandler(event.target.value);
+  };
   return (
     <div className="input-field">
       <label htmlFor="contact"> Contact Tel</label>
@@ -18,18 +22,16 @@ export default function Contact() {
         name="contact"
         placeholder="088 888 88 88"
         required
-        onChange={(event) =>
-          productContext.contactTelHandler(event.target.value)
-        }
+        onChange={(event) => onChange(event)}
       />
 
       <label htmlFor="contact">{t("ContactEmail")}</label>
       <input
-       defaultValue={
-        productContext.product.contactEmail
-          ? productContext.product.contactEmail
-          : ""
-      }
+        defaultValue={
+          productContext.product.contactEmail
+            ? productContext.product.contactEmail
+            : ""
+        }
         className="form-control"
         type="email"
         name="contact"

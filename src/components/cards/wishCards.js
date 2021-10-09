@@ -27,7 +27,6 @@ export default function WishCard(props) {
       console.log(error);
     }
   };
-console.log(tablet)
   useEffect(() => {
     showPicture();
   }, []);

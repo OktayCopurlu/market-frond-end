@@ -16,7 +16,7 @@ const {t}= useTranslation()
     <div className="alert alert-danger text-center" role="alert">
       <p>{t('ProductUploadMessage.notSuccess')}</p>
       <p>
-        <Link onClick={onClick} to="#">
+        <Link onClick={onClick} to="#"className="btn btn-success mt-5">
         {t('ProductUploadMessage.tryAgain')}
         </Link>
       </p>

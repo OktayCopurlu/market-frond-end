@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext} from "react";
 import "./personalPage.css";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import * as userService from "../../../services/users-service";
 import UserDetailCard from "./userDetailCard";
 import { useTranslation } from "react-i18next";
+import productContext from "../../../context/productContext";
 
 export default function PersonalPage() {
   const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
   const [userMetadata, setUserMetadata] = useState(null);
   const { user, getAccessTokenSilently } = useAuth0();
   const { t } = useTranslation();
-
+  const ProductContext = useContext(productContext)
   useEffect(() => {
     const readUserMetadata = async () => {
       try {
@@ -27,7 +28,10 @@ export default function PersonalPage() {
     };
     return readUserMetadata();
   }, [user, getAccessTokenSilently, audience]);
+const clean=() =>{
+  ProductContext.productHandler("");
 
+}
   return (
     <>
       <div className="out-container">
@@ -37,20 +41,18 @@ export default function PersonalPage() {
           <h3 className="m-5">Loading...</h3>
         )}
       </div>
-      <div className="bg-secondary">
-        <hr />
-        <div className="d-flex justify-content-center ">
-          <Link to="/my-products" className="text-light mr-5">
-            <h4 className="text-center p-0">{t("MyProduct")}</h4>
+      <div className="user-page-links-container">
+        <div className="d-flex justify-content-between ">
+          <Link to="/my-products" onClick={clean} className="btn user-page-link mr-4">
+           {t("MyProduct")}
           </Link>
-          <Link to="/my-wishes" className=" text-light">
-            <h4 className="text-center mr-5 p-0">{t("MyWish")}</h4>
+          <Link to="/my-wishes" onClick={clean} className="btn user-page-link mr-4">
+           {t("MyWish")}
           </Link>
-          <Link to="/edit-my-detail" className="text-light ">
-            <h4 className="p-0">{t("EditMyDetail")}</h4>
+          <Link to="/edit-my-detail" onClick={clean}className="btn user-page-link">
+            {t("EditMyDetail")}
           </Link>
         </div>
-        <hr />
       </div>
     </>
   );

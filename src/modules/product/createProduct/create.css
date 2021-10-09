@@ -4,18 +4,19 @@
   max-height: 15rem;
   min-height: 15rem;
   border-radius: 20px;
-  border: 1px solid rgb(135, 222, 139)
+  border: 1px solid rgb(135, 222, 139);
 }
 
-.alert-success, .alert-danger{
-  margin:5rem;
-  padding:5rem;
+.alert-success,
+.alert-danger {
+  margin: 5rem;
+  padding: 5rem;
 }
 .btn-file {
   position: relative;
   overflow: hidden;
 }
-.btn-file input[type=file] {
+.btn-file input[type="file"] {
   position: absolute;
   top: 0;
   right: 0;
@@ -30,12 +31,12 @@
   cursor: inherit;
   display: block;
 }
-.disabled-back{
-    opacity: 0.6;
-    cursor: not-allowed; 
+.disabled-back {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 .form-create {
-  width:50%
+  width: 50%;
 }
 
 .dropdown {
@@ -46,22 +47,27 @@
 .showUploadPhoto {
   width: 8rem;
 }
-
-@media only screen and (max-device-width:767px) {
-
+.explanation-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:flex-start;
+  padding: 2rem;
+}
+@media only screen and (max-device-width: 767px) {
   .createWish-row {
     display: inline-block;
-   width: 100%;
+    width: 100%;
   }
 
   .form-create {
-    width: 100%
+    width: 100%;
   }
-  .alert-success, .alert-danger{
-    margin:0;
-    margin-top:2rem;
-    margin-bottom:2rem;
-    padding:1rem;
+  .alert-success,
+  .alert-danger {
+    margin: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
   }
-  
 }

@@ -16,6 +16,8 @@ import ProtectedRoute from "./provider/protected-route";
 import UserProduct from "./modules/user/userProduct/userProduct";
 import UserWish from "./modules/user/userProduct/userWish";
 import NavbarModal from "./modules/user/editUser/navbarModal";
+import Explanation from "./modules/product/createProduct/explanation";
+import ExplanationWish from "./modules/wish/createWish/explanationWish";
 
 function App() {
   return (
@@ -34,7 +36,12 @@ function App() {
         <Route path="/email">
           <EmailForm />
         </Route>
-
+        <Route path="/explanation">
+          <Explanation />
+        </Route>
+        <Route path="/explanation-wish">
+          <ExplanationWish />
+        </Route>
         <Route path="/history">
           <History />
         </Route>

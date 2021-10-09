@@ -16,7 +16,7 @@ export default function NotSuccessText() {
         <div className="alert alert-danger text-center" role="alert">
         <p>{t('CreateWishMessage.notSuccess')}</p>
         <p>
-          <Link onClick={onClick} to="/wishForm">
+          <Link onClick={onClick} to="/wishForm" className="btn btn-primary mt-5">
           {t('CreateWishMessage.tryAgain')}
           </Link>
         </p>

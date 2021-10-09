@@ -16,7 +16,7 @@ const {t}= useTranslation()
     <div className="alert alert-success text-center" role="alert">
         <p>{t('CreateWishMessage.success')}</p>
       <p>
-        <Link onClick={onClick} to="/wishForm">
+        <Link onClick={onClick} to="/wishForm" className="btn btn-success mt-4">
           {t('CreateWishMessage.newWish')}
         </Link>
       </p>

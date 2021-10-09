@@ -7,7 +7,7 @@ const ProductContext = React.createContext({
   mainCategory: "",
   city: "",
   canton: "",
-  photo: [],
+  photos: [],
   condition: "",
   dimensions: "",
   size: "",

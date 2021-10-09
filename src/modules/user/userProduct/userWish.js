@@ -28,7 +28,7 @@ export default function UserWish() {
   return (
     <>
       <h3 className="d-flex justify-content-center mt-3">{t('MyWishList')}</h3>
-      <div className="d-flex justify-content-center row m-0 p-1">
+      <div className="user-wishes-container m-0 p-1">
         <UserWishCard wishes={wishes} />
       </div>
     </>

@@ -1,104 +1,145 @@
 .out-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.edit-user{
-    width: 50%;
+.edit-user {
+  width: 50%;
 }
 
 #profil-photo {
-    border: 3px solid rgb(75, 117, 145);
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    position: relative;
-    z-index: 1;
+  border: 3px solid rgb(75, 117, 145);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
 }
-.next-button{
-    position: fixed;
-    right: 4rem;
-    bottom: 2rem;
+.next-button {
+  position: fixed;
+  right: 4rem;
+  bottom: 2rem;
 }
-.close-modal{
-    position:fixed;
-    right: 2rem;
-    top: 2rem;
+.close-modal {
+  position: fixed;
+  right: 2rem;
+  top: 2rem;
 }
 p {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 h3 {
   padding: 1rem;
-
 }
 
 .form-control {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
-.userProductButton{
-    width: 7.5rem;
-    
+.userProductButton {
+  width: 7.5rem;
 }
-.user-card{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    min-width: 30rem;
-    text-align: center;
-  }
-  
+.user-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  min-width: 30rem;
+  text-align: center;
+}
+
 .user-title {
-    color: grey;
-    font-size: 1.5rem;
-  }
+  color: grey;
+  font-size: 1.5rem;
+}
+.user-page-links-container {
+  max-width: 591px;
+  margin: 1rem auto;
+}
 
+.user-page-link {
+  flex: 1 1 3rem;
+  background-color: #000000;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 0;
+}
+.user-page-link:hover {
+  color: white;
+}
 .user-contact-button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-  }
-  
-.social-media {
-    text-decoration: none;
-    font-size: 22px;
-    color: black;
-    margin-right: 1rem;
-  }
-  
-.social-media:hover, a:hover {
-    opacity: 0.7;
-  }
-@media only screen and (max-device-width:767px) {
-    .edit-user{
-        width: 100%!important;
-    }
-    .profile-picture {
-        border: 3px solid rgb(75, 117, 145);
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        position: relative;
-        z-index: 1;
-    }
-    .user-product-card{
-        width: 100%;
-    }
-    .user-wish-card{
-      width: 100%;
-  }
-    .user-card{
-        min-width: 22rem;
-      }
-    .user-card-container{ 
-        min-width: 100%;
-      }
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
 
+.social-media {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+  margin-right: 1rem;
+}
+
+.social-media:hover,
+a:hover {
+  opacity: 0.7;
+}
+.edit-delete-button-container {
+  margin-left: 10px;
+}
+
+.user-wishes-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.user-wishes-container > * {
+  flex: 0 1 30rem;
+  margin: 2rem;
+}
+
+@media screen and (max-width: 1290px) {
+  .user-wishes-container > * {
+    flex: 0 1 30rem;
+    margin: 0.5rem;
+  }
+}
+@media screen and (max-width: 1020px) {
+  .user-wishes-container {
+    justify-content: center;
+  }
+}
+@media only screen and (max-device-width: 767px) {
+  .edit-user {
+    width: 100% !important;
+  }
+  .profile-picture {
+    border: 3px solid rgb(75, 117, 145);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+  }
+  .user-product-card {
+    width: 100%;
+  }
+  .user-wish-card {
+    width: 100%;
+  }
+  .user-card {
+    min-width: 22rem;
+  }
+  .user-card-container {
+    min-width: 100%;
+  }
+
+  .user-wishes-container > * {
+    min-width: 100%;
+  }
 }

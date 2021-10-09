@@ -5,7 +5,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import EditProductCard from "./editProductPage";
 import { useTranslation } from "react-i18next";
 export default function EditProduct(props) {
-  const {t}= useTranslation()
+  const { t } = useTranslation();
   const { getAccessTokenSilently } = useAuth0();
   const [token, setToken] = useState();
   getAccessTokenSilently().then((token) => setToken(token));
@@ -15,7 +15,6 @@ export default function EditProduct(props) {
   const products = props.products;
   const productId = products._id;
   const photosProduct = products.photos;
-
   const [canton, setCanton] = useState(products.canton);
   const [city, setCity] = useState(products.city);
   const [mainCategory, setMainCategory] = useState(products.mainCategory);
@@ -68,6 +67,7 @@ export default function EditProduct(props) {
     if (productContext.contactEmail) {
       setContactEmail(productContext.contactEmail);
     }
+    // eslint-disable-next-line
   }, [
     productContext.information,
     productContext.canton,
@@ -78,11 +78,10 @@ export default function EditProduct(props) {
     productContext.contactTel,
     productContext.dimensions,
     productContext.mainCategory,
-    productContext.photos,
+    productContext.photos.length,
     productContext.size,
     productContext.title,
   ]);
-
 
   const body = {
     canton,
@@ -102,10 +101,11 @@ export default function EditProduct(props) {
 
   return (
     <>
-      <h3>{t('EditProduct')}</h3>
+      <h3>{t("EditProduct")}</h3>
       <div className="row">
         <EditProductCard
-          elements={{ productId, body, handlerSuccess, token, products }}/>
+          elements={{ productId, body, handlerSuccess, token, products }}
+        />
       </div>
     </>
   );
