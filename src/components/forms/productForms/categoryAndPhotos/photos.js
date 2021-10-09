@@ -43,7 +43,8 @@ export default function Photos() {
             .then((url) => {
               photos.push(url);
             })
-            .then(setPictureUploaded(false));
+            .then(setPictureUploaded(false))
+            .then(productContext.pictureUploadedHandler(true)); //
         }
       );
     });

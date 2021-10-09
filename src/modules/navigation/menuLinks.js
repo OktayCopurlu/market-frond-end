@@ -18,6 +18,7 @@ export default function MenuLinks() {
     context.navbarOpenHandler(!click);
     context.pageFormHandler(1);
     productContext.productHandler("");
+    productContext.pictureUploadedHandler(false)
   };
 
   return (

@@ -8,6 +8,8 @@ import SuccessText from "./messages/successText";
 import NotSuccessText from "./messages/notSuccessText";
 import MainForm from "../form/mainForm";
 import {useTranslation} from "react-i18next";
+import StepBar from "../../product/createProduct/stepBar";
+import ReactStepBar from "../../product/createProduct/reactStepBar";
 export default function CreateWishList() {
   const context = useContext(Context);
   const productContext = useContext(ProductContext);
@@ -47,13 +49,16 @@ export default function CreateWishList() {
     <div className="container">
       <h3 className="d-flex justify-content-center mb-4">{t('CreateYourWish')}</h3>
       {context.isSuccess === null ? (
+         <>
+         <ReactStepBar/>
+         {/* <StepBar /> */}
         <div className="row createWish-row">
           <div className="col d-flex justify-content-center">
             <form className="form-create" onSubmit={onSubmit}>
               <MainForm />
             </form>
           </div>
-        </div>
+        </div></>
       ) : context.isSuccess ? (
         <SuccessText />
       ) : (

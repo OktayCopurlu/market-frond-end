@@ -8,8 +8,10 @@ import SuccessText from "../../../components/forms/productForms/messages/success
 import NotSuccessText from "../../../components/forms/productForms/messages/notSuccessText";
 import MainForm from "../form/mainForm";
 import { useTranslation } from "react-i18next";
+import StepBar from "./stepBar";
+import ReactStepBar from "./reactStepBar";
 export default function CreateProducts() {
-  const {t}= useTranslation()
+  const { t } = useTranslation();
   const { getAccessTokenSilently, user } = useAuth0();
   const [token, setToken] = useState();
   getAccessTokenSilently().then((token) => setToken(token));
@@ -17,7 +19,7 @@ export default function CreateProducts() {
   const userId = user.sub;
   const context = useContext(Context);
   const productContext = useContext(ProductContext);
-  
+
   const canton = productContext.canton;
   const city = productContext.city;
   const categoryClothes = productContext.categoryClothes;
@@ -64,15 +66,19 @@ export default function CreateProducts() {
 
   return (
     <div className="container">
-      <h3 className="d-flex justify-content-center">{t('CreateNewProduct')}</h3>
+      <h3 className="d-flex justify-content-center">{t("CreateNewProduct")}</h3>
       {context.isSuccess === null ? (
-        <div className="row">
-          <div className="col d-flex justify-content-center">
-            <form className="form-create" onSubmit={onSubmit}>
-              <MainForm mainCategory={mainCategory} />
-            </form>
+        <>
+           <ReactStepBar/>
+         {/* <StepBar /> */}
+          <div>
+            <div className="col d-flex justify-content-center">
+              <form className="form-create" onSubmit={onSubmit}>
+                <MainForm mainCategory={mainCategory} />
+              </form>
+            </div>
           </div>
-        </div>
+        </>
       ) : context.isSuccess ? (
         <SuccessText /> //success message
       ) : (
