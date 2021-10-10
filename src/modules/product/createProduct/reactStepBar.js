@@ -29,7 +29,7 @@ export default function ReactStepBar() {
     <div className="d-flex justify-content-center">
       <div className="progress">
         <div className="progress-done" style={style}>
-          {persent}%
+           {persent} %
         </div>
       </div>
     </div>

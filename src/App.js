@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Route, Switch } from "react-router-dom";
+import { Switch,Route } from "react-router-dom";
 import Navigation from "./modules/navigation/navigation";
 import ProductList from "./modules/product/listProduct/main/productList";
 import WishList from "./modules/wish/listWish/wishList";
@@ -24,11 +24,11 @@ function App() {
     <>
       <Navigation />
       <Switch>
-        <Route path="/productList">
-          <ProductList />
-        </Route>
         <Route exact path="/">
           <FreeMarket />
+        </Route>
+        <Route path="/productList">
+          <ProductList />
         </Route>
         <Route path="/wishList">
           <WishList />
@@ -37,7 +37,7 @@ function App() {
           <EmailForm />
         </Route>
         <Route path="/explanation">
-          <Explanation />
+          <Explanation/>
         </Route>
         <Route path="/explanation-wish">
           <ExplanationWish />

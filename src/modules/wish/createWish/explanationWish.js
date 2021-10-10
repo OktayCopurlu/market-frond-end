@@ -2,6 +2,7 @@ import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import "../../product/createProduct/create.css";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 export default function ExplanationWish() {
   const { loginWithRedirect, isAuthenticated } = useAuth0();
@@ -26,9 +27,9 @@ export default function ExplanationWish() {
           SignUp
         </button>
       ) : (
-        <a href="/create" className="btn btn-primary mt-5 px-5 py-2">
+        <Link to="/create" className="btn btn-primary mt-5 px-5 py-2">
           Create a new wish
-        </a>
+        </Link>
       )}
     </section>
   );

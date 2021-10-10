@@ -2,11 +2,12 @@ import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import "./create.css";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 export default function Explanation() {
+  console.log("explanation");
   const { loginWithRedirect, isAuthenticated } = useAuth0();
   const { t } = useTranslation();
-
   return (
     <section className="explanation-container">
       <h1>FreeMarket</h1>
@@ -26,9 +27,9 @@ export default function Explanation() {
           SignUp
         </button>
       ) : (
-        <a href="/create" className="btn btn-primary mt-5 px-5 py-2">
+        <Link to="/create" className="btn btn-primary mt-5 px-5 py-2">
           Create a new product
-        </a>
+        </Link>
       )}
     </section>
   );

@@ -12,7 +12,7 @@ import StepBar from "./stepBar";
 import ReactStepBar from "./reactStepBar";
 export default function CreateProducts() {
   const { t } = useTranslation();
-  const { getAccessTokenSilently, user } = useAuth0();
+  const { getAccessTokenSilently, user} = useAuth0();
   const [token, setToken] = useState();
   getAccessTokenSilently().then((token) => setToken(token));
 
