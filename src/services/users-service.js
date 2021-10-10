@@ -2,6 +2,7 @@ const domain = process.env.REACT_APP_AUTH0_DOMAIN;
 const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
 const accessTokenMNG = process.env.REACT_APP_AUTH0_MNGT_TOKEN;
 
+
 //get all users
 export async function getAll(getAccessTokenSilently) {
   try {
@@ -60,14 +61,8 @@ export const getUserById = async (props) => {
 };
 
 // update user meta data
-export const updateUserMetaData = async (
-  userId,
-  accessToken,
-  body
-) => {
+export const updateUserMetaData = async (userId, accessToken, body) => {
   const token = await accessToken;
-
-
 
   try {
     const userDetailsByIdUrl = `https://${domain}/api/v2/users/${userId}`;
@@ -86,7 +81,7 @@ export const updateUserMetaData = async (
   }
 };
 
-export const deleteUser = async (userId,accessToken) => {
+export const deleteUser = async (userId, accessToken) => {
   try {
     const userDetailsByIdUrl = `https://${domain}/api/v2/users/${userId}`;
     await fetch(userDetailsByIdUrl, {
@@ -102,13 +97,10 @@ export const deleteUser = async (userId,accessToken) => {
 };
 
 //get user information from auth0
-export const getUserMetadata = async (user,accessToken) => {
-  
+export const getUserMetadata = async (user, accessToken) => {
   const userId = user.sub;
 
   try {
-    
-
     const userDetailsByIdUrl = `https://${domain}/api/v2/users/${userId}`;
     const metadataResponse = await fetch(userDetailsByIdUrl, {
       headers: {

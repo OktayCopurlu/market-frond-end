@@ -40,7 +40,7 @@ export async function getAll() {
     const list = await fetch(products);
     return await list.json();
   } catch (err) {
-    return await console.log("error", err);
+    return console.log("error", err);
   }
 }
 
@@ -50,7 +50,7 @@ export async function filterCanton(canton) {
     const list = await fetch(`${products}/filter?canton=${canton}`);
     return await list.json();
   } catch (err) {
-    return await console.log("error", err);
+    return console.log("error", err);
   }
 }
 
@@ -157,8 +157,6 @@ export async function filterUserProducts(userId) {
     return await console.log("Error :" + error);
   }
 }
-
-
 
 export async function listAction(canton, mainCategory, productContext) {
   

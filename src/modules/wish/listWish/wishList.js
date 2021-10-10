@@ -10,9 +10,10 @@ export default function WishList() {
   const searchItem = productContext.search;
   const [state, setState] = useState([]);
   const { t } = useTranslation();
+
   async function showWishList() {
     const list = await wishAction.getAll();
-    return await setState(list);
+    return setState(list);
   }
   useEffect(() => {
     showWishList();
@@ -28,7 +29,6 @@ export default function WishList() {
             <h2 className="d-flex justify-content-center mb-3">
               {t("WishList")}
             </h2>
-            
             <SearchButton />
             <div className="d-flex justify-content-between row m-0">
               <Card element={{ state, searchItem }} />

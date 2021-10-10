@@ -18,6 +18,7 @@ import UserWish from "./modules/user/userProduct/userWish";
 import NavbarModal from "./modules/user/editUser/navbarModal";
 import Explanation from "./modules/product/createProduct/explanation";
 import ExplanationWish from "./modules/wish/createWish/explanationWish";
+import NotFound from "./modules/notFound/notFound";
 
 function App() {
   return (
@@ -51,6 +52,9 @@ function App() {
         <ProtectedRoute path="/my-products" component={UserProduct} />
         <ProtectedRoute path="/my-wishes" component={UserWish} />
         <ProtectedRoute path="/edit-my-detail" component={NavbarModal} />
+        <Route path="*">
+            <NotFound />
+          </Route>
       </Switch>
       <Footer />
     </>
