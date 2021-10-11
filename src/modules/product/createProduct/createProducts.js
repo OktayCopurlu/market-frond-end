@@ -9,7 +9,7 @@ import NotSuccessText from "../../../components/forms/productForms/messages/notS
 import MainForm from "../form/mainForm";
 import { useTranslation } from "react-i18next";
 import StepBar from "./stepBar";
-import ReactStepBar from "./reactStepBar";
+// import ReactStepBar from "./reactStepBar";
 export default function CreateProducts() {
   const { t } = useTranslation();
   const { getAccessTokenSilently, user} = useAuth0();
@@ -69,8 +69,8 @@ export default function CreateProducts() {
       <h3 className="d-flex justify-content-center">{t("CreateNewProduct")}</h3>
       {context.isSuccess === null ? (
         <>
-           <ReactStepBar/>
-         {/* <StepBar /> */}
+           {/* <ReactStepBar/> */}
+         <StepBar />
           <div>
             <div className="col d-flex justify-content-center">
               <form className="form-create" onSubmit={onSubmit}>
