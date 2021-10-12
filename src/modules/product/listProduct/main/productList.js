@@ -6,7 +6,9 @@ import FilterProduct from "../filter/filterProduct";
 import { useTranslation } from "react-i18next";
 
 export default function ProductList() {
+ 
   const productContext = useContext(ProductContext);
+
   const searchItem = productContext.search;
   const productList = productContext.state;
   const { t } = useTranslation();

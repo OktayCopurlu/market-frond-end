@@ -21,6 +21,7 @@ const Context = React.createContext({
   facebook: null,
   twitter: null,
   instagram: null,
+
   facebookHandler: function (props) {},
   twitterHandler: function (props) {},
   instagramHandler: function (props) {},
@@ -151,6 +152,7 @@ export const ContextProvider = (props) => {
     facebook: facebook,
     twitter: twitter,
     instagram: instagram,
+
     facebookHandler: facebookHandler,
     twitterHandler: twitterHandler,
     instagramHandler: instagramHandler,
