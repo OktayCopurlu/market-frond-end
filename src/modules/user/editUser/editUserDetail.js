@@ -15,7 +15,6 @@ export default function EditUserDetail() {
   const context = useContext(Context);
   const photo = context.photo;
   const userMetaData = context.userMetaData;
-  console.log(userMetaData)
   const { t } = useTranslation();
   const [picture, setPicture] = useState(userMetaData.picture);
   const [name, setName] = useState(userMetaData.name);

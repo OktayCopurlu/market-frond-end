@@ -18,7 +18,7 @@ export default function UpdateUserPicture() {
 
   return (
     <>
-      <div className="form-group">
+      <div className="form-group mt-4">
       <span className="btn btn-info btn-file">Change Your Profile Photo
         <input
           id="file"

@@ -37,6 +37,12 @@
 }
 .form-create {
   width: 50%;
+
+}
+.justify-content-center > .form-create{
+  border-radius: 8px;
+  box-shadow: 1px 1px 7px 1px grey;
+  padding: 4rem;
 }
 
 .dropdown {
@@ -51,9 +57,18 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items:flex-start;
+  align-items: flex-start;
   padding: 2rem;
 }
+
+@media only screen and (max-device-width: 1024px) {
+  .justify-content-center > .form-create{
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+}
+
 @media only screen and (max-device-width: 767px) {
   .createWish-row {
     display: inline-block;
@@ -62,6 +77,15 @@
 
   .form-create {
     width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .justify-content-center > .form-create{
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
   }
   .alert-success,
   .alert-danger {

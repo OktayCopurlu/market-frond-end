@@ -49,6 +49,13 @@ export default function Photos() {
       );
     });
   };
+
+  const style = {
+    position: "relative",
+    top: "54px",
+    margin: "0 0 0 auto",
+    display: "block",
+  };
   return (
     <div className="form-group">
       <h3>{t("UploadYourProductPictures")}</h3>
@@ -78,14 +85,13 @@ export default function Photos() {
             {t("YouMustClickUploadButton")}
           </h6>
         ) : (
-          <div className="form-group">
-            <input
-              disabled={!productContext.photos > 0}
-              type="submit"
-              value={t("SaveAndPublish")}
-              className="btn btn-primary"
-            />
-          </div>
+          <input
+            style={style}
+            disabled={!productContext.photos > 0}
+            type="submit"
+            value={t("SaveAndPublish")}
+            className="btn btn-primary"
+          />
         )}
       </div>
     </div>

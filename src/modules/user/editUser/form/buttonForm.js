@@ -23,16 +23,16 @@ const {t}= useTranslation()
   return (
     <div className="d-flex justify-content-between">
       {page > 1 ? (
-        <Link to="#" onClick={backPage}>
+        <Link to="#" className="btn btn-warning" onClick={backPage}>
           {t('Back')}
         </Link>
       ) : (
-        <Link to="#" className="disabled-back" onClick={backPage}>
+        <Link to="#" className="btn btn-done disabled-back" onClick={backPage}>
           {t('Back')}
         </Link>
       )}
       {page < 4 ? (
-        <Link to="#" onClick={nextPage}>
+        <Link to="#" className="btn btn-success" onClick={nextPage}>
           {t('Next')}
         </Link>
       ) : null}

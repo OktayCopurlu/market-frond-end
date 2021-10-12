@@ -3,6 +3,11 @@
   max-width: 345px;
   min-width: 345px;
 }
+.card-container{
+  box-shadow: 1px 5px 10px 1px rgb(207, 207, 207);
+  border:none;
+  margin-bottom: 1.2rem;
+}
 .user-product-container > .user-product-card >.product-card{
   height: 100%;
   max-height: 550px;
