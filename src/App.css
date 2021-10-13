@@ -11,22 +11,24 @@
   .container {
     min-width: 63rem;
   }
-  /* #root{
+
+}
+@media screen and (min-width: 1025px) {
+  #root{
     height:100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  } */
+  } 
 }
 @media only screen and (min-width: 1300px) {
   .container {
     min-width: 83rem;
   }
-
-}
-  /* #root{
-    height:100vh;
+  #root {
+    height: 100vh;
     display: flex;
-   // flex-direction: column;
+    flex-direction: column;
     justify-content: space-between;
-  } */
+  }
+}
