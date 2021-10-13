@@ -42,7 +42,7 @@ const clean=() =>{
         )}
       </div>
       <div className="user-page-links-container">
-        <div className="d-flex justify-content-between ">
+        <div className="d-flex justify-content-between user-page-links-parent">
           <Link to="/my-products" onClick={clean} className="btn user-page-link mr-4">
            {t("MyProduct")}
           </Link>

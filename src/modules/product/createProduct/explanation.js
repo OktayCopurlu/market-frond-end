@@ -5,16 +5,13 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 export default function Explanation() {
-  console.log("explanation");
   const { loginWithRedirect, isAuthenticated } = useAuth0();
   const { t } = useTranslation();
   return (
     <section className="explanation-container">
-      <h1>FreeMarket</h1>
+      <h1>freeMarket</h1>
       <p className="mt-2 information-text">{t("FreeMarket")}</p>
-      <p className="mt-2 information-text">{t("WhatIsFreeMarketText.1")}</p>
-      <p className="mt-2 information-text">{t("WhatIsFreeMarketText.2")}</p>
-      <p className="mt-2 information-text">{t("WhatIsFreeMarketText.3")}</p>
+      <p className="mt-2 information-text">{t("WhatIsFreeMarketText")}</p>
       <h3>{t("Donors")}</h3>
       <p className="mt-2 information-text">{t("DonorsText")}</p>
       <h3>{t("Recipients")}</h3>
@@ -24,11 +21,11 @@ export default function Explanation() {
           className="btn btn-primary mt-5 px-5 py-2"
           onClick={loginWithRedirect}
         >
-          SignUp
+          Sign Up
         </button>
       ) : (
         <Link to="/create" className="btn btn-primary mt-5 px-5 py-2">
-          Create a new product
+          {t("CreateNewProduct")}
         </Link>
       )}
     </section>

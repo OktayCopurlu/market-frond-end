@@ -53,8 +53,8 @@ h3 {
   font-size: 1.5rem;
 }
 .user-page-links-container {
-  max-width: 591px;
-  margin: 1rem auto;
+  width: 591px;
+  margin: 1rem auto; 
 }
 
 .user-page-link {
@@ -149,5 +149,8 @@ a:hover {
 
   .user-wishes-container > * {
     min-width: 100%;
+  }
+  .user-page-links-container {
+    width: 100%;
   }
 }

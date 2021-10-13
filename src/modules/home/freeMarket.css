@@ -58,11 +58,6 @@
   text-align: center;
 }
 
-.SignUpButton:hover {
-  background-color: white;
-  color: red;
-}
-
 .information-text {
   font-weight: 500;
   font-size: 1.1rem;
@@ -70,10 +65,14 @@
 
 .SignUpButton {
   font-size: 1.2rem;
-  width: 13rem;
-  height: 4rem;
-  padding-top: 0.9rem;
-  border-radius: 15px;
+  padding: 0.8rem 2rem;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+.SignUpButton:hover {
+  background-color: white;
+  color: red;
+  transition: 0.5s;
 }
 
 h3 {

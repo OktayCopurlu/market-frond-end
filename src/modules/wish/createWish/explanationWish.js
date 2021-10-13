@@ -9,26 +9,25 @@ export default function ExplanationWish() {
   const { t } = useTranslation();
 
   return (
-    <section className="explanation-container">
-      <h1>FreeMarket</h1>
+    <section className="explanation-container wish-explanation-style">
+      <h1>freeMarket</h1>
       <p className="mt-2 information-text">{t("FreeMarket")}</p>
-      <p className="mt-2 information-text">{t("WhatIsFreeMarketText.1")}</p>
-      <p className="mt-2 information-text">{t("WhatIsFreeMarketText.2")}</p>
-      <p className="mt-2 information-text">{t("WhatIsFreeMarketText.3")}</p>
-      <h3>{t("Donors")}</h3>
-      <p className="mt-2 information-text">{t("DonorsText")}</p>
+      <p className="mt-2 information-text">{t("WhatIsFreeMarketText")}</p>
+
       <h3>{t("Recipients")}</h3>
       <p className="mt-2 information-text">{t("RecipientsText")}</p>
+      <h3>{t("WishItems")}</h3>
+      <p className="mt-2 information-text">{t("WishListText")}</p>
       {!isAuthenticated ? (
         <button
           className="btn btn-primary mt-5 px-5 py-2"
           onClick={loginWithRedirect}
         >
-          SignUp
+          Sign Up
         </button>
       ) : (
         <Link to="/create" className="btn btn-primary mt-5 px-5 py-2">
-          Create a new wish
+          {t("CreateYourWish")}
         </Link>
       )}
     </section>

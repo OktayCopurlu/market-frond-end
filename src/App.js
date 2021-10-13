@@ -24,7 +24,7 @@ function App() {
   return (
     <>
       <Navigation />
-      <Switch>
+      <Switch >
         <Route exact path="/">
           <FreeMarket />
         </Route>
