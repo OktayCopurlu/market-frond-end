@@ -4,10 +4,12 @@ import ProductContext from "../../../../context/productContext";
 import Card from "../card/card";
 import FilterProduct from "../filter/filterProduct";
 import { useTranslation } from "react-i18next";
-
+import { useLocation } from "react-router";
 export default function ProductList() {
  
   const productContext = useContext(ProductContext);
+  const location = useLocation()
+  localStorage.setItem('path', location.pathname);
 
   const searchItem = productContext.search;
   const productList = productContext.state;

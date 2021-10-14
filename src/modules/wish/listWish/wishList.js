@@ -5,7 +5,11 @@ import Card from "./card";
 import SearchButton from "../../../components/search/searchButton";
 import ProductContext from "../../../context/productContext";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router";
 export default function WishList() {
+  const location = useLocation()
+  localStorage.setItem('path', location.pathname);
+
   const productContext = useContext(ProductContext);
   const searchItem = productContext.search;
   const [state, setState] = useState([]);

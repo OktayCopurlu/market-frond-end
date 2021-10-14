@@ -9,8 +9,9 @@ const Auth0ProviderWithHistory = ({ children }) => {
   const path = window.location.origin;
   const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
 
+  const recentLocatin = localStorage.getItem('path')
   const onRedirectCallback = (appState) => {
-    history.push(appState?.returnTo || window.location.pathname);
+    history.push(appState?.returnTo || recentLocatin);
   };
 
   return (

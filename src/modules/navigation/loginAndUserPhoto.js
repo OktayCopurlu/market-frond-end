@@ -20,7 +20,7 @@ export default function LoginAndUserPhoto() {
           scope: "read:current_user",
         });
         const data = await userService.getUserMetadata(user, accessToken);
-        return await setUserMetadata(data);
+        return setUserMetadata(data);
       } catch (error) {
         console.log(error);
       }
@@ -30,13 +30,12 @@ export default function LoginAndUserPhoto() {
   //this is for @media navbar
   const click = context.navbarOpen;
   const handleClick = () => context.navbarOpenHandler(!click);
-
+  const recentLocatin = localStorage.getItem('path')
   return (
     <>
       <li className="nav-button">
         <NavLink
-          exact
-          to="/productList"
+          to={recentLocatin}
           activeclassname="active"
           className="nav-links"
           onClick={handleClick}
