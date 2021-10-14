@@ -1,26 +1,19 @@
 .container {
   min-height: 33rem;
 }
-/* #root{
+ #root{
   height:100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-} */
+} 
 @media only screen and (min-width: 900px) {
   .container {
     min-width: 63rem;
   }
 
 }
-@media screen and (min-width: 1025px) {
-  #root{
-    height:100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  } 
-}
+
 @media only screen and (min-width: 1300px) {
   .container {
     min-width: 83rem;
