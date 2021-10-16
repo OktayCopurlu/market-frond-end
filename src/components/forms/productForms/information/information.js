@@ -8,6 +8,7 @@ function Information() {
     <div className="input-field">
       <label htmlFor="detail">{t("MoreInformation")}</label>
       <textarea
+      id="detail"
         defaultValue={
           productContext.product.detail
             ? productContext.product.detail

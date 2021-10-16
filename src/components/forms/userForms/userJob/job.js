@@ -8,6 +8,7 @@ export default function Job() {
     <div className="input-field">
       <label htmlFor="job"> Job </label>
       <input
+        id="job"
         className="form-control mt-2"
         type="text"
         name="job"

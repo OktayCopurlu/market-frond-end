@@ -6,11 +6,12 @@ export default function Size() {
   const { t } = useTranslation();
   return (
     <div className="input-field mt-4 mb-4">
-      <label htmlFor="title">{t("Size")}</label>
+      <label htmlFor="size">{t("Size")}</label>
       <input
         defaultValue={
           productContext.product.size ? productContext.product.size : ""
         }
+        id="size"
         className="form-control"
         name="size"
         onChange={(event) => productContext.sizeHandler(event.target.value)}

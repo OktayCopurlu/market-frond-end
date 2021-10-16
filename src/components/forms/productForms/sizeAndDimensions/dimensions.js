@@ -6,8 +6,9 @@ export default function Dimensions() {
   const { t } = useTranslation();
   return (
     <div className="input-field mt-4 mb-4">
-      <label htmlFor="title">{t("Dimensions")}</label>
+      <label htmlFor="dimensions">{t("Dimensions")}</label>
       <input
+      id="dimensions"
         defaultValue={
           productContext.product.dimensions
             ? productContext.product.dimensions

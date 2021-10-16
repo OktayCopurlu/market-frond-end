@@ -10,8 +10,8 @@ export default function Contact() {
   };
   return (
     <div className="input-field">
-      <label htmlFor="contact"> Contact Tel</label>
-      <input
+      <label htmlFor="contact-tel"> Contact Tel</label>
+      <input id="contact-tel"
         defaultValue={
           productContext.product.contactTel
             ? productContext.product.contactTel
@@ -20,7 +20,7 @@ export default function Contact() {
         className="form-control "
         type="tel"
         name="contact"
-        placeholder="088 888 88 88"
+        placeholder="041 88 888 88 88"
         required
         onChange={(event) => onChange(event)}
       />

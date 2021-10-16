@@ -21,7 +21,7 @@ export default function ProductList() {
       {productList.length === 0 ? (
         <div className="m-auto d-flex justify-content-center">
           <h3 key="header">
-            {t("ThereIsNoProduct")} in{" "}
+            {t("ThereIsNoProduct")} in 
             <strong className="text-danger">
               {category && canton
                 ? canton + " / " + category

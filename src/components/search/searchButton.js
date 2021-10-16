@@ -17,7 +17,6 @@ export default function SearchButton() {
   const onClick = (event) => {
     event.preventDefault();
     productContext.searchHandler(searchItem);
-    // event.target.reset();
   };
 
   return (
