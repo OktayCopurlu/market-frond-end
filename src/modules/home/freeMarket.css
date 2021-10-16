@@ -46,7 +46,6 @@
   width: 100%;
 }
 .boxes-container:hover .overlay {
-
   opacity: 1;
   transition: 1s;
 }
@@ -55,7 +54,7 @@
   transition: 1s;
 }
 .boxes-container:hover .boxes {
-  background-color:#FA8072;
+  background-color: #fa8072;
   transition: 1s;
 }
 .text-in-boxes {
@@ -130,7 +129,9 @@ h3 {
   .information-text {
     font-size: 14px;
   }
-
+  .text-in-boxes {
+    font-size: 13px;
+  }
   .freemarket {
     background-image: url("https://t3.ftcdn.net/jpg/03/16/35/88/240_F_316358814_dh58mlXH8NbtsxsyXbAedEMuBKSzMTNp.jpg");
     background-position: center;
