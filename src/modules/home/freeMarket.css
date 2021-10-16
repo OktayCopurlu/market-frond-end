@@ -53,8 +53,16 @@
   opacity: 0;
   transition: 1s;
 }
-.boxes-container:hover .boxes {
+.boxes-container:hover .find-box {
   background-color: #fa8072;
+  transition: 1s;
+}
+.boxes-container:hover .donate-box {
+  background-color: #bc8f8ffa;
+  transition: 1s;
+}
+.boxes-container:hover .wish-box {
+  background-color: #20B2AA;
   transition: 1s;
 }
 .text-in-boxes {

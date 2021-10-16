@@ -53,7 +53,7 @@ export default function CantonLinks() {
             <FormControlLabel
               className={classes.cantonList}
               control={<Radio value="null" onChange={onSubmit} />}
-              label="Cancel selection"
+              label="Cancel Selection"
             />
             {cantonArray.sort().map((canton, index) => {
               return (

@@ -34,11 +34,15 @@
   flex: 0 0 20%;
   max-width: 20%;
   overflow: scroll;
-  height: 83vh;
+  height: 55vh;
 }
 .productList-main {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
+}
+.empty-filter {
+  margin:auto;
 }
 @media only screen and (max-device-width: 1024px) {
   .productList-container {
