@@ -75,6 +75,7 @@ export const updateUserMetaData = async (userId, accessToken, body) => {
       body: JSON.stringify(body),
     });
     const { user_metadata } = await metadataResponse.json();
+    
     return await user_metadata;
   } catch (e) {
     console.log(e.message);

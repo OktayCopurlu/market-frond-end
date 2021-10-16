@@ -40,6 +40,9 @@
   display: flex;
   flex-wrap: wrap;
 }
+.empty-filter {
+  margin: auto;
+}
 
 @media only screen and (max-device-width: 1024px) {
   .productList-container {
