@@ -16,7 +16,7 @@ export default function Boxes() {
               alt="donate photos"
             />
             <div className="overlay">
-              <strong className="text-in-boxes">lorem ipsum dolor sit amet, consectetur adip occ lorem</strong>
+              <strong className="text-in-boxes">Donate your lovely items for free!</strong>
             </div>
           </Link>
           <h5 className="d-flex justify-content-center">{t("DonateItems")}</h5>
@@ -29,7 +29,7 @@ export default function Boxes() {
               alt="find photos"
             />
             <div className="overlay">
-              <strong className="text-in-boxes" >lorem ipsum dolor sit amet, consectetur adip occ lorem</strong>
+              <strong className="text-in-boxes" >Find items easy! Simply create your account, complete our social assistance verification form, and then search freeMarket. </strong>
             </div>
           </Link>
           <h5 className="d-flex justify-content-center">{t("FindItems")}</h5>
@@ -43,7 +43,7 @@ export default function Boxes() {
               alt="wish photos"
             />
             <div className="overlay">
-              <strong className="text-in-boxes">lorem ipsum dolor sit amet, consectetur adip occ lorem</strong>
+              <strong className="text-in-boxes">Is there something you need that you can't find on freeMarket? Or do you have a special request? Register your wish...</strong>
             </div>
           </Link>
           <h5 className="d-flex justify-content-center">{t("WishItems")}</h5>

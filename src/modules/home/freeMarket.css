@@ -41,20 +41,25 @@
 .overlay {
   position: absolute;
   opacity: 0;
-  transition: 0.5s ease;
-  background-color: #008cba;
+  transition: 1s ease;
+  text-align: center;
+  width: 100%;
 }
 .boxes-container:hover .overlay {
+
   opacity: 1;
+  transition: 1s;
 }
 .boxes-container:hover .box-images {
   opacity: 0;
+  transition: 1s;
 }
-.boxes-container:hover .boxes{
-  background-color: #008cba;
+.boxes-container:hover .boxes {
+  background-color:#FA8072;
+  transition: 1s;
 }
 .text-in-boxes {
-  color: black;
+  color: white;
   font-size: 20px;
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
