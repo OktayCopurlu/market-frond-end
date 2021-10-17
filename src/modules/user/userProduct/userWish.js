@@ -14,9 +14,9 @@ export default function UserWish() {
     productsContext.wishIdHandler(wishes);
     async function showList() {
       try {
-        const userId = await user.sub;
+        const userId =  user.sub;
         const wishes = await wishActions.filterUserWishes(userId);
-        await setWishes(wishes);
+         setWishes(wishes);
       } catch (error) {
         console.log(error);
       }
@@ -28,9 +28,15 @@ export default function UserWish() {
   return (
     <>
       <h3 className="d-flex justify-content-center mt-3">{t('MyWishList')}</h3>
+      {wishes.length > 0 ? (
       <div className="user-wishes-container m-0 p-1">
         <UserWishCard wishes={wishes} />
       </div>
+      ) : (
+        <h3 className="d-flex justify-content-center p-0">
+          {t("YouDontHaveWishYet")}
+        </h3>
+      )}
     </>
   );
 }

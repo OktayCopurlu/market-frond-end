@@ -31,6 +31,7 @@ export function confirmAlertDelete(user, productsContext, logout) {
                 returnTo: window.location.origin,
               })
             );
+            alert("Account was deleted.")
         },
       },
       {

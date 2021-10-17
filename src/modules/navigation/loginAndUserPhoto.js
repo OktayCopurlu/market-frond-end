@@ -22,7 +22,7 @@ export default function LoginAndUserPhoto() {
         const data = await userService.getUserMetadata(user, accessToken);
         return setUserMetadata(data);
       } catch (error) {
-        console.log(error);
+        console.log("This Error message is because of that user information is coming slower than pages " + error);
       }
     };
     return readUserMetadata();

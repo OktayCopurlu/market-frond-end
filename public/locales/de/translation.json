@@ -73,6 +73,8 @@
   "MyWish": "Mein Wunsch",
   "MyProductList": "Meine Produktliste",
   "MyWishList": "Meine Wunschliste",
+  "YouDontHaveProductYet":"Sie haben noch keine Produkte",
+  "YouDontHaveWishYet":"Du hast noch keine Wünsche",
   "DeleteAccount": "Konto Löschen",
   "Delete": "Löschen",
   "DeleteAlert": {

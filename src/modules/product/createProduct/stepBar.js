@@ -13,16 +13,16 @@ export default function StepBar() {
     <div className="d-flex justify-content-center">
       <ul className="progressbar">
         <li className={page >= 2 ? active : null}>
-          {page >= 2 ? <i class="fas fa-check"></i> : null}
+          {page >= 2 ? <i className="fas fa-check"></i> : null}
         </li>
         <li className={page >= 3 ? active : null}>
-          {page >= 3 ? <i class="fas fa-check"></i> : null}
+          {page >= 3 ? <i className="fas fa-check"></i> : null}
         </li>
         <li className={page >= 4 ? active : null}>
-          {page >= 4 ? <i class="fas fa-check"></i> : null}
+          {page >= 4 ? <i className="fas fa-check"></i> : null}
         </li>
         <li className={productContext.pictureUploaded ? active : null}>
-          {productContext.pictureUploaded ? <i class="fas fa-check"></i> : null}
+          {productContext.pictureUploaded ? <i className="fas fa-check"></i> : null}
         </li>
       </ul>
     </div>

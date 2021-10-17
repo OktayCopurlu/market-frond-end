@@ -100,11 +100,6 @@ export async function deleteProducts(id, token) {
 
   try {
     const list = await fetch(products + "/" + id, requestOptions);
-    if (list.ok) {
-      console.log("product deleted");
-    } else {
-      alert("product did not delete");
-    }
     return await list.json();
   } catch (err) {
     console.log("error", err);

@@ -60,11 +60,6 @@ export async function deleteWishes(id, token) {
 
   try {
     const list = await fetch(wishes + "/" + id, requestOptions);
-    if (list.ok) {
-      alert("wish deleted");
-    } else {
-      alert("wish did not delete");
-    }
     return await list.json();
   } catch (err) {
     console.log("error", err);

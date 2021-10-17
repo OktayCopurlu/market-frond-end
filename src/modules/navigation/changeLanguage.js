@@ -14,10 +14,10 @@ export default function ChangeLanguage() {
       className="form-select d-flex multi-languages"
       aria-label="Default select example"
     >
-      <option  defaultValue="en">
+      <option value="en">
         EN
       </option>
-      <option  value="de">
+      <option value="de">
         DE
       </option>
       <option value="fr">

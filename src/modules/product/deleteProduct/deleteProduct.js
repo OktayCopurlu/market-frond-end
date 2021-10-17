@@ -24,11 +24,11 @@ export default function DeleteProduct(props) {
           onClick: () => {
             productActions.deleteProducts(id, token);
             wishesActions.deleteWishes(id, token);
+            alert(t('DeleteAlert.deleted'))
           },
         },
         {
           label: "No",
-          onClick: () => alert(t('DeleteAlert.deleted')),
         },
       ],
     });

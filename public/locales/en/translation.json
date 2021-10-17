@@ -73,12 +73,14 @@
   "MyWish": "My Wish",
   "MyProductList": "My Product List",
   "MyWishList": "My Wish List",
+  "YouDontHaveProductYet":"You don't have any products yet",
+  "YouDontHaveWishYet":"You don't have any wish yet",
   "DeleteAccount": "Delete Account",
   "Delete": "Delete",
   "DeleteAlert": {
     "title": "Are you sure?",
     "message": "if you delete the item you can not bring it back  again",
-    "deleted": "Product was deleted"
+    "deleted": "Item has been deleted."
   },
   "EditProduct": "Edit Product",
   "ProductUploadMessage": {
