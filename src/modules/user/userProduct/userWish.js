@@ -10,6 +10,8 @@ export default function UserWish() {
   const [wishes, setWishes] = useState([]);
   const { user } = useAuth0();
   const {t}= useTranslation()
+  const itemDeleted = productsContext.itemDeleted
+
   useEffect(() => {
     productsContext.wishIdHandler(wishes);
     async function showList() {
@@ -23,7 +25,7 @@ export default function UserWish() {
     }
     showList();
     // eslint-disable-next-line
-  }, [user]);
+  }, [user,itemDeleted]);
 
   return (
     <>

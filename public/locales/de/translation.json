@@ -79,8 +79,7 @@
   "Delete": "Löschen",
   "DeleteAlert": {
     "title": "Bist du sicher?",
-    "message": "Wenn Sie das Element löschen, können Sie es nicht wieder zurückholen",
-    "deleted": "Produkt wurde gelöscht"
+    "message": "Wenn Sie das Element löschen, können Sie es nicht wieder zurückholen"
   },
   "EditProduct": "Edit Produkt",
   "ProductUploadMessage": {

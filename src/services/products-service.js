@@ -102,7 +102,7 @@ export async function deleteProducts(id, token) {
     const list = await fetch(products + "/" + id, requestOptions);
     return await list.json();
   } catch (err) {
-    console.log("error", err);
+    console.log("Deleting error", err);
   }
 }
 
@@ -112,7 +112,7 @@ export async function filterAndGet(id) {
     const list = await fetch(products + "/" + id);
     return await list.json();
   } catch (err) {
-    console.log("error", err);
+    console.log("filter product error", err);
   }
 }
 
@@ -139,7 +139,7 @@ export async function updateProduct(id, body, isSuccess, token) {
     }
   } catch (error) {
     await isSuccess(false); //for user message
-    return console.log("Error :" + error);
+    return console.log("Editing Error :" + error);
   }
 }
 

@@ -79,8 +79,7 @@
   "Delete": "Delete",
   "DeleteAlert": {
     "title": "Are you sure?",
-    "message": "if you delete the item you can not bring it back  again",
-    "deleted": "Item has been deleted."
+    "message": "if you delete the item you can not bring it back  again"
   },
   "EditProduct": "Edit Product",
   "ProductUploadMessage": {

@@ -11,6 +11,7 @@ export default function UserProduct() {
   const productsContext = useContext(productContext);
   const { user } = useAuth0();
   const { t } = useTranslation();
+  const itemDeleted = productsContext.itemDeleted;
   useEffect(() => {
     productsContext.productIdHandler(products);
 
@@ -25,7 +26,7 @@ export default function UserProduct() {
     }
     showList();
     // eslint-disable-next-line
-  }, [user]);
+  }, [user, itemDeleted]);
 
   return (
     <>

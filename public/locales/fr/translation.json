@@ -79,8 +79,7 @@
   "Delete": "Effacer",
   "DeleteAlert": {
     "title": "Êtes-vous sûr?",
-    "message": "si vous supprimez l'élément, vous ne pouvez plus le ramener",
-    "deleted": "Le produit a été supprimé"
+    "message": "si vous supprimez l'élément, vous ne pouvez plus le ramener"
   },
   "EditProduct": "Modifier le produit",
   "ProductUploadMessage": {
