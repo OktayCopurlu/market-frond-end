@@ -10,12 +10,10 @@
   padding-right: 8rem;
   box-shadow: 0 2px 8px rgb(247, 237, 237);
 }
-
 .home-carousel {
   max-height: 400px;
   min-height: 400px;
 }
-
 .text-home-page {
   margin-left: 30rem;
 }
@@ -63,7 +61,7 @@
   transition: 1s;
 }
 .boxes-container:hover .wish-box {
-  background-color: #20B2AA;
+  background-color: #20b2aa;
   transition: 1s;
 }
 .text-in-boxes {
@@ -95,6 +93,79 @@
 
 h3 {
   padding-left: 0 !important;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1414px) {
+  .information-text {
+    font-size: 16px;
+  }
+  .text-home-page {
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+  }
+  .freemarket {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: justify;
+    justify-content: center;
+    padding: 2rem;
+    margin: 0;
+  }
+
+  .boxes {
+    height: 17rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    color: black;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  .box-images {
+    height: 17rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .information-text {
+    font-size: 14px;
+    background-color: #20b2aa;
+
+  }
+  .text-in-boxes {
+    font-size: 13px;
+  }
+  .freemarket {
+    background-image: url("https://t3.ftcdn.net/jpg/03/16/35/88/240_F_316358814_dh58mlXH8NbtsxsyXbAedEMuBKSzMTNp.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: justify;
+    justify-content: center;
+    padding: 2rem;
+    margin: 0;
+  }
+
+  .boxes {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    color: black;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  .box-images {
+    height: 15rem;
+  }
+  .text-home-page {
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+  }
+
 }
 
 @media only screen and (max-device-width: 767px) {
@@ -131,75 +202,5 @@ h3 {
     font-size: 3rem;
     color: black;
     font-family: Georgia, "Times New Roman", Times, serif;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .information-text {
-    font-size: 14px;
-  }
-  .text-in-boxes {
-    font-size: 13px;
-  }
-  .freemarket {
-    background-image: url("https://t3.ftcdn.net/jpg/03/16/35/88/240_F_316358814_dh58mlXH8NbtsxsyXbAedEMuBKSzMTNp.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-align: justify;
-    justify-content: center;
-    padding: 2rem;
-    margin: 0;
-  }
-
-  .boxes {
-    min-width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.4rem;
-    color: black;
-    font-family: Georgia, "Times New Roman", Times, serif;
-  }
-  .box-images {
-    height: 15rem;
-  }
-  .text-home-page {
-    margin: 0 auto;
-    width: 80%;
-    text-align: center;
-  }
-}
-
-@media screen and (min-width: 1024px) and (max-width: 1414px) {
-  .information-text {
-    font-size: 16px;
-  }
-  .text-home-page {
-    margin: 0 auto;
-    width: 80%;
-    text-align: center;
-  }
-  .freemarket {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-align: justify;
-    justify-content: center;
-    padding: 2rem;
-    margin: 0;
-  }
-
-  .boxes {
-    height: 17rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.4rem;
-    color: black;
-    font-family: Georgia, "Times New Roman", Times, serif;
-  }
-  .box-images {
-    height: 17rem;
   }
 }

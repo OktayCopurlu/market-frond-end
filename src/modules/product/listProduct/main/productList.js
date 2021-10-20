@@ -18,7 +18,8 @@ export default function ProductList() {
   return (
     <div className="productList-container">
       <FilterProduct />
-      {productList.length === 0 ? (
+      {productList.length === 0 && canton && category ?  <h3>Loading...</h3>:
+      productList.length === 0 ? (  
         <div className="m-auto d-flex justify-content-center">
           <h3 key="header">
             {t("ThereIsNoProduct")} in 

@@ -11,7 +11,6 @@ export default function LoginAndUserPhoto() {
   const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
   const [userMetadata, setUserMetadata] = useState(null);
   const { user, getAccessTokenSilently } = useAuth0();
-
   useEffect(() => {
     const readUserMetadata = async () => {
       try {

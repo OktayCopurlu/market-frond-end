@@ -6,7 +6,7 @@ export default function Boxes() {
   const { t } = useTranslation();
 
   return (
-    <div className="container mt-3">
+    <div className=" m-3">
       <div className="row">
         <div className="col-md mb-2 boxes-container">
           <Link to="/explanation" className="boxes donate-box">
