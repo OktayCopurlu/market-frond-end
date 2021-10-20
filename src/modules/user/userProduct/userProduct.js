@@ -34,7 +34,7 @@ export default function UserProduct() {
         {t("MyProductList")}
       </h3>
       {products.length > 0 ? (
-        <div className="d-flex justify-content-center user-product-container row m-0 p-1">
+        <div className="d-flex justify-content-center user-product-container row m-0">
           <UserProductCard products={products} />
         </div>
       ) : (

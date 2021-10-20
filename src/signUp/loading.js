@@ -1,10 +1,10 @@
 import React from 'react'
-const img="http://cdn.auth0.com/blog/auth0-react-sample/assets/loading.svg"
+import loading from "../../store/Loading.svg"
 export default function Loading() {
 
     return (
         <div className="d-flex justify-content-center">
-            <img alt="Loading..." src={img}/>
+            <h3 className="m-auto"><img className="m-auto" src={loading} alt="Loading..."/></h3>
         </div>
     )
 }

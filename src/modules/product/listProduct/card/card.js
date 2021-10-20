@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "../../../../components/cards/productCard";
 import { useTranslation } from "react-i18next";
-
+import loading from "../../../../store/Loading.svg"
 export default function Card(filterAndSearch) {
   const searched = filterAndSearch.elements;
   const { t } = useTranslation();
   const { productList, searchItem } = searched;
-  const [productListFiltered,setProductListFiltered] = useState([]);
+  const [productListFiltered, setProductListFiltered] = useState([]);
 
   useEffect(() => {
     if (productList === 0) {
@@ -27,14 +27,26 @@ export default function Card(filterAndSearch) {
         return null;
       });
     }
-    setProductListFiltered(productsListSs)
-  },[productList, searchItem,t])
-  
+    setProductListFiltered(productsListSs);
+  }, [productList, searchItem, t]);
+
   return (
     <div className="productList-main">
-      {productListFiltered.length > 0 ? productListFiltered.map((element, index) => {
-        return <ProductCard element={element} key={index} />;
-      }) :<h3 className="empty-filter"><strong  className="text-danger">{searchItem}</strong> couldn't be found</h3>}
+      {productListFiltered.length > 0 ? (
+        productListFiltered.map((element, index) => {
+          return <ProductCard element={element} key={index} />;
+        })
+      ) : searchItem ? (
+        <h3 className="empty-filter">
+          {" "}
+          <strong className="text-danger">{searchItem}</strong> Couldn't be
+          found
+        </h3>
+      ) : (
+        <div className="m-auto">
+          <img className="m-auto" src={loading} alt="Loading..."/>
+        </div>
+      )}
     </div>
   );
 }

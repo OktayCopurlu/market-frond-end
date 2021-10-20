@@ -6,7 +6,7 @@ import * as userService from "../../../services/users-service";
 import UserDetailCard from "./userDetailCard";
 import { useTranslation } from "react-i18next";
 import productContext from "../../../context/productContext";
-
+import loading from "../../../store/Loading.svg"
 export default function PersonalPage() {
   const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
   const [userMetadata, setUserMetadata] = useState(null);
@@ -38,7 +38,7 @@ export default function PersonalPage() {
         {userMetadata ? (
           <UserDetailCard element={userMetadata} />
         ) : (
-          <h3 className="m-5">Loading...</h3>
+          <h3 className="m-auto"><img className="m-auto" src={loading} alt="Loading..."/></h3>
         )}
       </div>
       <div className="user-page-links-container">

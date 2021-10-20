@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./navigation.css";
 import MenuLinks from "./menuLinks";
-import logo from "../../logo.png"
+import logo from "../../store/logo.png"
 export default function Navigation() {
 
   return (

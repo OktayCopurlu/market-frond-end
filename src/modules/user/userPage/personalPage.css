@@ -153,4 +153,8 @@ a:hover {
   .user-page-links-container {
     width: 100%;
   }
+  .edit-delete-button-container {
+  margin-left: 0;
+  margin-bottom: 1rem;
+}
 }
