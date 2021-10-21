@@ -5,8 +5,11 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useTranslation } from "react-i18next";
 
 import "./productCard.css";
+import MapGoogle from "../../modules/product/listProduct/google-map/mapGoogle";
 export default function ProductCard(props) {
   const element = props.element;
+  const canton = props.element.canton
+  const city = props.element.city
   const { t } = useTranslation();
   const { isAuthenticated, loginWithRedirect } = useAuth0();
 
@@ -30,7 +33,8 @@ export default function ProductCard(props) {
         </div>
         <div className="d-flex justify-content-between mb-0">
           <p className="mb-0">{element.condition}</p>
-          <p className="mb-0">{element.city}</p>
+      
+          <div className="mb-0"><MapGoogle address={{canton,city}}/>{element.city}</div>
         </div>
 
         <p className="mt-0">

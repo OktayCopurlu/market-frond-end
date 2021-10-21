@@ -60,7 +60,7 @@ export async function filterMainCategory(mainCategory) {
     const list = await fetch(`${products}/filter?mainCategory=${mainCategory}`);
     return await list.json();
   } catch (err) {
-    return await console.log("error", err);
+    return console.log("error", err);
   }
 }
 
@@ -72,7 +72,7 @@ export async function filterProductCantonAndCategory(canton, category) {
     );
     return await list.json();
   } catch (err) {
-    return await console.log("error", err);
+    return  console.log("error", err);
   }
 }
 

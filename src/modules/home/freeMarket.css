@@ -131,7 +131,6 @@ h3 {
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .information-text {
     font-size: 14px;
-    background-color: #20b2aa;
 
   }
   .text-in-boxes {
