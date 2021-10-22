@@ -13,14 +13,13 @@ export default function MapGoogle(props) {
   const classes = googleMapStyle.useStyles();
   const [center, setCenter] = useState({});
 
-  function onSubmit(event) {
-    event.preventDefault();
-    setOpen(true);
-  }
-
   function handleClose(event) {
     event.preventDefault();
     setOpen(false);
+  }
+  function handleOpen(event) {
+    event.preventDefault();
+    setOpen(true);
   }
 
   useEffect(() => {
@@ -37,8 +36,11 @@ export default function MapGoogle(props) {
     getGoogleLocation();
   }, [address]);
   return (
-    <Link to="#" onClick={onSubmit} className="mr-2">
-      <i className="fas fa-map-marker-alt"></i>
+    <>
+      <Link to="#" onClick={handleOpen} className="mr-2">
+        <i className="fas fa-map-marker-alt"></i>
+      </Link>
+
       <Modal
         onClose={handleClose}
         open={open}
@@ -58,6 +60,6 @@ export default function MapGoogle(props) {
           </LoadScript>
         </div>
       </Modal>
-    </Link>
+    </>
   );
 }
