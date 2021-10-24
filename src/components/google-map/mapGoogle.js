@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import Modal from "@material-ui/core/Modal";
-import * as googleMapService from "../../../../services/google-map-service";
+import {getLocationFromGoogle} from "../../services/google-map-service";
 import * as googleMapStyle from "./mapGoogleStyle";
 
 export default function MapGoogle(props) {
@@ -25,7 +25,7 @@ export default function MapGoogle(props) {
   useEffect(() => {
     const getGoogleLocation = async () => {
       try {
-        let googleLocation = await googleMapService.getLocationFromGoogle(
+        let googleLocation = await getLocationFromGoogle(
           address
         );
         setCenter(googleLocation.results[0].geometry.location);

@@ -3,10 +3,9 @@ import Slider from "../slider";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useTranslation } from "react-i18next";
-
 import "./productCard.css";
-import MapGoogle from "../../modules/product/listProduct/google-map/mapGoogle";
 import Messages from "../messages/messages";
+import MapGoogle from "../google-map/mapGoogle";
 export default function ProductCard(props) {
   const element = props.element;
   const canton = props.element.canton;
@@ -57,8 +56,8 @@ export default function ProductCard(props) {
       </div>
       <div className="card-footer">
         {isAuthenticated ? (
-          <div className="d-flex justify-content-between">
-            <Link to="#" className="text-dark d-block">
+          <div className="d-flex justify-content-between align-items-center">
+            <Link to="#" className="text-dark d-block ">
               <i className="fas fa-phone"></i> {element.contactTel}
             </Link>
             <Messages element={element} />

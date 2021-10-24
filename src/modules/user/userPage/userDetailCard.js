@@ -2,6 +2,7 @@ import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import "./personalPage.css";
 import { useTranslation } from "react-i18next";
+import UserMessages from "../../../components/messages/userMessages";
 export default function UserDetailCard(props) {
   const userMetadata = props.element;
   const { user } = useAuth0();
@@ -22,25 +23,37 @@ export default function UserDetailCard(props) {
           <span>{userMetadata?.birthDate}</span>
         </p>
         <p className="d-flex ml-5">
-          <span className="h6 mr-3">{t("Detail")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : </span>
+          <span className="h6 mr-3">
+            {t("Detail")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :{" "}
+          </span>
           <span>{userMetadata?.detail}</span>
         </p>
         <p className="d-flex ml-5">
-          <span className="h6 mr-3">{t("Address")}&nbsp;&nbsp;&nbsp;&nbsp; :</span>
+          <span className="h6 mr-3">
+            {t("Address")}&nbsp;&nbsp;&nbsp;&nbsp; :
+          </span>
           <span>{userMetadata?.address}</span>
         </p>
         <p className="d-flex ml-5">
-          <span className="h6 mr-3">{t("Canton")} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</span>
+          <span className="h6 mr-3">
+            {t("Canton")} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+          </span>
           <span> {userMetadata?.canton}</span>
         </p>
         <p className="d-flex ml-5">
-          <span className="h6 mr-3">{t("City")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : </span>
+          <span className="h6 mr-3">
+            {t("City")}
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :{" "}
+          </span>
           <span>{userMetadata?.city}</span>
         </p>
         <p className="d-flex ml-5">
-          <span className="h6 mr-3">{t("Phone")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</span>
+          <span className="h6 mr-3">
+            {t("Phone")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
+          </span>
           <span>{userMetadata?.contactNumber}</span>
         </p>
+        <UserMessages/>
         {userMetadata?.instagram ? (
           <a
             className="social-media"

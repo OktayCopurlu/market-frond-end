@@ -41,14 +41,27 @@ export async function getRecipientMessages(recipientID) {
 }
 
 export async function getSenderMessages(senderID) {
-  console.log(senderID);
+  
   try {
     const messagesData = await fetch(
-      `http://localhost:8080/messages/filter?recipientID=${senderID}`
+      `http://localhost:8080/messages/filter?senderID=${senderID}`
     );
     const messages = await messagesData.json();
     return messages;
   } catch (err) {
     return console.log("error", err);
   }
+}
+
+export async function getUserMessages(mongoUserID){
+  try {
+    const messagesData = await fetch(
+      `http://localhost:8080/messages/filter?_id=${mongoUserID}`
+    );
+    const messages = await messagesData.json();
+    return messages;
+  } catch (err) {
+    return console.log("error", err);
+  }
+
 }

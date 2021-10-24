@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Link } from "react-router-dom";
 import Modal from "@material-ui/core/Modal";
 import "./messages.css";
 import {
@@ -14,15 +13,19 @@ export default function Messages(props) {
   const productInfo = props.element;
   const productID = productInfo._id;
   const productOwnerID = productInfo.mongoUserID;
+  const productOwnerEmail = productInfo.contactEmail;
   const [userID, setUserID] = useState();
   const { user } = useAuth0();
   const [open, setOpen] = useState(false);
   const [messagesString, setMessageString] = useState();
+  let recipientEmail = productOwnerEmail;
   let recipientID = productOwnerID;
+
   function handleClose(event) {
     event.preventDefault();
     setOpen(false);
   }
+
   function handleOpen(event) {
     event.preventDefault();
     setOpen(true);
@@ -30,47 +33,60 @@ export default function Messages(props) {
       setMessages(messages);
     });
   }
-  const sendMessage = (event) => {
-    event.preventDefault();
-    messages.map((message) => {
+
+  function defineRecipientUser(){
+    messages.forEach((message) => {
       if (message.productID === productID) {
         if (message.senderID === userID) {
-          return (recipientID = message.recipientID);
+          recipientEmail = message.recipientEmail;
+          recipientID = message.recipientID;
         } else {
-          return (recipientID = message.senderID);
+          recipientEmail = user.email;
+          recipientID = message.senderID;
         }
       } else {
-        return (recipientID = productOwnerID);
+        recipientEmail = productOwnerEmail;
+        recipientID = productOwnerID;
       }
     });
+  }
+  defineRecipientUser()
+
+  function sendMessage(event) {
+    event.preventDefault();
 
     const body = {
       recipientID: recipientID,
+      recipientEmail: recipientEmail,
       senderID: userID,
-      senderName: user.name,
-      message: messagesString,
+      senderEmail: user.email,
       productID: productID,
+      message: messagesString,
     };
 
     if (!(userID === recipientID)) {
       return postMessage(body);
     }
+    
     getProductMessages(productID).then((messages) => {
       setMessages(messages);
     });
-  };
+  }
   useEffect(() => {
-    getUserInformationFromMangoDB(user).then((user) => setUserID(user[0]._id));
+    getUserInformationFromMangoDB(user).then((user) => {
+      setUserID(user[0]._id);
+    });
     getProductMessages(productID).then((messages) => {
       setMessages(messages);
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div>
-      <Link onClick={handleOpen} to="#" className="chat">
+      <button onClick={handleOpen} to="#" className="chat btn btn-danger">
         Chat
-      </Link>
+      </button>
       <Modal
         onClose={handleClose}
         open={open}
@@ -78,18 +94,21 @@ export default function Messages(props) {
         aria-describedby="simple-modal-description"
       >
         <div className="modal-container">
-          <section className="h-100 w-100 p-3 d-flex flex-column messages-section">
-            {messages.map((message) => {
+          <section className="h-100 w-100 p-3 d-flex flex-column-reverse messages-section">
+            {messages.reverse().map((message, index) => {
               return message.productID === productID &&
                 message.senderID === userID ? (
-                <div className="d-flex flex-row-reverse sender-messages-container">
+                <div
+                  key={index}
+                  className="d-flex flex-row-reverse sender-messages-container"
+                >
                   <p className="text-dark w-75 text-right border  sender-message">
                     {message.message}
                   </p>
                 </div>
               ) : message.productID === productID &&
                 message.recipientID === userID ? (
-                <div className="d-flex flex-row">
+                <div key={index} className="d-flex flex-row">
                   <p className=" w-75 border recipient-message">
                     {message.message}
                   </p>
@@ -103,7 +122,7 @@ export default function Messages(props) {
               onChange={(event) => setMessageString(event.target.value)}
               type="text-area"
               className="form-control message-input"
-              placeholder="Type your "
+              placeholder="Type your message"
             />
             <div className="input-group-append ">
               <button

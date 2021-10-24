@@ -127,3 +127,15 @@ export async function getUserInformationFromMangoDB(user) {
     console.log("Error", error);
   }
 }
+export async function getUserMongoID(email) {
+
+  try {
+    const response = await fetch(
+      `http://localhost:8080/users/filter?email=${email}`
+    );
+    const user = await response.json();
+    return user;
+  } catch (error) {
+    console.log("Error", error);
+  }
+}
