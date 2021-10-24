@@ -2,7 +2,6 @@ const domain = process.env.REACT_APP_AUTH0_DOMAIN;
 const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
 const accessTokenMNG = process.env.REACT_APP_AUTH0_MNGT_TOKEN;
 
-
 //get all users
 export async function getAll(getAccessTokenSilently) {
   try {
@@ -75,7 +74,7 @@ export const updateUserMetaData = async (userId, accessToken, body) => {
       body: JSON.stringify(body),
     });
     const { user_metadata } = await metadataResponse.json();
-    
+
     return await user_metadata;
   } catch (e) {
     console.log(e.message);
@@ -115,3 +114,16 @@ export const getUserMetadata = async (user, accessToken) => {
     console.log(e.message);
   }
 };
+
+export async function getUserInformationFromMangoDB(user) {
+  const userId = user.sub;
+  try {
+    const response = await fetch(
+      `http://localhost:8080/users/filter?userId=${userId}`
+    );
+    const user = await response.json();
+    return user;
+  } catch (error) {
+    console.log("Error", error);
+  }
+}

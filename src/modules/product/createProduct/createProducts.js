@@ -9,13 +9,13 @@ import NotSuccessText from "../../../components/forms/productForms/messages/notS
 import MainForm from "../form/mainForm";
 import { useTranslation } from "react-i18next";
 import StepBar from "./stepBar";
+import { getUserInformationFromMangoDB } from "../../../services/users-service";
 // import ReactStepBar from "./reactStepBar";
 export default function CreateProducts() {
   const { t } = useTranslation();
-  const { getAccessTokenSilently, user} = useAuth0();
+  const { getAccessTokenSilently, user } = useAuth0();
   const [token, setToken] = useState();
   getAccessTokenSilently().then((token) => setToken(token));
-
   const userId = user.sub;
   const context = useContext(Context);
   const productContext = useContext(ProductContext);
@@ -32,6 +32,10 @@ export default function CreateProducts() {
   const contactTel = productContext.contactTel;
   const dimensions = productContext.dimensions;
   const contactEmail = productContext.contactEmail;
+  const [mongoUserID, setMongoUserID] = useState();
+  getUserInformationFromMangoDB(user).then((user) =>
+    setMongoUserID(user[0]._id)
+  );
   //----------------------------------------------------------------
 
   const body = {
@@ -48,16 +52,17 @@ export default function CreateProducts() {
     contactTel,
     photos,
     contactEmail,
+    mongoUserID,
   };
 
   //post request function
   const onSubmit = async (event) => {
     try {
       await event.preventDefault();
-      await productActions.createProduct(body, context.handlerSuccess, token);
-      await context.pageFormHandler(1);
-      await productContext.cantonHandler(null);
-      await productContext.mainCategoryHandler(null);
+      productActions.createProduct(body, context.handlerSuccess, token);
+      context.pageFormHandler(1);
+      productContext.cantonHandler(null);
+      productContext.mainCategoryHandler(null);
     } catch (error) {
       console.log(error);
     }
@@ -69,8 +74,8 @@ export default function CreateProducts() {
       <h3 className="d-flex justify-content-center">{t("CreateNewProduct")}</h3>
       {context.isSuccess === null ? (
         <>
-           {/* <ReactStepBar/> */}
-         <StepBar />
+          {/* <ReactStepBar/> */}
+          <StepBar />
           <div>
             <div className="col d-flex justify-content-center">
               <form className="form-create" onSubmit={onSubmit}>

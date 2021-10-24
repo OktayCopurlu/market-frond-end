@@ -6,10 +6,11 @@ import { useTranslation } from "react-i18next";
 
 import "./productCard.css";
 import MapGoogle from "../../modules/product/listProduct/google-map/mapGoogle";
+import Messages from "../messages/messages";
 export default function ProductCard(props) {
   const element = props.element;
-  const canton = props.element.canton
-  const city = props.element.city
+  const canton = props.element.canton;
+  const city = props.element.city;
   const { t } = useTranslation();
   const { isAuthenticated, loginWithRedirect } = useAuth0();
 
@@ -33,8 +34,11 @@ export default function ProductCard(props) {
         </div>
         <div className="d-flex justify-content-between mb-0">
           <p className="mb-0">{element.condition}</p>
-      
-          <div className="mb-0"><MapGoogle address={{canton,city}}/>{element.city}</div>
+
+          <div className="mb-0">
+            <MapGoogle address={{ canton, city }} />
+            {element.city}
+          </div>
         </div>
 
         <p className="mt-0">
@@ -53,9 +57,12 @@ export default function ProductCard(props) {
       </div>
       <div className="card-footer">
         {isAuthenticated ? (
-          <Link to="#" className="text-dark d-block">
-            <i className="fas fa-phone"></i> {element.contactTel}
-          </Link>
+          <div className="d-flex justify-content-between">
+            <Link to="#" className="text-dark d-block">
+              <i className="fas fa-phone"></i> {element.contactTel}
+            </Link>
+            <Messages element={element} />
+          </div>
         ) : (
           <Link
             to="/SignUp"
