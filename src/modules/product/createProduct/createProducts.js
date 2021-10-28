@@ -9,7 +9,7 @@ import NotSuccessText from "../../../components/forms/productForms/messages/notS
 import MainForm from "../form/mainForm";
 import { useTranslation } from "react-i18next";
 import StepBar from "./stepBar";
-import { getUserInformationFromMangoDB } from "../../../services/users-service";
+import { getUserInformationFromMongoDB } from "../../../services/users-service";
 // import ReactStepBar from "./reactStepBar";
 export default function CreateProducts() {
   const { t } = useTranslation();
@@ -33,7 +33,7 @@ export default function CreateProducts() {
   const dimensions = productContext.dimensions;
   const contactEmail = productContext.contactEmail;
   const [mongoUserID, setMongoUserID] = useState();
-  getUserInformationFromMangoDB(user).then((user) =>
+  getUserInformationFromMongoDB(user).then((user) =>
     setMongoUserID(user[0]._id)
   );
   //----------------------------------------------------------------

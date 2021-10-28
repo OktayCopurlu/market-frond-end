@@ -24,7 +24,9 @@
   background-image: url("../../store/chat-bg.jpg");
   padding: 0;
 }
-
+.messages-main{
+  max-height:595.5px
+}
 .messages-section {
   overflow-y: scroll;
 }
@@ -64,6 +66,7 @@
   padding-left: 7rem;
   padding-top: 0.7rem;
   padding-bottom: 0.7rem;
+  height:50px
 }
 .message-input {
   height: calc(1.5em + 0.75rem + 16px);
@@ -82,17 +85,21 @@
 .message-type-send-container {
   justify-content: space-between;
 }
-.open-user-list {
+.user-list{
   display: flex;
   flex-direction: column-reverse;
   background-color: #ffff;
+  transition: width 0.5s linear;
+  overflow: hidden;
+}
+.open-user-list {
+  width: 20rem;
+}
+.close-user-list {
+  width: 0;
 }
 
-.close-user-list {
-  display: none;
-  flex-direction: column-reverse;
-  background-color: #ffff;
-}
+
 
 @media screen and (max-width: 767px) {
   .modal-container {

@@ -115,7 +115,7 @@ export const getUserMetadata = async (user, accessToken) => {
   }
 };
 
-export async function getUserInformationFromMangoDB(user) {
+export async function getUserInformationFromMongoDB(user) {
   const userId = user.sub;
   try {
     const response = await fetch(

@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import Modal from "@material-ui/core/Modal";
 import { postMessage, getUserMessages } from "../../services/message-service";
 import {
-  getUserInformationFromMangoDB,
+  getUserInformationFromMongoDB,
   getUserMongoID,
 } from "../../services/users-service";
 import "./messages.css";
 
 export default function UserMessages() {
+  const messagesInput = useRef(null);
   const [messages, setMessages] = useState([]);
   const { user } = useAuth0();
   const [open, setOpen] = useState(false);
@@ -17,6 +18,7 @@ export default function UserMessages() {
   const [recipientID, setRecipientID] = useState();
   const [recipientEmail, setRecipientEmail] = useState();
   const [list, setList] = useState(true);
+
   const userEmails = [];
   const emails = [];
 
@@ -35,6 +37,9 @@ export default function UserMessages() {
 
   function sendMessage(event) {
     event.preventDefault();
+
+    messagesInput.current.value = "";
+
     const body = {
       recipientID: recipientID,
       senderID: mongoUserID,
@@ -42,9 +47,11 @@ export default function UserMessages() {
       message: messagesString,
       recipientEmail: recipientEmail,
     };
-    postMessage(body);
-    getUserMessages(mongoUserID).then((messages) => {
-      setMessages(messages);
+
+    postMessage(body).then(() => {
+      getUserMessages(mongoUserID).then((messages) => {
+        setMessages(messages.reverse());
+      });
     });
   }
 
@@ -82,13 +89,18 @@ export default function UserMessages() {
   filterUserEmails();
 
   useEffect(() => {
-    getUserInformationFromMangoDB(user).then((user) =>
+    getUserInformationFromMongoDB(user).then((user) =>
       setMongoUserID(user[0]._id)
     );
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <div>
-      <button onClick={handleOpen} to="#" className="chat btn btn-danger px-5 m-2">
+      <button
+        onClick={handleOpen}
+        to="#"
+        className="chat btn btn-danger px-5 m-2"
+      >
         Chat
       </button>
       <Modal
@@ -107,9 +119,9 @@ export default function UserMessages() {
               {list === true ? ">" : "<"}
             </button>
           </div>
-          <main className="d-flex h-100">
+          <main className="d-flex h-100 messages-main">
             <section className="h-100 w-100 p-3 d-flex flex-column-reverse messages-section">
-              {userMessages.reverse().map((message, index) => {
+              {userMessages.map((message, index) => {
                 return message.senderID === mongoUserID ? (
                   <div
                     key={index}
@@ -129,7 +141,9 @@ export default function UserMessages() {
               })}
             </section>
             <section
-              className={list === true ? "open-user-list" : "close-user-list"}
+              className={`user-list ${
+                list === true ? "open-user-list" : "close-user-list"
+              }`}
             >
               {emails.map((email, index) => {
                 return email !== user.email ? (
@@ -147,6 +161,7 @@ export default function UserMessages() {
           </main>
           <form onSubmit={(e) => sendMessage(e)} className="input-group">
             <input
+              ref={messagesInput}
               onChange={(event) => setMessageString(event.target.value)}
               type="text-area"
               className="form-control message-input"

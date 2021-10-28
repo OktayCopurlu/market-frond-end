@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import Modal from "@material-ui/core/Modal";
 import "./messages.css";
@@ -7,8 +7,9 @@ import {
   postMessage,
 } from "../../services/message-service";
 
-import { getUserInformationFromMangoDB } from "../../services/users-service";
+import { getUserInformationFromMongoDB } from "../../services/users-service";
 export default function Messages(props) {
+  const messagesInput = useRef();
   const [messages, setMessages] = useState([]);
   const productInfo = props.element;
   const productID = productInfo._id;
@@ -30,11 +31,11 @@ export default function Messages(props) {
     event.preventDefault();
     setOpen(true);
     getProductMessages(productID).then((messages) => {
-      setMessages(messages);
+      setMessages(messages.reverse());
     });
   }
 
-  function defineRecipientUser(){
+  function defineRecipientUser() {
     messages.forEach((message) => {
       if (message.productID === productID) {
         if (message.senderID === userID) {
@@ -50,10 +51,11 @@ export default function Messages(props) {
       }
     });
   }
-  defineRecipientUser()
+  defineRecipientUser();
 
   function sendMessage(event) {
     event.preventDefault();
+    messagesInput.current.value = "";
 
     const body = {
       recipientID: recipientID,
@@ -65,21 +67,22 @@ export default function Messages(props) {
     };
 
     if (!(userID === recipientID)) {
-      return postMessage(body);
+      return postMessage(body).then(() => {
+        getProductMessages(productID).then((messages) => {
+          setMessages(messages);
+        });
+      });
     }
-    
-    getProductMessages(productID).then((messages) => {
-      setMessages(messages);
-    });
   }
+
   useEffect(() => {
-    getUserInformationFromMangoDB(user).then((user) => {
+    getUserInformationFromMongoDB(user).then((user) => {
       setUserID(user[0]._id);
     });
     getProductMessages(productID).then((messages) => {
       setMessages(messages);
     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -95,7 +98,7 @@ export default function Messages(props) {
       >
         <div className="modal-container">
           <section className="h-100 w-100 p-3 d-flex flex-column-reverse messages-section">
-            {messages.reverse().map((message, index) => {
+            {messages.map((message, index) => {
               return message.productID === productID &&
                 message.senderID === userID ? (
                 <div
@@ -119,6 +122,7 @@ export default function Messages(props) {
 
           <form onSubmit={(e) => sendMessage(e)} className="input-group">
             <input
+              ref={messagesInput}
               onChange={(event) => setMessageString(event.target.value)}
               type="text-area"
               className="form-control message-input"

@@ -8,10 +8,10 @@ export const postMessage = (body) => {
     body: JSON.stringify(body),
   };
 
-  fetch(`http://localhost:8080/messages`, requestOptions)
-    .then((response) => {
-      return response.json();
-    })
+  return fetch(`http://localhost:8080/messages`, requestOptions)
+    // .then((response) => {
+    //   return response.json();
+    // })
     .catch((err) => {
       return console.log("Error :" + err);
     });
@@ -41,7 +41,6 @@ export async function getRecipientMessages(recipientID) {
 }
 
 export async function getSenderMessages(senderID) {
-  
   try {
     const messagesData = await fetch(
       `http://localhost:8080/messages/filter?senderID=${senderID}`
@@ -53,7 +52,7 @@ export async function getSenderMessages(senderID) {
   }
 }
 
-export async function getUserMessages(mongoUserID){
+export async function getUserMessages(mongoUserID) {
   try {
     const messagesData = await fetch(
       `http://localhost:8080/messages/filter?_id=${mongoUserID}`
@@ -63,5 +62,4 @@ export async function getUserMessages(mongoUserID){
   } catch (err) {
     return console.log("error", err);
   }
-
 }
