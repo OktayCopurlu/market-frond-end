@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import citiesJson from "../../../../context/city.json"; //import canton and city information
-import ProductContext from "../../../../context/productContext";
+import citiesJson from "../../context/city.json"; //import canton and city information
+import ProductContext from "../../context/productContext";
 import {
   RadioGroup,
   Radio,
@@ -29,9 +29,9 @@ export default function CantonLinks() {
   const onSubmit = async (event) => {
     try {
       if (event.target.value === "null") {
-        return productContext.cantonHandler(null);
+        return productContext.filterCantonHandler(null);
       } else {
-        return productContext.cantonHandler(event.target.value);
+        return productContext.filterCantonHandler(event.target.value);
       }
     } catch (error) {
       return  console.log(error);

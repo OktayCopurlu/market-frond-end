@@ -2,18 +2,17 @@ import React, { useContext,useEffect }from "react";
 import ProductContext from "../../../../context/productContext";
 import * as productService from "../../../../services/products-service";
 import SearchButton from "../../../../components/search/searchButton";
-import CantonLinks from "../../../../components/forms/productForms/cantonLinkList/cantonLinks";
-import CategoryLinks from "../../../../components/forms/productForms/categoryLinkList/categoryLinks";
+import CantonLinks from "../../../../components/filter/cantonLinks";
+import CategoryLinks from "../../../../components/filter/categoryLinks";
 import "../main/productList.css"
 
 export default function FilterProduct() {
   const productContext = useContext(ProductContext);
-  const mainCategory = productContext.mainCategory;
-  const canton = productContext.canton;
-  const isLoading = productContext.isLoadingHandler;
-
+  const mainCategory = productContext.filterCategory;
+  const canton = productContext.filterCanton;
+  
   useEffect(() => {
-  productService.listAction (canton,mainCategory,productContext,isLoading)
+  productService.listAction (canton,mainCategory,productContext)
   // eslint-disable-next-line
 },[canton,mainCategory])
 

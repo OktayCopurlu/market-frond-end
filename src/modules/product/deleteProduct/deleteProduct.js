@@ -7,6 +7,7 @@ import * as wishesActions from "../../../services/wishes-service";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useTranslation } from "react-i18next";
 import ProductContext from "../../../context/productContext";
+import { Link } from "react-router-dom";
 export default function DeleteProduct(props) {
   const id = props.value;
   const { t } = useTranslation();
@@ -15,7 +16,9 @@ export default function DeleteProduct(props) {
   getAccessTokenSilently().then((token) => setToken(token));
   const productContext = useContext(ProductContext);
 
-  function onSubmit() {
+  function onSubmit(event) {
+    event.preventDefault();
+console.log(id)
     confirmAlert({
       title: t("DeleteAlert.title"),
       message: t("DeleteAlert.message"),
@@ -35,12 +38,8 @@ export default function DeleteProduct(props) {
     });
   }
   return (
-    <button
-      className="userProductButton btn btn-danger"
-      type="submit"
-      onClick={onSubmit}
-    >
-      {t("Delete")}
-    </button>
+    <Link className="userProductButton text-danger" onClick={(event) => onSubmit(event)}>
+       <i class="fas fa-trash-alt"></i> 
+    </Link>
   );
 }

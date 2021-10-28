@@ -7,6 +7,7 @@ export default function SuccessText() {
   const context = useContext(Context);
   const productContext = useContext(ProductContext);
   const {t}= useTranslation()
+  
   function onClick() {
     context.handlerSuccess(null);
     productContext.photosHandler([]);

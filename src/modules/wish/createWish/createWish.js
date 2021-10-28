@@ -7,18 +7,18 @@ import ProductContext from "../../../context/productContext";
 import SuccessText from "./messages/successText";
 import NotSuccessText from "./messages/notSuccessText";
 import MainForm from "../form/mainForm";
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 import StepBar from "../../product/createProduct/stepBar";
-// import ReactStepBar from "../../product/createProduct/reactStepBar";
 export default function CreateWishList() {
   const context = useContext(Context);
+  context.handlerSuccess(null);
   const productContext = useContext(ProductContext);
   const { getAccessTokenSilently, user } = useAuth0();
   const { sub } = user;
   const userId = sub;
   const [token, setToken] = useState();
   getAccessTokenSilently().then((token) => setToken(token));
-  const {t}= useTranslation()
+  const { t } = useTranslation();
   const name = context.name;
   const canton = productContext.canton;
   const title = productContext.title;
@@ -47,18 +47,20 @@ export default function CreateWishList() {
 
   return (
     <div className="container">
-      <h3 className="d-flex justify-content-center mb-4">{t('CreateYourWish')}</h3>
+      <h3 className="d-flex justify-content-center mb-4">
+        {t("CreateYourWish")}
+      </h3>
       {context.isSuccess === null ? (
-         <>
-         {/* <ReactStepBar/> */}
-         <StepBar />
-        <div className="row createWish-row">
-          <div className="col d-flex justify-content-center">
-            <form className="form-create" onSubmit={onSubmit}>
-              <MainForm />
-            </form>
+        <>
+          <StepBar />
+          <div className="row createWish-row">
+            <div className="col d-flex justify-content-center">
+              <form className="form-create" onSubmit={onSubmit}>
+                <MainForm />
+              </form>
+            </div>
           </div>
-        </div></>
+        </>
       ) : context.isSuccess ? (
         <SuccessText />
       ) : (

@@ -48,21 +48,13 @@ export default function UserInfoInWishCard(props) {
               />
             )}
             <h3 className="p-0">
-              {" "}
               {user.user_metadata?.name ? user.user_metadata?.name : user.name}
             </h3>
             <h4 className="p-0">{user.user_metadata?.job}</h4>
-            <p className="d-flex ml-5">
-              <span className="h6 mr-3">{t("BirthDate")} :</span>{" "}
-              <span>{user.user_metadata?.birthDate}</span>
-            </p>
+ 
             <p className="d-flex ml-5">
               <span className="h6 mr-3">{t("Detail")} : </span>
               <span>{user.user_metadata?.detail}</span>
-            </p>
-            <p className="d-flex ml-5">
-              <span className="h6 mr-3">{t("Address")} :</span>{" "}
-              <span>{user.user_metadata?.address}</span>
             </p>
             <p className="d-flex ml-5">
               <span className="h6 mr-3">{t("Canton")} :</span>
@@ -71,10 +63,6 @@ export default function UserInfoInWishCard(props) {
             <p className="d-flex ml-5">
               <span className="h6 mr-3">{t("City")} : </span>
               <span>{user.user_metadata?.city}</span>
-            </p>
-            <p className="d-flex ml-5">
-              <span className="h6 mr-3">{t("Phone")} :</span>{" "}
-              <span>{user.user_metadata?.contactNumber}</span>
             </p>
             {user.user_metadata?.instagram ? (
               <a

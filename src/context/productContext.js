@@ -19,6 +19,9 @@ const ProductContext = React.createContext({
   product: [],
   pictureUploaded: false,
   itemDeleted: false,
+  filterCanton:"",
+  filterCategory:"",
+  filterCategoryHandler: function(props){},
   itemDeletedHandler: function (props) {},
   pictureUploadedHandler: function (props) {},
   productHandler: function (props) {},
@@ -38,6 +41,7 @@ const ProductContext = React.createContext({
   cityHandler: function (props) {},
   cantonHandler: function (props) {},
   productIdHandler: function (id) {},
+  filterCantonHandler: function (canton) {},
 });
 
 export const ProductContextProvider = (props) => {
@@ -60,6 +64,14 @@ export const ProductContextProvider = (props) => {
   const [product, setProduct] = useState([null]);
   const [pictureUploaded, setPictureUploaded] = useState(false);
   const [itemDeleted, setItemDeleted] = useState(false);
+const [filterCanton,setFilterCanton] = useState();
+const [ filterCategory,setFilterCategory]= useState()
+const filterCategoryHandler = (props)=>{
+  setFilterCategory(props)
+}
+const filterCantonHandler =(props)=>{
+  setFilterCanton(props)
+}
 
   const itemDeletedHandler = (props) => {
     setItemDeleted(props);
@@ -145,6 +157,10 @@ export const ProductContextProvider = (props) => {
     product: product,
     pictureUploaded: pictureUploaded,
     itemDeleted: itemDeleted,
+    filterCanton: filterCanton,
+    filterCategory: filterCategory,
+    filterCategoryHandler:filterCategoryHandler,
+    filterCantonHandler:filterCantonHandler,
     itemDeletedHandler: itemDeletedHandler,
     pictureUploadedHandler: pictureUploadedHandler,
     productHandler: productHandler,

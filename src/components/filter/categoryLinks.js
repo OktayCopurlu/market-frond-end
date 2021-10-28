@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import ProductContext from "../../../../context/productContext";
-import "../../../../modules/product/listProduct/main/productList.css";
+import ProductContext from "../../context/productContext";
+import "../../modules/product/listProduct/main/productList.css";
 import {
   Grid,
   Typography,
@@ -18,12 +18,12 @@ export default function CategoryLinks() {
   const classes = categoryLinksCss.useStyles();
   const productContext = useContext(ProductContext);
   const { t } = useTranslation();
-  const onSubmit = async (event) => {
+  const onChange = async (event) => {
     try {
       if (event.target.value === "null") {
-        return productContext.mainCategoryHandler(null);
+        return productContext.filterCategoryHandler(null);
       } else {
-        return productContext.mainCategoryHandler(event.target.value);
+        return productContext.filterCategoryHandler(event.target.value);
       }
     } catch (error) {
       return console.log(error);
@@ -43,7 +43,7 @@ export default function CategoryLinks() {
           <RadioGroup>
             <FormControlLabel
               className={classes.categoryList}
-              control={<Radio value="null" onChange={onSubmit} />}
+              control={<Radio value="null" onChange={onChange} />}
               label="Cancel Selection"
             /> 
             {array.map((category, index) => {
@@ -51,7 +51,7 @@ export default function CategoryLinks() {
                 <FormControlLabel
                   className={classes.categoryList}
                   key={index}
-                  control={<Radio onChange={onSubmit} value={category} />}
+                  control={<Radio onChange={onChange} value={category} />}
                   label={category}
                 />
               );

@@ -29,7 +29,8 @@ export default function EditProductOrWish() {
     }
 
     showList();
-  }, [productId,productContext]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div>

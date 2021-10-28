@@ -9,13 +9,13 @@ import { useLocation } from "react-router";
 export default function WishList() {
   const location = useLocation()
   localStorage.setItem('path', location.pathname);
-
   const productContext = useContext(ProductContext);
+
   const searchItem = productContext.search;
   const [state, setState] = useState([]);
   const { t } = useTranslation();
-
   async function showWishList() {
+
     const list = await wishAction.getAll();
     return setState(list);
   }

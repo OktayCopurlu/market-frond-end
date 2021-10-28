@@ -38,9 +38,7 @@ export default function Card(filterAndSearch) {
         })
       ) : searchItem ? (
         <h3 className="empty-filter">
-          {" "}
-          <strong className="text-danger">{searchItem}</strong> Couldn't be
-          found
+          <strong className="text-danger">{searchItem}</strong> Couldn't be found
         </h3>
       ) : (
         <div className="m-auto">

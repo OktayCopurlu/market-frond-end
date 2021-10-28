@@ -39,7 +39,7 @@ export default function UserDetailCard(props) {
         </p>
         <p className="d-flex ml-5">
           <span className="h6 mr-3">{t("Phone")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</span>
-          <span>{userMetadata?.contactNumber}</span>
+          <a href={`tel:${userMetadata?.phone}`}>{userMetadata?.contactNumber}</a>
         </p>
         {userMetadata?.instagram ? (
           <a

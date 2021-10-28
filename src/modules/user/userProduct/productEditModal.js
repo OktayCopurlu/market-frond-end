@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState} from "react";
 import { Link } from "react-router-dom";
 import Context from "../../../context/context";
 import EditProductOrWish from "../editUser/editProductOrWish";
@@ -6,9 +6,8 @@ import Modal from "@material-ui/core/Modal";
 import { makeStyles } from "@material-ui/core/styles";
 
 export default function ProductEditModal(props) {
-  const element = props.element;
+  const id = props.element;
   const context = useContext(Context);
-  //   const history = useHistory();
   const [open, setOpen] = useState(false);
   const [modalStyle] = useState(getModalStyle);
 
@@ -36,9 +35,9 @@ export default function ProductEditModal(props) {
   
   function onSubmit(event) {
     event.preventDefault();
+    console.log(id)
     setOpen(true);
-    context.product(event.target.value); //for edit
-    // history.replace("/ProductEdit");
+    context.product(id); //for edit
   }
   function handleClose(event) {
     event.preventDefault();
@@ -46,13 +45,12 @@ export default function ProductEditModal(props) {
   }
   return (
     <>
-      <button
-        value={element._id}
+      <Link
         onClick={onSubmit}
-        className="userProductButton btn btn-warning mr-1"
+        className="text-dark"
       >
-        Edit
-      </button>
+        <i class="fas fa-edit"></i> 
+      </Link>
       <Modal
         onClose={handleClose}
         open={open}

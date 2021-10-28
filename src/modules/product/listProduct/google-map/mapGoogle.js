@@ -37,8 +37,8 @@ export default function MapGoogle(props) {
   }, [address]);
   return (
     <>
-      <Link to="#" onClick={handleOpen} className="mr-2">
-        <i className="fas fa-map-marker-alt"></i>
+      <Link to="#" onClick={handleOpen} className="mr-2 text-dark">
+        <i className="fas fa-map-marker-alt mr-2"></i>{city}
       </Link>
 
       <Modal

@@ -11,27 +11,26 @@ import {
   useMediaQuery,
 } from "@material-ui/core";
 import * as styles from "./wishCardStyle";
+import { useAuth0 } from "@auth0/auth0-react";
+import { useTranslation } from "react-i18next";
+import MapGoogle from "../../modules/product/listProduct/google-map/mapGoogle";
 
 export default function WishCard(props) {
   const { element, index } = props.element;
+  const canton = element.canton;
+  const city = element.city;
   const [picture, setPicture] = useState([]);
   const classes = styles.useStyles();
   const tablet = useMediaQuery("(max-width:830)");
   const matches = useMediaQuery("(max-width:767px)");
-  
-  const showPicture =()=> {
+  const { isAuthenticated, loginWithRedirect } = useAuth0();
+  const { t } = useTranslation();
+
+  const showPicture = () => {
     userService.getUsers().then((user) => {
       setPicture(user);
     });
-    
-  //     try {
-  //       const user = await userService.getUsers();
-  //       const userArray = await user;
-  //       return setPicture(userArray);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
- };
+  };
   useEffect(() => {
     showPicture();
   }, []);
@@ -39,9 +38,7 @@ export default function WishCard(props) {
     <Card
       key={index}
       className={
-        matches ? classes.rootMedia : tablet ? classes.tablet : classes.root
-      }
-    >
+        matches ? classes.rootMedia : tablet ? classes.tablet : classes.root}>
       <CardActionArea>
         <CardContent>
           <div className="d-flex justify-content-between">
@@ -55,8 +52,7 @@ export default function WishCard(props) {
           <div
             variant="body2"
             color="textSecondary"
-            className="d-flex justify-content-between"
-          >
+            className="d-flex justify-content-between">
             <div variant="body2" color="textSecondary" component="p">
               {picture.map((user) => {
                 if (user.user_id === element.userId) {
@@ -66,7 +62,9 @@ export default function WishCard(props) {
               })}
             </div>
             <Typography variant="body2" color="textSecondary" component="p">
-              {element.city}
+            <div className="mb-0">
+            <MapGoogle address={{ canton, city }} />
+          </div>
             </Typography>
           </div>
           <Typography variant="body2" color="textSecondary" component="p">
@@ -75,9 +73,25 @@ export default function WishCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions className="bg-light text-dark">
-        <Link to="#" className="text-info d-block">
-          <i className="fas fa-phone"></i> {element.contactTel}
-        </Link>
+        {isAuthenticated ? (
+          <div className="d-flex justify-content-between w-100">
+          <a href={`tel:${element.contactTel}`} className="text-info">
+            <i className="fas fa-phone"></i> {element.contactTel}
+          </a>
+          <a href={`mailto:${element.contactEmail}`} className="text-info ">{element.contactEmail}</a></div>
+        ) : (
+          <Link
+            to="/SignUp"
+            onClick={() =>
+              loginWithRedirect({
+                screen_hint: "signup",
+              })
+            }
+            className="text-danger"
+          >
+            {t("PleaseSignUp")}
+          </Link>
+        )}
       </CardActions>
     </Card>
   );

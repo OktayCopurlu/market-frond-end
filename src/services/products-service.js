@@ -118,6 +118,7 @@ export async function filterAndGet(id) {
 
 //edit product
 export async function updateProduct(id, body, isSuccess, token) {
+  console.log(body)
   const tokenString = token;
   const requestOptions = {
     method: "PUT",
