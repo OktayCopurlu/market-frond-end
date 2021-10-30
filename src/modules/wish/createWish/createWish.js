@@ -9,6 +9,7 @@ import NotSuccessText from "./messages/notSuccessText";
 import MainForm from "../form/mainForm";
 import { useTranslation } from "react-i18next";
 import StepBar from "../../product/createProduct/stepBar";
+
 export default function CreateWishList() {
   const context = useContext(Context);
   context.handlerSuccess(null);

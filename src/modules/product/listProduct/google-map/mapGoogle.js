@@ -23,22 +23,25 @@ export default function MapGoogle(props) {
   }
 
   useEffect(() => {
-    const getGoogleLocation = async () => {
+    const getGoogleLocation = () => {
       try {
-        let googleLocation = await googleMapService.getLocationFromGoogle(
-          address
-        );
-        setCenter(googleLocation.results[0].geometry.location);
+        googleMapService
+          .getLocationFromGoogle(address)
+          .then((googleLocation) => {
+            setCenter(googleLocation.results[0].geometry.location);
+          });
       } catch (error) {
         console.log("Get location failed", error);
       }
     };
     getGoogleLocation();
-  }, [address]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <>
       <Link to="#" onClick={handleOpen} className="mr-2 text-dark">
-        <i className="fas fa-map-marker-alt mr-2"></i>{city}
+        <i className="fas fa-map-marker-alt mr-2"></i>
+        {city}
       </Link>
 
       <Modal

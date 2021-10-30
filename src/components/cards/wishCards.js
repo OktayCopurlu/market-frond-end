@@ -61,15 +61,15 @@ export default function WishCard(props) {
                 return null;
               })}
             </div>
-            <Typography variant="body2" color="textSecondary" component="p">
+            <div variant="body2" color="textSecondary" component="p">
             <div className="mb-0">
             <MapGoogle address={{ canton, city }} />
           </div>
-            </Typography>
+            </div>
           </div>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <div variant="body2" color="textSecondary" component="p">
             {element.detail}
-          </Typography>
+          </div>
         </CardContent>
       </CardActionArea>
       <CardActions className="bg-light text-dark">

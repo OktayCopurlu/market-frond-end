@@ -18,7 +18,6 @@ export default function DeleteProduct(props) {
 
   function onSubmit(event) {
     event.preventDefault();
-console.log(id)
     confirmAlert({
       title: t("DeleteAlert.title"),
       message: t("DeleteAlert.message"),
@@ -38,8 +37,8 @@ console.log(id)
     });
   }
   return (
-    <Link className="userProductButton text-danger" onClick={(event) => onSubmit(event)}>
-       <i class="fas fa-trash-alt"></i> 
+    <Link to="#" className="userProductButton text-danger" onClick={(event) => onSubmit(event)}>
+       <i className="fas fa-trash-alt"></i> 
     </Link>
   );
 }

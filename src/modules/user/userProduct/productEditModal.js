@@ -46,10 +46,11 @@ export default function ProductEditModal(props) {
   return (
     <>
       <Link
+      to="#"
         onClick={onSubmit}
         className="text-dark"
       >
-        <i class="fas fa-edit"></i> 
+        <i className="fas fa-edit"></i> 
       </Link>
       <Modal
         onClose={handleClose}
