@@ -4,7 +4,6 @@ import * as productActions from "../../../services/products-service";
 import MainForm from "../form/mainForm";
 
 export default function EditForm(props) {
-
   const { productId, body, handlerSuccess, token } = props.elements;
   const productContext = useContext(ProductContext);
   const mainCategory = productContext.mainCategory;

@@ -9,6 +9,7 @@ export default function Photos() {
   const { t } = useTranslation();
   const productContext = useContext(ProductContext);
   const photos = productContext.photos;
+
   const [images] = useState([]);
   const [pictureUploaded, setPictureUploaded] = useState(true);
   const [photoCounter, setPhotoCounter] = useState("-0-");
@@ -48,6 +49,7 @@ export default function Photos() {
         }
       );
     });
+
   };
 
   const style = {

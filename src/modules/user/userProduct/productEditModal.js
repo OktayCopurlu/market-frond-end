@@ -35,7 +35,6 @@ export default function ProductEditModal(props) {
   
   function onSubmit(event) {
     event.preventDefault();
-    console.log(id)
     setOpen(true);
     context.product(id); //for edit
   }

@@ -11,14 +11,14 @@ import { useTranslation } from "react-i18next";
 import StepBar from "./stepBar";
 export default function CreateProducts() {
   const { t } = useTranslation();
-  const { getAccessTokenSilently, user} = useAuth0();
+  const { getAccessTokenSilently, user } = useAuth0();
   const [token, setToken] = useState();
   getAccessTokenSilently().then((token) => setToken(token));
 
   const userId = user.sub;
   const context = useContext(Context);
   const productContext = useContext(ProductContext);
-
+  context.handlerSuccess(null);
   const canton = productContext.canton;
   const city = productContext.city;
   const categoryClothes = productContext.categoryClothes;
@@ -51,15 +51,19 @@ export default function CreateProducts() {
 
   //post request function
   const onSubmit = async (event) => {
-    try {
-      await event.preventDefault();
-      await productActions.createProduct(body, context.handlerSuccess, token);
-      await context.pageFormHandler(1);
-      await productContext.cantonHandler(null);
-      await productContext.mainCategoryHandler(null);
-    } catch (error) {
-      console.log(error);
-    }
+      event.preventDefault();
+      productActions
+        .createProduct(body, context.handlerSuccess, token)
+        .then(() => {
+          context.pageFormHandler(1);
+        })
+        .then(() => {
+          productContext.cantonHandler(null);
+        })
+        .then(() => {
+          productContext.mainCategoryHandler(null);
+        }).catch((error) =>{
+      console.log(error)});
   };
   //----------------------------------------------------------------
 
@@ -68,7 +72,7 @@ export default function CreateProducts() {
       <h3 className="d-flex justify-content-center">{t("CreateNewProduct")}</h3>
       {context.isSuccess === null ? (
         <>
-         <StepBar />
+          <StepBar />
           <div>
             <div className="col d-flex justify-content-center">
               <form className="form-create" onSubmit={onSubmit}>

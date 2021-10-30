@@ -14,11 +14,11 @@ export default function EditProduct(props) {
   const productContext = useContext(ProductContext);
   const products = props.products;
   const productId = products._id;
-  const photosProduct = products.photos;
+
   const [canton, setCanton] = useState(products.canton);
   const [city, setCity] = useState(products.city);
   const [mainCategory, setMainCategory] = useState(products.mainCategory);
-  const [photos, setPhotos] = useState(photosProduct);
+  const [photos, setPhotos] = useState(products.photos);
   const [condition, setCondition] = useState(products.condition);
   const [title, setTitle] = useState(products.title);
   const [size, setSize] = useState(products.size);
@@ -46,7 +46,7 @@ export default function EditProduct(props) {
     if (productContext.mainCategory) {
       setMainCategory(productContext.mainCategory);
     }
-    if (productContext.photos.length > 0) {
+    if (productContext.photos) {
       setPhotos(productContext.photos);
     }
     if (productContext.condition) {
@@ -97,7 +97,7 @@ export default function EditProduct(props) {
     photos,
     contactEmail,
   };
-  //----------------------------------------------------------------
+  //----------------------------------------------------------------a
 
   return (
     <>
