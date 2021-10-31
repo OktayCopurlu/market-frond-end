@@ -1,8 +1,6 @@
 import React from "react";
-import DeleteProduct from "../../product/deleteProduct/deleteProduct";
 import "../userPage/personalPage.css";
 import WishCard from "../../../components/cards/wishCards";
-import EditWishModal from "../../wish/editWish/editWishModal";
 
 export default function UserWishCard(props) {
   const wishes = props.wishes;
@@ -11,8 +9,6 @@ export default function UserWishCard(props) {
     return (
       <div className="user-wish-card w-100 mb-5" key={index}>
         <WishCard element={{ element, index }} />
-        <EditWishModal value={element._id} />
-        <DeleteProduct value={element._id} />
       </div>
     );
   });

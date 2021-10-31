@@ -5,7 +5,6 @@ import Modal from "@material-ui/core/Modal";
 import { makeStyles } from "@material-ui/core/styles";
 import EditWish from "./editWish";
 export default function EditWishModal(props) {
-
   const productId = props.value;
   const context = useContext(Context);
   const [open, setOpen] = useState(false);
@@ -36,7 +35,7 @@ export default function EditWishModal(props) {
   function onSubmit(event) {
     event.preventDefault();
     setOpen(true);
-    context.product(event.target.value);
+    context.product(productId);
   }
 
   function handleClose(event) {
@@ -45,13 +44,9 @@ export default function EditWishModal(props) {
   }
   return (
     <>
-      <button
-        value={productId}
-        onClick={onSubmit}
-        className="userProductButton btn btn-warning mr-1"
-      >
-        Edit
-      </button>
+      <Link to="#" onClick={onSubmit} className="text-dark mr-2">
+        <i className="fas fa-edit"></i>
+      </Link>
       <Modal
         onClose={handleClose}
         open={open}
@@ -62,7 +57,7 @@ export default function EditWishModal(props) {
           <Link to="#" onClick={handleClose} className="close-modal">
             Close
           </Link>
-         <EditWish element={productId}/>
+          <EditWish element={productId} />
         </div>
       </Modal>
     </>

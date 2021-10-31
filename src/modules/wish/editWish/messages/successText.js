@@ -14,7 +14,7 @@ const {t}= useTranslation()
     productContext.cantonHandler(null);
   }
   return (
-    <div className="alert alert-success text-center" role="alert">
+    <div className="alert alert-success text-center px-0 m-1" role="alert">
      <p>{t('WishUploadMessage.success')}</p>
       <p>
         <Link onClick={onClick} to="/personalPage">

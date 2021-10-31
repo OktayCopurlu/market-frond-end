@@ -39,7 +39,7 @@ export default function MapGoogle(props) {
   }, []);
   return (
     <>
-      <Link to="#" onClick={handleOpen} className="mr-2 text-dark">
+      <Link to="#" onClick={handleOpen} className="text-dark">
         <i className="fas fa-map-marker-alt mr-2"></i>
         {city}
       </Link>

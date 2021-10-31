@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import * as userService from "../../services/users-service";
 import UserInfoInWishCard from "../../modules/wish/listWish/userInfoInWishCard";
+import DeleteProduct from "../../modules/product/deleteProduct/deleteProduct";
+import EditWishModal from "../../modules/wish/editWish/editWishModal";
 import { Link } from "react-router-dom";
 import {
   Card,
@@ -17,13 +19,14 @@ import MapGoogle from "../../modules/product/listProduct/google-map/mapGoogle";
 
 export default function WishCard(props) {
   const { element, index } = props.element;
+  console.log(props.element);
   const canton = element.canton;
   const city = element.city;
   const [picture, setPicture] = useState([]);
   const classes = styles.useStyles();
   const tablet = useMediaQuery("(max-width:830)");
   const matches = useMediaQuery("(max-width:767px)");
-  const { isAuthenticated, loginWithRedirect } = useAuth0();
+  const { user, isAuthenticated, loginWithRedirect } = useAuth0();
   const { t } = useTranslation();
 
   const showPicture = () => {
@@ -38,7 +41,9 @@ export default function WishCard(props) {
     <Card
       key={index}
       className={
-        matches ? classes.rootMedia : tablet ? classes.tablet : classes.root}>
+        matches ? classes.rootMedia : tablet ? classes.tablet : classes.root
+      }
+    >
       <CardActionArea>
         <CardContent>
           <div className="d-flex justify-content-between">
@@ -52,7 +57,8 @@ export default function WishCard(props) {
           <div
             variant="body2"
             color="textSecondary"
-            className="d-flex justify-content-between">
+            className="d-flex justify-content-between"
+          >
             <div variant="body2" color="textSecondary" component="p">
               {picture.map((user) => {
                 if (user.user_id === element.userId) {
@@ -61,24 +67,34 @@ export default function WishCard(props) {
                 return null;
               })}
             </div>
-            <div variant="body2" color="textSecondary" component="p">
-            <div className="mb-0">
-            <MapGoogle address={{ canton, city }} />
-          </div>
+            <div>
+              <div >
+                <MapGoogle address={{ canton, city }} />
+              </div>
             </div>
           </div>
+          <div className="d-flex justify-content-between mt-2">
           <div variant="body2" color="textSecondary" component="p">
             {element.detail}
           </div>
+          {element.userId === user?.sub ? (
+            <div>
+              <EditWishModal value={element._id} />
+              <DeleteProduct value={element._id} />
+            </div>
+          ) : null}</div>
         </CardContent>
       </CardActionArea>
       <CardActions className="bg-light text-dark">
         {isAuthenticated ? (
           <div className="d-flex justify-content-between w-100">
-          <a href={`tel:${element.contactTel}`} className="text-info">
-            <i className="fas fa-phone"></i> {element.contactTel}
-          </a>
-          <a href={`mailto:${element.contactEmail}`} className="text-info ">{element.contactEmail}</a></div>
+            <a href={`tel:${element.contactTel}`} className="text-info">
+              <i className="fas fa-phone"></i> {element.contactTel}
+            </a>
+            <a href={`mailto:${element.contactEmail}`} className="text-info ">
+              {element.contactEmail}
+            </a>
+          </div>
         ) : (
           <Link
             to="/SignUp"
