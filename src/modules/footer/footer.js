@@ -57,7 +57,7 @@ const {t} = useTranslation()
                 info@freemarket.com
               </Link>
               <p>
-                <i className="fas fa-phone me-3"></i> + 41 00 000 00 00
+                <i className="fas fa-phone me-3"></i><a className="text-dark" href="tel:+41 00 000 00 00"> + 41 00 000 00 00</a>
               </p>
             </div>
           </div>
